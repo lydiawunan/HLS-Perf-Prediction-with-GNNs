@@ -1,0 +1,47 @@
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source /tools/reconfig/xilinx/Vitis_HLS/2020.2/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/tools/reconfig/xilinx/Vitis_HLS/2020.2/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'chao33' on host 'rg-fpga-dev-1.crnch' (Linux_x86_64 version 4.15.0-135-generic) on Mon Apr 12 12:55:24 EDT 2021
+INFO: [HLS 200-10] On os Ubuntu 18.04.5 LTS
+INFO: [HLS 200-10] In directory '/nethome/chao33/GNN-for-DFG/dfg/dfg_9'
+Sourcing Tcl script 'script.tcl'
+INFO: [HLS 200-1510] Running: open_project project_tmp 
+INFO: [HLS 200-10] Creating and opening project '/nethome/chao33/GNN-for-DFG/dfg/dfg_9/project_tmp'.
+INFO: [HLS 200-1510] Running: set_top fn1 
+INFO: [HLS 200-1510] Running: add_files ./dfg_49.c 
+INFO: [HLS 200-10] Adding design file './dfg_49.c' to the project
+INFO: [HLS 200-1510] Running: open_solution solution_tmp 
+INFO: [HLS 200-10] Creating and opening solution '/nethome/chao33/GNN-for-DFG/dfg/dfg_9/project_tmp/solution_tmp'.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xc7z020clg484-1 
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 205.782 MB.
+INFO: [HLS 200-10] Analyzing design file './dfg_49.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.1 seconds. CPU system time: 0.16 seconds. Elapsed time: 1.28 seconds; current allocated memory: 206.467 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::fp_struct(double)' into 'long generic_cast_IEEE754<long, (ap_q_mode)6, double>(double, bool, hls::enable_if<std::numeric_limits<long>::is_signed, bool>::type)' (/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::mantissa() const' into 'long generic_cast_IEEE754<long, (ap_q_mode)6, double>(double, bool, hls::enable_if<std::numeric_limits<long>::is_signed, bool>::type)' (/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::expv() const' into 'long generic_cast_IEEE754<long, (ap_q_mode)6, double>(double, bool, hls::enable_if<std::numeric_limits<long>::is_signed, bool>::type)' (/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::__signbit() const' into 'long generic_cast_IEEE754<long, (ap_q_mode)6, double>(double, bool, hls::enable_if<std::numeric_limits<long>::is_signed, bool>::type)' (/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'long generic_cast_IEEE754<long, (ap_q_mode)6, double>(double, bool, hls::enable_if<std::numeric_limits<long>::is_signed, bool>::type)' into 'long generic_cast_IEEE754<long, double>(double, bool)' (/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116:0)
+INFO: [HLS 214-178] Inlining function 'long generic_cast_IEEE754<long, double>(double, bool)' into '__hls_fptosi_double_i64' (/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/src/lib_floatconversion.cpp:56:0)
+INFO: [HLS 214-178] Inlining function '__hls_fptosi_double_i64' into 'fn1' (./dfg_49.c:8:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.53 seconds. CPU system time: 0.42 seconds. Elapsed time: 4.16 seconds; current allocated memory: 208.370 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 208.371 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.05 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.1 seconds; current allocated memory: 222.776 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+free(): invalid next size (fast)
+Stack dump:
+0.	Running pass 'Function Pass Manager' on module '/nethome/chao33/GNN-for-DFG/dfg/dfg_9/project_tmp/solution_tmp/.autopilot/db/a.g.1.bc'.
+1.	Running pass 'Instruction simplification' on function '@fn1'
+/tools/reconfig/xilinx/Vitis_HLS/2020.2/bin/loader: line 309: 29121 Aborted                 (core dumped) "$RDI_PROG" "$@"
