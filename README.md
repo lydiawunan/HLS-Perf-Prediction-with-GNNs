@@ -20,8 +20,16 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This project aims to explore the capability of GNNs applied on data flow graphs (DFGs) and control data flow graphs (CDFGs). 
-It also provides a standard dataset of (C)DFGs for further explorations of different GNN models.
+This project explores different GNN-based strategies in HLS performance prediction, aiming to provide fast and accurate circuit quality evaluation from early design stages as well as to facilitate hardware agile design.
+
+The contribution of this work is three-fold. 
+* First, we build a standard benchmark containing 40k C synthesizable programs, which includes both synthetic programs and three sets of real-world HLS benchmarks. Each program is implemented on FPGA to generate ground-truth performance metrics.
+* Second, we formally formulate the HLS performance prediction problem on graphs, and propose multiple modeling strategies with GNNs that leverage different trade-offs between prediction timeliness (early/late prediction) and accuracy. 
+* Third, we further propose a novel hierarchical GNN that does not sacrifice timeliness but largely improves prediction accuracy, significantly outperforming HLS tools
+
+The papers related to this project:
+* DAC2022: [High-Level Synthesis Performance Prediction using GNNs: Benchmarking, Modeling, and Advancing](https://arxiv.org/abs/2201.06848)
+* More statistics of the benchmark: [Program-to-Circuit: Exploiting GNNs for Program Representation and Circuit Translation](https://arxiv.org/abs/2109.06265)
 
 
 ## Dataset
