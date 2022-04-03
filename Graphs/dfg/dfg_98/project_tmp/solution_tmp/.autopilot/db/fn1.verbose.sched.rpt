@@ -1,0 +1,1262 @@
+
+
+================================================================
+== Vitis HLS Report for 'fn1'
+================================================================
+* Date:           Fri Apr 30 12:11:44 2021
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)
+* Project:        project_tmp
+* Solution:       solution_tmp (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.256 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      114|      114|  1.140 us|  1.140 us|  115|  115|     none|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 115
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 28 
+28 --> 29 
+29 --> 30 
+30 --> 31 
+31 --> 32 
+32 --> 33 
+33 --> 34 
+34 --> 35 
+35 --> 36 
+36 --> 37 
+37 --> 38 
+38 --> 39 
+39 --> 40 
+40 --> 41 
+41 --> 42 
+42 --> 43 
+43 --> 44 
+44 --> 45 
+45 --> 46 
+46 --> 47 
+47 --> 48 
+48 --> 49 
+49 --> 50 
+50 --> 51 
+51 --> 52 
+52 --> 53 
+53 --> 54 
+54 --> 55 
+55 --> 56 
+56 --> 57 
+57 --> 58 
+58 --> 59 
+59 --> 60 
+60 --> 61 
+61 --> 62 
+62 --> 63 
+63 --> 64 
+64 --> 65 
+65 --> 66 
+66 --> 67 
+67 --> 68 
+68 --> 69 
+69 --> 70 
+70 --> 71 
+71 --> 72 
+72 --> 73 
+73 --> 74 
+74 --> 75 
+75 --> 76 
+76 --> 77 
+77 --> 78 
+78 --> 79 
+79 --> 80 
+80 --> 81 
+81 --> 82 
+82 --> 83 
+83 --> 84 
+84 --> 85 
+85 --> 86 
+86 --> 87 
+87 --> 88 
+88 --> 89 
+89 --> 90 
+90 --> 91 
+91 --> 92 
+92 --> 93 
+93 --> 94 
+94 --> 95 
+95 --> 96 
+96 --> 97 
+97 --> 98 
+98 --> 99 
+99 --> 100 
+100 --> 101 
+101 --> 102 
+102 --> 103 
+103 --> 104 
+104 --> 105 
+105 --> 106 
+106 --> 107 
+107 --> 108 
+108 --> 109 
+109 --> 110 
+110 --> 111 
+111 --> 112 
+112 --> 113 
+113 --> 114 
+114 --> 115 
+115 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.88>
+ST_1 : Operation 116 [1/1] (0.00ns)   --->   "%p_13_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_13" [dfg_199.c:7]   --->   Operation 116 'read' 'p_13_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 117 [1/1] (0.00ns)   --->   "%data_V = bitcast i32 %p_13_read" [/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:312]   --->   Operation 117 'bitcast' 'data_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 118 [1/1] (0.00ns)   --->   "%p_Result_s = bitselect i1 @_ssdm_op_BitSelect.i1.i32.i32, i32 %data_V, i32 31"   --->   Operation 118 'bitselect' 'p_Result_s' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 119 [1/1] (0.00ns)   --->   "%tmp_15 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %data_V, i32 23, i32 30"   --->   Operation 119 'partselect' 'tmp_15' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 120 [1/1] (0.00ns)   --->   "%tmp_16 = trunc i32 %data_V"   --->   Operation 120 'trunc' 'tmp_16' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 121 [1/1] (0.00ns)   --->   "%zext_ln341 = zext i8 %tmp_15" [/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:341]   --->   Operation 121 'zext' 'zext_ln341' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 122 [1/1] (1.91ns)   --->   "%add_ln341 = add i9 %zext_ln341, i9 385" [/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:341]   --->   Operation 122 'add' 'add_ln341' <Predicate = true> <Delay = 1.91> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.94> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 123 [1/1] (0.00ns)   --->   "%isNeg = bitselect i1 @_ssdm_op_BitSelect.i1.i9.i32, i9 %add_ln341, i32 8"   --->   Operation 123 'bitselect' 'isNeg' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 124 [1/1] (1.91ns)   --->   "%sub_ln1311 = sub i8 127, i8 %tmp_15"   --->   Operation 124 'sub' 'sub_ln1311' <Predicate = true> <Delay = 1.91> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.94> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 125 [1/1] (0.00ns)   --->   "%sext_ln1311 = sext i8 %sub_ln1311"   --->   Operation 125 'sext' 'sext_ln1311' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 126 [1/1] (0.96ns)   --->   "%ush = select i1 %isNeg, i9 %sext_ln1311, i9 %add_ln341"   --->   Operation 126 'select' 'ush' <Predicate = true> <Delay = 0.96> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+
+State 2 <SV = 1> <Delay = 6.33>
+ST_2 : Operation 127 [1/1] (0.00ns)   --->   "%mantissa = bitconcatenate i25 @_ssdm_op_BitConcatenate.i25.i1.i23.i1, i1 1, i23 %tmp_16, i1 0"   --->   Operation 127 'bitconcatenate' 'mantissa' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 128 [1/1] (0.00ns)   --->   "%zext_ln15 = zext i25 %mantissa" [/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:15]   --->   Operation 128 'zext' 'zext_ln15' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 129 [1/1] (0.00ns)   --->   "%sh_prom_i_i_i_i_i_cast_cast_cast = sext i9 %ush"   --->   Operation 129 'sext' 'sh_prom_i_i_i_i_i_cast_cast_cast' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 130 [1/1] (0.00ns)   --->   "%sh_prom_i_i_i_i_i_cast_cast_cast_cast = zext i32 %sh_prom_i_i_i_i_i_cast_cast_cast"   --->   Operation 130 'zext' 'sh_prom_i_i_i_i_i_cast_cast_cast_cast' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 131 [1/1] (0.00ns) (grouped into LUT with out node val)   --->   "%r_V = lshr i55 %zext_ln15, i55 %sh_prom_i_i_i_i_i_cast_cast_cast_cast"   --->   Operation 131 'lshr' 'r_V' <Predicate = (isNeg)> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 4.42> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 132 [1/1] (0.00ns) (grouped into LUT with out node val)   --->   "%r_V_1 = shl i55 %zext_ln15, i55 %sh_prom_i_i_i_i_i_cast_cast_cast_cast"   --->   Operation 132 'shl' 'r_V_1' <Predicate = (!isNeg)> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 4.42> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 133 [1/1] (0.00ns) (grouped into LUT with out node val)   --->   "%tmp = bitselect i1 @_ssdm_op_BitSelect.i1.i55.i32, i55 %r_V, i32 24"   --->   Operation 133 'bitselect' 'tmp' <Predicate = (isNeg)> <Delay = 0.00>
+ST_2 : Operation 134 [1/1] (0.00ns) (grouped into LUT with out node val)   --->   "%zext_ln662 = zext i1 %tmp"   --->   Operation 134 'zext' 'zext_ln662' <Predicate = (isNeg)> <Delay = 0.00>
+ST_2 : Operation 135 [1/1] (0.00ns) (grouped into LUT with out node val)   --->   "%tmp_1 = partselect i8 @_ssdm_op_PartSelect.i8.i55.i32.i32, i55 %r_V_1, i32 24, i32 31"   --->   Operation 135 'partselect' 'tmp_1' <Predicate = (!isNeg)> <Delay = 0.00>
+ST_2 : Operation 136 [1/1] (4.42ns) (out node of the LUT)   --->   "%val = select i1 %isNeg, i8 %zext_ln662, i8 %tmp_1"   --->   Operation 136 'select' 'val' <Predicate = true> <Delay = 4.42> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 137 [1/1] (1.91ns)   --->   "%result_V_2 = sub i8 0, i8 %val"   --->   Operation 137 'sub' 'result_V_2' <Predicate = (p_Result_s)> <Delay = 1.91> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.94> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 3 <SV = 2> <Delay = 5.41>
+ST_3 : Operation 138 [1/1] (1.24ns)   --->   "%result_V = select i1 %p_Result_s, i8 %result_V_2, i8 %val" [/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:59]   --->   Operation 138 'select' 'result_V' <Predicate = true> <Delay = 1.24> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 139 [1/1] (0.00ns)   --->   "%sext_ln23 = sext i8 %result_V" [dfg_199.c:23]   --->   Operation 139 'sext' 'sext_ln23' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 140 [1/1] (4.17ns)   --->   "%mul_ln23 = mul i16 %sext_ln23, i16 70" [dfg_199.c:23]   --->   Operation 140 'mul' 'mul_ln23' <Predicate = true> <Delay = 4.17> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 4> <II = 1> <Delay = 6.97> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 4 <SV = 3> <Delay = 6.41>
+ST_4 : Operation 141 [1/1] (0.00ns)   --->   "%sext_ln23_1 = sext i16 %mul_ln23" [dfg_199.c:23]   --->   Operation 141 'sext' 'sext_ln23_1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 142 [6/6] (6.41ns)   --->   "%conv = sitofp i32 %sext_ln23_1" [dfg_199.c:23]   --->   Operation 142 'sitofp' 'conv' <Predicate = true> <Delay = 6.41> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 5> <II = 1> <Delay = 6.41> <FuncUnit> <Opcode : 'sitofp' 'uitofp'> <InPorts = 1> <OutPorts = 1>
+
+State 5 <SV = 4> <Delay = 6.41>
+ST_5 : Operation 143 [5/6] (6.41ns)   --->   "%conv = sitofp i32 %sext_ln23_1" [dfg_199.c:23]   --->   Operation 143 'sitofp' 'conv' <Predicate = true> <Delay = 6.41> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 5> <II = 1> <Delay = 6.41> <FuncUnit> <Opcode : 'sitofp' 'uitofp'> <InPorts = 1> <OutPorts = 1>
+
+State 6 <SV = 5> <Delay = 6.41>
+ST_6 : Operation 144 [4/6] (6.41ns)   --->   "%conv = sitofp i32 %sext_ln23_1" [dfg_199.c:23]   --->   Operation 144 'sitofp' 'conv' <Predicate = true> <Delay = 6.41> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 5> <II = 1> <Delay = 6.41> <FuncUnit> <Opcode : 'sitofp' 'uitofp'> <InPorts = 1> <OutPorts = 1>
+
+State 7 <SV = 6> <Delay = 6.41>
+ST_7 : Operation 145 [3/6] (6.41ns)   --->   "%conv = sitofp i32 %sext_ln23_1" [dfg_199.c:23]   --->   Operation 145 'sitofp' 'conv' <Predicate = true> <Delay = 6.41> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 5> <II = 1> <Delay = 6.41> <FuncUnit> <Opcode : 'sitofp' 'uitofp'> <InPorts = 1> <OutPorts = 1>
+
+State 8 <SV = 7> <Delay = 6.41>
+ST_8 : Operation 146 [2/6] (6.41ns)   --->   "%conv = sitofp i32 %sext_ln23_1" [dfg_199.c:23]   --->   Operation 146 'sitofp' 'conv' <Predicate = true> <Delay = 6.41> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 5> <II = 1> <Delay = 6.41> <FuncUnit> <Opcode : 'sitofp' 'uitofp'> <InPorts = 1> <OutPorts = 1>
+
+State 9 <SV = 8> <Delay = 6.41>
+ST_9 : Operation 147 [1/6] (6.41ns)   --->   "%conv = sitofp i32 %sext_ln23_1" [dfg_199.c:23]   --->   Operation 147 'sitofp' 'conv' <Predicate = true> <Delay = 6.41> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 5> <II = 1> <Delay = 6.41> <FuncUnit> <Opcode : 'sitofp' 'uitofp'> <InPorts = 1> <OutPorts = 1>
+
+State 10 <SV = 9> <Delay = 7.25>
+ST_10 : Operation 148 [1/1] (0.00ns)   --->   "%p_11_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_11" [dfg_199.c:7]   --->   Operation 148 'read' 'p_11_read' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 149 [5/5] (7.25ns)   --->   "%add = fadd i32 %conv, i32 %p_13_read" [dfg_199.c:23]   --->   Operation 149 'fadd' 'add' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 150 [5/5] (7.25ns)   --->   "%add1 = fadd i32 %p_11_read, i32 162" [dfg_199.c:24]   --->   Operation 150 'fadd' 'add1' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 151 [1/1] (0.00ns)   --->   "%bitcast_ln25 = bitcast i32 %p_11_read" [dfg_199.c:25]   --->   Operation 151 'bitcast' 'bitcast_ln25' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 152 [1/1] (0.00ns)   --->   "%tmp_19 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln25, i32 23, i32 30"   --->   Operation 152 'partselect' 'tmp_19' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 153 [1/1] (0.00ns)   --->   "%tmp_20 = trunc i32 %bitcast_ln25"   --->   Operation 153 'trunc' 'tmp_20' <Predicate = true> <Delay = 0.00>
+
+State 11 <SV = 10> <Delay = 7.25>
+ST_11 : Operation 154 [4/5] (7.25ns)   --->   "%add = fadd i32 %conv, i32 %p_13_read" [dfg_199.c:23]   --->   Operation 154 'fadd' 'add' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 155 [4/5] (7.25ns)   --->   "%add1 = fadd i32 %p_11_read, i32 162" [dfg_199.c:24]   --->   Operation 155 'fadd' 'add1' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 12 <SV = 11> <Delay = 7.25>
+ST_12 : Operation 156 [3/5] (7.25ns)   --->   "%add = fadd i32 %conv, i32 %p_13_read" [dfg_199.c:23]   --->   Operation 156 'fadd' 'add' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 157 [3/5] (7.25ns)   --->   "%add1 = fadd i32 %p_11_read, i32 162" [dfg_199.c:24]   --->   Operation 157 'fadd' 'add1' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 13 <SV = 12> <Delay = 7.25>
+ST_13 : Operation 158 [2/5] (7.25ns)   --->   "%add = fadd i32 %conv, i32 %p_13_read" [dfg_199.c:23]   --->   Operation 158 'fadd' 'add' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 159 [2/5] (7.25ns)   --->   "%add1 = fadd i32 %p_11_read, i32 162" [dfg_199.c:24]   --->   Operation 159 'fadd' 'add1' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 14 <SV = 13> <Delay = 7.25>
+ST_14 : Operation 160 [1/5] (7.25ns)   --->   "%add = fadd i32 %conv, i32 %p_13_read" [dfg_199.c:23]   --->   Operation 160 'fadd' 'add' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 161 [1/5] (7.25ns)   --->   "%add1 = fadd i32 %p_11_read, i32 162" [dfg_199.c:24]   --->   Operation 161 'fadd' 'add1' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 15 <SV = 14> <Delay = 6.07>
+ST_15 : Operation 162 [16/16] (6.07ns)   --->   "%div = fdiv i32 %add, i32 %add1" [dfg_199.c:23]   --->   Operation 162 'fdiv' 'div' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 16 <SV = 15> <Delay = 6.07>
+ST_16 : Operation 163 [15/16] (6.07ns)   --->   "%div = fdiv i32 %add, i32 %add1" [dfg_199.c:23]   --->   Operation 163 'fdiv' 'div' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 17 <SV = 16> <Delay = 6.07>
+ST_17 : Operation 164 [14/16] (6.07ns)   --->   "%div = fdiv i32 %add, i32 %add1" [dfg_199.c:23]   --->   Operation 164 'fdiv' 'div' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 18 <SV = 17> <Delay = 6.07>
+ST_18 : Operation 165 [13/16] (6.07ns)   --->   "%div = fdiv i32 %add, i32 %add1" [dfg_199.c:23]   --->   Operation 165 'fdiv' 'div' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 19 <SV = 18> <Delay = 6.07>
+ST_19 : Operation 166 [12/16] (6.07ns)   --->   "%div = fdiv i32 %add, i32 %add1" [dfg_199.c:23]   --->   Operation 166 'fdiv' 'div' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 20 <SV = 19> <Delay = 6.07>
+ST_20 : Operation 167 [11/16] (6.07ns)   --->   "%div = fdiv i32 %add, i32 %add1" [dfg_199.c:23]   --->   Operation 167 'fdiv' 'div' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 21 <SV = 20> <Delay = 6.07>
+ST_21 : Operation 168 [10/16] (6.07ns)   --->   "%div = fdiv i32 %add, i32 %add1" [dfg_199.c:23]   --->   Operation 168 'fdiv' 'div' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 22 <SV = 21> <Delay = 6.07>
+ST_22 : Operation 169 [9/16] (6.07ns)   --->   "%div = fdiv i32 %add, i32 %add1" [dfg_199.c:23]   --->   Operation 169 'fdiv' 'div' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 23 <SV = 22> <Delay = 6.07>
+ST_23 : Operation 170 [8/16] (6.07ns)   --->   "%div = fdiv i32 %add, i32 %add1" [dfg_199.c:23]   --->   Operation 170 'fdiv' 'div' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 24 <SV = 23> <Delay = 6.07>
+ST_24 : Operation 171 [7/16] (6.07ns)   --->   "%div = fdiv i32 %add, i32 %add1" [dfg_199.c:23]   --->   Operation 171 'fdiv' 'div' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 25 <SV = 24> <Delay = 6.07>
+ST_25 : Operation 172 [6/16] (6.07ns)   --->   "%div = fdiv i32 %add, i32 %add1" [dfg_199.c:23]   --->   Operation 172 'fdiv' 'div' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 26 <SV = 25> <Delay = 6.07>
+ST_26 : Operation 173 [5/16] (6.07ns)   --->   "%div = fdiv i32 %add, i32 %add1" [dfg_199.c:23]   --->   Operation 173 'fdiv' 'div' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 27 <SV = 26> <Delay = 6.07>
+ST_27 : Operation 174 [4/16] (6.07ns)   --->   "%div = fdiv i32 %add, i32 %add1" [dfg_199.c:23]   --->   Operation 174 'fdiv' 'div' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 28 <SV = 27> <Delay = 6.07>
+ST_28 : Operation 175 [3/16] (6.07ns)   --->   "%div = fdiv i32 %add, i32 %add1" [dfg_199.c:23]   --->   Operation 175 'fdiv' 'div' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 29 <SV = 28> <Delay = 6.07>
+ST_29 : Operation 176 [2/16] (6.07ns)   --->   "%div = fdiv i32 %add, i32 %add1" [dfg_199.c:23]   --->   Operation 176 'fdiv' 'div' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 30 <SV = 29> <Delay = 6.07>
+ST_30 : Operation 177 [1/16] (6.07ns)   --->   "%div = fdiv i32 %add, i32 %add1" [dfg_199.c:23]   --->   Operation 177 'fdiv' 'div' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 178 [1/1] (0.00ns)   --->   "%bitcast_ln23 = bitcast i32 %div" [dfg_199.c:23]   --->   Operation 178 'bitcast' 'bitcast_ln23' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 179 [1/1] (0.00ns)   --->   "%tmp_17 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln23, i32 23, i32 30"   --->   Operation 179 'partselect' 'tmp_17' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 180 [1/1] (0.00ns)   --->   "%tmp_18 = trunc i32 %bitcast_ln23"   --->   Operation 180 'trunc' 'tmp_18' <Predicate = true> <Delay = 0.00>
+
+State 31 <SV = 30> <Delay = 2.88>
+ST_31 : Operation 181 [1/1] (0.00ns)   --->   "%zext_ln341_1 = zext i8 %tmp_17" [/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:341]   --->   Operation 181 'zext' 'zext_ln341_1' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 182 [1/1] (1.91ns)   --->   "%add_ln341_1 = add i9 %zext_ln341_1, i9 385" [/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:341]   --->   Operation 182 'add' 'add_ln341_1' <Predicate = true> <Delay = 1.91> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.94> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 183 [1/1] (0.00ns)   --->   "%isNeg_1 = bitselect i1 @_ssdm_op_BitSelect.i1.i9.i32, i9 %add_ln341_1, i32 8"   --->   Operation 183 'bitselect' 'isNeg_1' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 184 [1/1] (1.91ns)   --->   "%sub_ln1311_1 = sub i8 127, i8 %tmp_17"   --->   Operation 184 'sub' 'sub_ln1311_1' <Predicate = true> <Delay = 1.91> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.94> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 185 [1/1] (0.00ns)   --->   "%sext_ln1311_1 = sext i8 %sub_ln1311_1"   --->   Operation 185 'sext' 'sext_ln1311_1' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 186 [1/1] (0.96ns)   --->   "%ush_1 = select i1 %isNeg_1, i9 %sext_ln1311_1, i9 %add_ln341_1"   --->   Operation 186 'select' 'ush_1' <Predicate = true> <Delay = 0.96> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+
+State 32 <SV = 31> <Delay = 4.42>
+ST_32 : Operation 187 [1/1] (0.00ns)   --->   "%p_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %p" [dfg_199.c:7]   --->   Operation 187 'read' 'p_read' <Predicate = true> <Delay = 0.00>
+ST_32 : Operation 188 [1/1] (0.00ns)   --->   "%mantissa_1 = bitconcatenate i25 @_ssdm_op_BitConcatenate.i25.i1.i23.i1, i1 1, i23 %tmp_18, i1 0"   --->   Operation 188 'bitconcatenate' 'mantissa_1' <Predicate = true> <Delay = 0.00>
+ST_32 : Operation 189 [1/1] (0.00ns)   --->   "%zext_ln68 = zext i25 %mantissa_1" [/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:68]   --->   Operation 189 'zext' 'zext_ln68' <Predicate = true> <Delay = 0.00>
+ST_32 : Operation 190 [1/1] (0.00ns)   --->   "%sh_prom_i_i_i_i_i23_cast_cast_cast = sext i9 %ush_1"   --->   Operation 190 'sext' 'sh_prom_i_i_i_i_i23_cast_cast_cast' <Predicate = true> <Delay = 0.00>
+ST_32 : Operation 191 [1/1] (0.00ns)   --->   "%sh_prom_i_i_i_i_i23_cast_cast_cast_cast = zext i32 %sh_prom_i_i_i_i_i23_cast_cast_cast"   --->   Operation 191 'zext' 'sh_prom_i_i_i_i_i23_cast_cast_cast_cast' <Predicate = true> <Delay = 0.00>
+ST_32 : Operation 192 [1/1] (0.00ns) (grouped into LUT with out node val_1)   --->   "%r_V_2 = lshr i79 %zext_ln68, i79 %sh_prom_i_i_i_i_i23_cast_cast_cast_cast"   --->   Operation 192 'lshr' 'r_V_2' <Predicate = (isNeg_1)> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 4.42> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 193 [1/1] (0.00ns) (grouped into LUT with out node val_1)   --->   "%r_V_3 = shl i79 %zext_ln68, i79 %sh_prom_i_i_i_i_i23_cast_cast_cast_cast"   --->   Operation 193 'shl' 'r_V_3' <Predicate = (!isNeg_1)> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 4.42> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 194 [1/1] (0.00ns) (grouped into LUT with out node val_1)   --->   "%tmp_6 = bitselect i1 @_ssdm_op_BitSelect.i1.i79.i32, i79 %r_V_2, i32 24"   --->   Operation 194 'bitselect' 'tmp_6' <Predicate = (isNeg_1)> <Delay = 0.00>
+ST_32 : Operation 195 [1/1] (0.00ns) (grouped into LUT with out node val_1)   --->   "%zext_ln662_1 = zext i1 %tmp_6"   --->   Operation 195 'zext' 'zext_ln662_1' <Predicate = (isNeg_1)> <Delay = 0.00>
+ST_32 : Operation 196 [1/1] (0.00ns) (grouped into LUT with out node val_1)   --->   "%tmp_8 = partselect i32 @_ssdm_op_PartSelect.i32.i79.i32.i32, i79 %r_V_3, i32 24, i32 55"   --->   Operation 196 'partselect' 'tmp_8' <Predicate = (!isNeg_1)> <Delay = 0.00>
+ST_32 : Operation 197 [1/1] (4.42ns) (out node of the LUT)   --->   "%val_1 = select i1 %isNeg_1, i32 %zext_ln662_1, i32 %tmp_8"   --->   Operation 197 'select' 'val_1' <Predicate = true> <Delay = 4.42> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_32 : Operation 198 [1/1] (3.52ns)   --->   "%add_ln27 = add i64 %p_read, i64 86" [dfg_199.c:27]   --->   Operation 198 'add' 'add_ln27' <Predicate = true> <Delay = 3.52> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.94> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 33 <SV = 32> <Delay = 6.91>
+ST_33 : Operation 199 [1/1] (0.00ns)   --->   "%p_9_read = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_9" [dfg_199.c:7]   --->   Operation 199 'read' 'p_9_read' <Predicate = true> <Delay = 0.00>
+ST_33 : Operation 200 [1/1] (0.00ns)   --->   "%sext_ln25 = sext i8 %p_9_read" [dfg_199.c:25]   --->   Operation 200 'sext' 'sext_ln25' <Predicate = true> <Delay = 0.00>
+ST_33 : Operation 201 [2/2] (6.91ns)   --->   "%mul_ln25 = mul i32 %val_1, i32 %sext_ln25" [dfg_199.c:25]   --->   Operation 201 'mul' 'mul_ln25' <Predicate = true> <Delay = 6.91> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 4> <II = 1> <Delay = 6.97> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_33 : Operation 202 [1/1] (0.00ns)   --->   "%zext_ln27 = zext i32 %val_1" [dfg_199.c:27]   --->   Operation 202 'zext' 'zext_ln27' <Predicate = true> <Delay = 0.00>
+ST_33 : Operation 203 [36/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 203 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 34 <SV = 33> <Delay = 6.91>
+ST_34 : Operation 204 [1/2] (6.91ns)   --->   "%mul_ln25 = mul i32 %val_1, i32 %sext_ln25" [dfg_199.c:25]   --->   Operation 204 'mul' 'mul_ln25' <Predicate = true> <Delay = 6.91> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 4> <II = 1> <Delay = 6.97> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_34 : Operation 205 [1/1] (0.00ns)   --->   "%zext_ln341_2 = zext i8 %tmp_19" [/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:341]   --->   Operation 205 'zext' 'zext_ln341_2' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 206 [1/1] (1.91ns)   --->   "%add_ln341_2 = add i9 %zext_ln341_2, i9 385" [/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:341]   --->   Operation 206 'add' 'add_ln341_2' <Predicate = true> <Delay = 1.91> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.94> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_34 : Operation 207 [1/1] (0.00ns)   --->   "%isNeg_2 = bitselect i1 @_ssdm_op_BitSelect.i1.i9.i32, i9 %add_ln341_2, i32 8"   --->   Operation 207 'bitselect' 'isNeg_2' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 208 [1/1] (1.91ns)   --->   "%sub_ln1311_2 = sub i8 127, i8 %tmp_19"   --->   Operation 208 'sub' 'sub_ln1311_2' <Predicate = true> <Delay = 1.91> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.94> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_34 : Operation 209 [1/1] (0.00ns)   --->   "%sext_ln1311_2 = sext i8 %sub_ln1311_2"   --->   Operation 209 'sext' 'sext_ln1311_2' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 210 [1/1] (0.96ns)   --->   "%ush_2 = select i1 %isNeg_2, i9 %sext_ln1311_2, i9 %add_ln341_2"   --->   Operation 210 'select' 'ush_2' <Predicate = true> <Delay = 0.96> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_34 : Operation 211 [35/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 211 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 35 <SV = 34> <Delay = 6.89>
+ST_35 : Operation 212 [1/1] (0.00ns)   --->   "%mantissa_2 = bitconcatenate i25 @_ssdm_op_BitConcatenate.i25.i1.i23.i1, i1 1, i23 %tmp_20, i1 0"   --->   Operation 212 'bitconcatenate' 'mantissa_2' <Predicate = true> <Delay = 0.00>
+ST_35 : Operation 213 [1/1] (0.00ns)   --->   "%zext_ln68_1 = zext i25 %mantissa_2" [/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:68]   --->   Operation 213 'zext' 'zext_ln68_1' <Predicate = true> <Delay = 0.00>
+ST_35 : Operation 214 [1/1] (0.00ns)   --->   "%sh_prom_i_i_i_i_i53_cast_cast_cast = sext i9 %ush_2"   --->   Operation 214 'sext' 'sh_prom_i_i_i_i_i53_cast_cast_cast' <Predicate = true> <Delay = 0.00>
+ST_35 : Operation 215 [1/1] (0.00ns)   --->   "%sh_prom_i_i_i_i_i53_cast_cast_cast_cast = zext i32 %sh_prom_i_i_i_i_i53_cast_cast_cast"   --->   Operation 215 'zext' 'sh_prom_i_i_i_i_i53_cast_cast_cast_cast' <Predicate = true> <Delay = 0.00>
+ST_35 : Operation 216 [1/1] (0.00ns) (grouped into LUT with out node sub_ln25)   --->   "%r_V_4 = lshr i79 %zext_ln68_1, i79 %sh_prom_i_i_i_i_i53_cast_cast_cast_cast"   --->   Operation 216 'lshr' 'r_V_4' <Predicate = (isNeg_2)> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 4.42> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_35 : Operation 217 [1/1] (0.00ns) (grouped into LUT with out node sub_ln25)   --->   "%r_V_5 = shl i79 %zext_ln68_1, i79 %sh_prom_i_i_i_i_i53_cast_cast_cast_cast"   --->   Operation 217 'shl' 'r_V_5' <Predicate = (!isNeg_2)> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 4.42> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_35 : Operation 218 [1/1] (0.00ns) (grouped into LUT with out node sub_ln25)   --->   "%tmp_13 = bitselect i1 @_ssdm_op_BitSelect.i1.i79.i32, i79 %r_V_4, i32 24"   --->   Operation 218 'bitselect' 'tmp_13' <Predicate = (isNeg_2)> <Delay = 0.00>
+ST_35 : Operation 219 [1/1] (0.00ns) (grouped into LUT with out node sub_ln25)   --->   "%zext_ln662_2 = zext i1 %tmp_13"   --->   Operation 219 'zext' 'zext_ln662_2' <Predicate = (isNeg_2)> <Delay = 0.00>
+ST_35 : Operation 220 [1/1] (0.00ns) (grouped into LUT with out node sub_ln25)   --->   "%tmp_s = partselect i32 @_ssdm_op_PartSelect.i32.i79.i32.i32, i79 %r_V_5, i32 24, i32 55"   --->   Operation 220 'partselect' 'tmp_s' <Predicate = (!isNeg_2)> <Delay = 0.00>
+ST_35 : Operation 221 [1/1] (0.00ns) (grouped into LUT with out node sub_ln25)   --->   "%val_2 = select i1 %isNeg_2, i32 %zext_ln662_2, i32 %tmp_s"   --->   Operation 221 'select' 'val_2' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_35 : Operation 222 [1/1] (4.42ns) (out node of the LUT)   --->   "%sub_ln25 = sub i32 0, i32 %val_2" [dfg_199.c:25]   --->   Operation 222 'sub' 'sub_ln25' <Predicate = true> <Delay = 4.42> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.94> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_35 : Operation 223 [1/1] (2.47ns)   --->   "%icmp_ln25 = icmp_eq  i32 %mul_ln25, i32 %sub_ln25" [dfg_199.c:25]   --->   Operation 223 'icmp' 'icmp_ln25' <Predicate = true> <Delay = 2.47> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_35 : Operation 224 [34/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 224 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 36 <SV = 35> <Delay = 5.07>
+ST_36 : Operation 225 [33/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 225 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 37 <SV = 36> <Delay = 5.07>
+ST_37 : Operation 226 [32/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 226 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 38 <SV = 37> <Delay = 5.07>
+ST_38 : Operation 227 [31/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 227 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 39 <SV = 38> <Delay = 5.07>
+ST_39 : Operation 228 [30/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 228 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 40 <SV = 39> <Delay = 5.07>
+ST_40 : Operation 229 [29/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 229 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 41 <SV = 40> <Delay = 5.07>
+ST_41 : Operation 230 [28/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 230 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 42 <SV = 41> <Delay = 5.07>
+ST_42 : Operation 231 [27/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 231 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 43 <SV = 42> <Delay = 5.07>
+ST_43 : Operation 232 [26/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 232 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 44 <SV = 43> <Delay = 5.07>
+ST_44 : Operation 233 [25/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 233 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 45 <SV = 44> <Delay = 5.07>
+ST_45 : Operation 234 [24/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 234 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 46 <SV = 45> <Delay = 5.07>
+ST_46 : Operation 235 [23/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 235 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 47 <SV = 46> <Delay = 5.07>
+ST_47 : Operation 236 [22/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 236 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 48 <SV = 47> <Delay = 5.07>
+ST_48 : Operation 237 [21/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 237 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 49 <SV = 48> <Delay = 5.07>
+ST_49 : Operation 238 [20/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 238 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 50 <SV = 49> <Delay = 5.07>
+ST_50 : Operation 239 [19/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 239 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 51 <SV = 50> <Delay = 5.07>
+ST_51 : Operation 240 [18/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 240 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 52 <SV = 51> <Delay = 5.07>
+ST_52 : Operation 241 [17/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 241 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 53 <SV = 52> <Delay = 5.07>
+ST_53 : Operation 242 [16/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 242 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 54 <SV = 53> <Delay = 5.07>
+ST_54 : Operation 243 [15/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 243 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 55 <SV = 54> <Delay = 5.07>
+ST_55 : Operation 244 [14/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 244 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 56 <SV = 55> <Delay = 5.07>
+ST_56 : Operation 245 [13/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 245 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 57 <SV = 56> <Delay = 5.07>
+ST_57 : Operation 246 [12/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 246 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 58 <SV = 57> <Delay = 5.07>
+ST_58 : Operation 247 [11/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 247 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 59 <SV = 58> <Delay = 5.07>
+ST_59 : Operation 248 [10/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 248 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 60 <SV = 59> <Delay = 5.07>
+ST_60 : Operation 249 [9/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 249 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 61 <SV = 60> <Delay = 5.07>
+ST_61 : Operation 250 [8/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 250 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 62 <SV = 61> <Delay = 5.07>
+ST_62 : Operation 251 [7/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 251 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 63 <SV = 62> <Delay = 5.07>
+ST_63 : Operation 252 [1/1] (0.00ns)   --->   "%zext_ln25 = zext i1 %icmp_ln25" [dfg_199.c:25]   --->   Operation 252 'zext' 'zext_ln25' <Predicate = true> <Delay = 0.00>
+ST_63 : Operation 253 [1/1] (0.97ns)   --->   "%v = xor i2 %zext_ln25, i2 3" [dfg_199.c:25]   --->   Operation 253 'xor' 'v' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_63 : Operation 254 [6/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 254 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 64 <SV = 63> <Delay = 6.97>
+ST_64 : Operation 255 [1/1] (0.00ns)   --->   "%sext_ln26 = sext i2 %v" [dfg_199.c:26]   --->   Operation 255 'sext' 'sext_ln26' <Predicate = true> <Delay = 0.00>
+ST_64 : Operation 256 [1/1] (0.00ns)   --->   "%zext_ln26_1 = zext i64 %sext_ln26" [dfg_199.c:26]   --->   Operation 256 'zext' 'zext_ln26_1' <Predicate = true> <Delay = 0.00>
+ST_64 : Operation 257 [5/5] (6.97ns)   --->   "%mul_ln26 = mul i129 %zext_ln26_1, i129 31723453194800458045" [dfg_199.c:26]   --->   Operation 257 'mul' 'mul_ln26' <Predicate = true> <Delay = 6.97> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 4> <II = 1> <Delay = 6.97> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_64 : Operation 258 [5/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 258 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 65 <SV = 64> <Delay = 6.97>
+ST_65 : Operation 259 [4/5] (6.97ns)   --->   "%mul_ln26 = mul i129 %zext_ln26_1, i129 31723453194800458045" [dfg_199.c:26]   --->   Operation 259 'mul' 'mul_ln26' <Predicate = true> <Delay = 6.97> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 4> <II = 1> <Delay = 6.97> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_65 : Operation 260 [4/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 260 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 66 <SV = 65> <Delay = 6.97>
+ST_66 : Operation 261 [3/5] (6.97ns)   --->   "%mul_ln26 = mul i129 %zext_ln26_1, i129 31723453194800458045" [dfg_199.c:26]   --->   Operation 261 'mul' 'mul_ln26' <Predicate = true> <Delay = 6.97> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 4> <II = 1> <Delay = 6.97> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_66 : Operation 262 [3/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 262 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 67 <SV = 66> <Delay = 6.97>
+ST_67 : Operation 263 [2/5] (6.97ns)   --->   "%mul_ln26 = mul i129 %zext_ln26_1, i129 31723453194800458045" [dfg_199.c:26]   --->   Operation 263 'mul' 'mul_ln26' <Predicate = true> <Delay = 6.97> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 4> <II = 1> <Delay = 6.97> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_67 : Operation 264 [2/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 264 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 68 <SV = 67> <Delay = 6.97>
+ST_68 : Operation 265 [1/5] (6.97ns)   --->   "%mul_ln26 = mul i129 %zext_ln26_1, i129 31723453194800458045" [dfg_199.c:26]   --->   Operation 265 'mul' 'mul_ln26' <Predicate = true> <Delay = 6.97> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 4> <II = 1> <Delay = 6.97> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_68 : Operation 266 [1/1] (0.00ns)   --->   "%trunc_ln = partselect i36 @_ssdm_op_PartSelect.i36.i129.i32.i32, i129 %mul_ln26, i32 93, i32 128" [dfg_199.c:27]   --->   Operation 266 'partselect' 'trunc_ln' <Predicate = true> <Delay = 0.00>
+ST_68 : Operation 267 [1/36] (5.07ns)   --->   "%udiv_ln27 = udiv i64 %zext_ln27, i64 %add_ln27" [dfg_199.c:27]   --->   Operation 267 'udiv' 'udiv_ln27' <Predicate = true> <Delay = 5.07> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 32> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 69 <SV = 68> <Delay = 6.80>
+ST_69 : Operation 268 [1/1] (0.00ns)   --->   "%trunc_ln27 = trunc i32 %udiv_ln27" [dfg_199.c:27]   --->   Operation 268 'trunc' 'trunc_ln27' <Predicate = true> <Delay = 0.00>
+ST_69 : Operation 269 [1/1] (0.00ns)   --->   "%zext_ln27_1 = zext i32 %trunc_ln27" [dfg_199.c:27]   --->   Operation 269 'zext' 'zext_ln27_1' <Predicate = true> <Delay = 0.00>
+ST_69 : Operation 270 [1/1] (2.55ns)   --->   "%add_ln27_1 = add i33 %zext_ln27_1, i33 187" [dfg_199.c:27]   --->   Operation 270 'add' 'add_ln27_1' <Predicate = true> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.94> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_69 : Operation 271 [1/1] (0.00ns)   --->   "%zext_ln26 = zext i33 %add_ln27_1" [dfg_199.c:26]   --->   Operation 271 'zext' 'zext_ln26' <Predicate = true> <Delay = 0.00>
+ST_69 : Operation 272 [40/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 272 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 70 <SV = 69> <Delay = 4.25>
+ST_70 : Operation 273 [39/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 273 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 71 <SV = 70> <Delay = 4.25>
+ST_71 : Operation 274 [38/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 274 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 72 <SV = 71> <Delay = 4.25>
+ST_72 : Operation 275 [37/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 275 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 73 <SV = 72> <Delay = 4.25>
+ST_73 : Operation 276 [36/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 276 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 74 <SV = 73> <Delay = 4.25>
+ST_74 : Operation 277 [35/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 277 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 75 <SV = 74> <Delay = 4.25>
+ST_75 : Operation 278 [34/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 278 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 76 <SV = 75> <Delay = 4.25>
+ST_76 : Operation 279 [33/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 279 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 77 <SV = 76> <Delay = 4.25>
+ST_77 : Operation 280 [32/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 280 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 78 <SV = 77> <Delay = 4.25>
+ST_78 : Operation 281 [31/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 281 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 79 <SV = 78> <Delay = 4.25>
+ST_79 : Operation 282 [30/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 282 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 80 <SV = 79> <Delay = 4.25>
+ST_80 : Operation 283 [29/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 283 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 81 <SV = 80> <Delay = 4.25>
+ST_81 : Operation 284 [28/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 284 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 82 <SV = 81> <Delay = 4.25>
+ST_82 : Operation 285 [27/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 285 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 83 <SV = 82> <Delay = 4.25>
+ST_83 : Operation 286 [26/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 286 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 84 <SV = 83> <Delay = 4.25>
+ST_84 : Operation 287 [25/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 287 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 85 <SV = 84> <Delay = 4.25>
+ST_85 : Operation 288 [24/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 288 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 86 <SV = 85> <Delay = 4.25>
+ST_86 : Operation 289 [23/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 289 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 87 <SV = 86> <Delay = 4.25>
+ST_87 : Operation 290 [22/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 290 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 88 <SV = 87> <Delay = 4.25>
+ST_88 : Operation 291 [21/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 291 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 89 <SV = 88> <Delay = 4.25>
+ST_89 : Operation 292 [20/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 292 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 90 <SV = 89> <Delay = 4.25>
+ST_90 : Operation 293 [19/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 293 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 91 <SV = 90> <Delay = 4.25>
+ST_91 : Operation 294 [18/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 294 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 92 <SV = 91> <Delay = 4.25>
+ST_92 : Operation 295 [17/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 295 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 93 <SV = 92> <Delay = 4.25>
+ST_93 : Operation 296 [16/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 296 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 94 <SV = 93> <Delay = 4.25>
+ST_94 : Operation 297 [15/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 297 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 95 <SV = 94> <Delay = 4.25>
+ST_95 : Operation 298 [14/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 298 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 96 <SV = 95> <Delay = 4.25>
+ST_96 : Operation 299 [13/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 299 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 97 <SV = 96> <Delay = 4.25>
+ST_97 : Operation 300 [12/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 300 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 98 <SV = 97> <Delay = 4.25>
+ST_98 : Operation 301 [11/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 301 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 99 <SV = 98> <Delay = 4.25>
+ST_99 : Operation 302 [10/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 302 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 100 <SV = 99> <Delay = 4.25>
+ST_100 : Operation 303 [9/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 303 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 101 <SV = 100> <Delay = 4.25>
+ST_101 : Operation 304 [8/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 304 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 102 <SV = 101> <Delay = 4.25>
+ST_102 : Operation 305 [7/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 305 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 103 <SV = 102> <Delay = 4.25>
+ST_103 : Operation 306 [6/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 306 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 104 <SV = 103> <Delay = 4.25>
+ST_104 : Operation 307 [5/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 307 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 105 <SV = 104> <Delay = 4.25>
+ST_105 : Operation 308 [4/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 308 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 106 <SV = 105> <Delay = 4.25>
+ST_106 : Operation 309 [3/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 309 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_106 : Operation 310 [1/1] (0.00ns)   --->   "%sext_ln28 = sext i8 %p_9_read" [dfg_199.c:28]   --->   Operation 310 'sext' 'sext_ln28' <Predicate = true> <Delay = 0.00>
+ST_106 : Operation 311 [1/1] (1.94ns)   --->   "%sub_ln28 = sub i15 24037, i15 %sext_ln28" [dfg_199.c:28]   --->   Operation 311 'sub' 'sub_ln28' <Predicate = true> <Delay = 1.94> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.94> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_106 : Operation 312 [1/1] (0.00ns)   --->   "%zext_ln28 = zext i15 %sub_ln28" [dfg_199.c:28]   --->   Operation 312 'zext' 'zext_ln28' <Predicate = true> <Delay = 0.00>
+ST_106 : Operation 313 [4/4] (2.15ns) (root node of the DSP)   --->   "%mul_ln28 = mul i31 %zext_ln28, i31 64777" [dfg_199.c:28]   --->   Operation 313 'mul' 'mul_ln28' <Predicate = true> <Delay = 2.15> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 3> <II = 1> <Delay = 2.15> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 107 <SV = 106> <Delay = 4.25>
+ST_107 : Operation 314 [2/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 314 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_107 : Operation 315 [3/4] (2.15ns) (root node of the DSP)   --->   "%mul_ln28 = mul i31 %zext_ln28, i31 64777" [dfg_199.c:28]   --->   Operation 315 'mul' 'mul_ln28' <Predicate = true> <Delay = 2.15> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 3> <II = 1> <Delay = 2.15> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 108 <SV = 107> <Delay = 6.71>
+ST_108 : Operation 316 [1/40] (4.25ns)   --->   "%udiv_ln26 = udiv i36 %trunc_ln, i36 %zext_ln26" [dfg_199.c:26]   --->   Operation 316 'udiv' 'udiv_ln26' <Predicate = true> <Delay = 4.25> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 39> <II = 29> <Delay = 4.25> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_108 : Operation 317 [1/1] (0.00ns)   --->   "%trunc_ln26 = trunc i29 %udiv_ln26" [dfg_199.c:26]   --->   Operation 317 'trunc' 'trunc_ln26' <Predicate = true> <Delay = 0.00>
+ST_108 : Operation 318 [1/1] (2.46ns)   --->   "%icmp_ln26 = icmp_eq  i29 %trunc_ln26, i29 0" [dfg_199.c:26]   --->   Operation 318 'icmp' 'icmp_ln26' <Predicate = true> <Delay = 2.46> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_108 : Operation 319 [2/4] (2.15ns) (root node of the DSP)   --->   "%mul_ln28 = mul i31 %zext_ln28, i31 64777" [dfg_199.c:28]   --->   Operation 319 'mul' 'mul_ln28' <Predicate = true> <Delay = 2.15> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 3> <II = 1> <Delay = 2.15> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 109 <SV = 108> <Delay = 2.52>
+ST_109 : Operation 320 [1/1] (0.00ns)   --->   "%p_7_read = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_7" [dfg_199.c:7]   --->   Operation 320 'read' 'p_7_read' <Predicate = true> <Delay = 0.00>
+ST_109 : Operation 321 [1/1] (1.55ns)   --->   "%icmp_ln28 = icmp_eq  i8 %p_7_read, i8 0" [dfg_199.c:28]   --->   Operation 321 'icmp' 'icmp_ln28' <Predicate = true> <Delay = 1.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_109 : Operation 322 [1/4] (0.00ns) (root node of the DSP)   --->   "%mul_ln28 = mul i31 %zext_ln28, i31 64777" [dfg_199.c:28]   --->   Operation 322 'mul' 'mul_ln28' <Predicate = true> <Delay = 0.00> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 3> <II = 1> <Delay = 2.15> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_109 : Operation 323 [1/1] (0.00ns) (grouped into LUT with out node and_ln27)   --->   "%tmp_14 = bitselect i1 @_ssdm_op_BitSelect.i1.i31.i32, i31 %mul_ln28, i32 24" [dfg_199.c:28]   --->   Operation 323 'bitselect' 'tmp_14' <Predicate = true> <Delay = 0.00>
+ST_109 : Operation 324 [1/1] (0.00ns) (grouped into LUT with out node and_ln27)   --->   "%and_ln28 = and i1 %tmp_14, i1 %icmp_ln28" [dfg_199.c:28]   --->   Operation 324 'and' 'and_ln28' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_109 : Operation 325 [1/1] (0.97ns) (out node of the LUT)   --->   "%and_ln27 = and i1 %and_ln28, i1 %icmp_ln26" [dfg_199.c:27]   --->   Operation 325 'and' 'and_ln27' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+
+State 110 <SV = 109> <Delay = 6.41>
+ST_110 : Operation 326 [1/1] (0.00ns)   --->   "%zext_ln26_2 = zext i1 %and_ln27" [dfg_199.c:26]   --->   Operation 326 'zext' 'zext_ln26_2' <Predicate = true> <Delay = 0.00>
+ST_110 : Operation 327 [6/6] (6.41ns)   --->   "%result = uitofp i32 %zext_ln26_2" [dfg_199.c:26]   --->   Operation 327 'uitofp' 'result' <Predicate = true> <Delay = 6.41> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 5> <II = 1> <Delay = 6.41> <FuncUnit> <Opcode : 'sitofp' 'uitofp'> <InPorts = 1> <OutPorts = 1>
+
+State 111 <SV = 110> <Delay = 6.41>
+ST_111 : Operation 328 [5/6] (6.41ns)   --->   "%result = uitofp i32 %zext_ln26_2" [dfg_199.c:26]   --->   Operation 328 'uitofp' 'result' <Predicate = true> <Delay = 6.41> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 5> <II = 1> <Delay = 6.41> <FuncUnit> <Opcode : 'sitofp' 'uitofp'> <InPorts = 1> <OutPorts = 1>
+
+State 112 <SV = 111> <Delay = 6.41>
+ST_112 : Operation 329 [4/6] (6.41ns)   --->   "%result = uitofp i32 %zext_ln26_2" [dfg_199.c:26]   --->   Operation 329 'uitofp' 'result' <Predicate = true> <Delay = 6.41> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 5> <II = 1> <Delay = 6.41> <FuncUnit> <Opcode : 'sitofp' 'uitofp'> <InPorts = 1> <OutPorts = 1>
+
+State 113 <SV = 112> <Delay = 6.41>
+ST_113 : Operation 330 [3/6] (6.41ns)   --->   "%result = uitofp i32 %zext_ln26_2" [dfg_199.c:26]   --->   Operation 330 'uitofp' 'result' <Predicate = true> <Delay = 6.41> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 5> <II = 1> <Delay = 6.41> <FuncUnit> <Opcode : 'sitofp' 'uitofp'> <InPorts = 1> <OutPorts = 1>
+
+State 114 <SV = 113> <Delay = 6.41>
+ST_114 : Operation 331 [2/6] (6.41ns)   --->   "%result = uitofp i32 %zext_ln26_2" [dfg_199.c:26]   --->   Operation 331 'uitofp' 'result' <Predicate = true> <Delay = 6.41> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 5> <II = 1> <Delay = 6.41> <FuncUnit> <Opcode : 'sitofp' 'uitofp'> <InPorts = 1> <OutPorts = 1>
+
+State 115 <SV = 114> <Delay = 6.41>
+ST_115 : Operation 332 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 0"   --->   Operation 332 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_115 : Operation 333 [1/1] (0.00ns)   --->   "%spectopmodule_ln0 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_1"   --->   Operation 333 'spectopmodule' 'spectopmodule_ln0' <Predicate = true> <Delay = 0.00>
+ST_115 : Operation 334 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i64 %p"   --->   Operation 334 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_115 : Operation 335 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %p, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 335 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_115 : Operation 336 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %p_7"   --->   Operation 336 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_115 : Operation 337 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %p_7, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 337 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_115 : Operation 338 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %p_9"   --->   Operation 338 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_115 : Operation 339 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %p_9, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 339 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_115 : Operation 340 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %p_11"   --->   Operation 340 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_115 : Operation 341 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %p_11, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 341 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_115 : Operation 342 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %p_13"   --->   Operation 342 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_115 : Operation 343 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %p_13, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 343 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_115 : Operation 344 [1/6] (6.41ns)   --->   "%result = uitofp i32 %zext_ln26_2" [dfg_199.c:26]   --->   Operation 344 'uitofp' 'result' <Predicate = true> <Delay = 6.41> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 5> <II = 1> <Delay = 6.41> <FuncUnit> <Opcode : 'sitofp' 'uitofp'> <InPorts = 1> <OutPorts = 1>
+ST_115 : Operation 345 [1/1] (0.00ns)   --->   "%ret_ln30 = ret i32 %result" [dfg_199.c:30]   --->   Operation 345 'ret' 'ret_ln30' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 2.88ns
+The critical path consists of the following:
+	wire read on port 'p_13' (dfg_199.c:7) [18]  (0 ns)
+	'sub' operation ('sub_ln1311') [32]  (1.92 ns)
+	'select' operation ('ush') [34]  (0.968 ns)
+
+ <State 2>: 6.33ns
+The critical path consists of the following:
+	'lshr' operation ('r.V') [37]  (0 ns)
+	'select' operation ('val') [42]  (4.42 ns)
+	'sub' operation ('result.V') [43]  (1.92 ns)
+
+ <State 3>: 5.42ns
+The critical path consists of the following:
+	'select' operation ('result.V', /wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:59) [44]  (1.25 ns)
+	'mul' operation ('mul_ln23', dfg_199.c:23) [46]  (4.17 ns)
+
+ <State 4>: 6.41ns
+The critical path consists of the following:
+	'sitofp' operation ('conv', dfg_199.c:23) [48]  (6.41 ns)
+
+ <State 5>: 6.41ns
+The critical path consists of the following:
+	'sitofp' operation ('conv', dfg_199.c:23) [48]  (6.41 ns)
+
+ <State 6>: 6.41ns
+The critical path consists of the following:
+	'sitofp' operation ('conv', dfg_199.c:23) [48]  (6.41 ns)
+
+ <State 7>: 6.41ns
+The critical path consists of the following:
+	'sitofp' operation ('conv', dfg_199.c:23) [48]  (6.41 ns)
+
+ <State 8>: 6.41ns
+The critical path consists of the following:
+	'sitofp' operation ('conv', dfg_199.c:23) [48]  (6.41 ns)
+
+ <State 9>: 6.41ns
+The critical path consists of the following:
+	'sitofp' operation ('conv', dfg_199.c:23) [48]  (6.41 ns)
+
+ <State 10>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('add', dfg_199.c:23) [49]  (7.26 ns)
+
+ <State 11>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('add', dfg_199.c:23) [49]  (7.26 ns)
+
+ <State 12>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('add', dfg_199.c:23) [49]  (7.26 ns)
+
+ <State 13>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('add', dfg_199.c:23) [49]  (7.26 ns)
+
+ <State 14>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('add', dfg_199.c:23) [49]  (7.26 ns)
+
+ <State 15>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('div', dfg_199.c:23) [51]  (6.08 ns)
+
+ <State 16>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('div', dfg_199.c:23) [51]  (6.08 ns)
+
+ <State 17>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('div', dfg_199.c:23) [51]  (6.08 ns)
+
+ <State 18>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('div', dfg_199.c:23) [51]  (6.08 ns)
+
+ <State 19>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('div', dfg_199.c:23) [51]  (6.08 ns)
+
+ <State 20>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('div', dfg_199.c:23) [51]  (6.08 ns)
+
+ <State 21>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('div', dfg_199.c:23) [51]  (6.08 ns)
+
+ <State 22>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('div', dfg_199.c:23) [51]  (6.08 ns)
+
+ <State 23>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('div', dfg_199.c:23) [51]  (6.08 ns)
+
+ <State 24>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('div', dfg_199.c:23) [51]  (6.08 ns)
+
+ <State 25>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('div', dfg_199.c:23) [51]  (6.08 ns)
+
+ <State 26>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('div', dfg_199.c:23) [51]  (6.08 ns)
+
+ <State 27>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('div', dfg_199.c:23) [51]  (6.08 ns)
+
+ <State 28>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('div', dfg_199.c:23) [51]  (6.08 ns)
+
+ <State 29>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('div', dfg_199.c:23) [51]  (6.08 ns)
+
+ <State 30>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('div', dfg_199.c:23) [51]  (6.08 ns)
+
+ <State 31>: 2.88ns
+The critical path consists of the following:
+	'add' operation ('sh', /wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:341) [58]  (1.92 ns)
+	'select' operation ('ush') [62]  (0.968 ns)
+
+ <State 32>: 4.42ns
+The critical path consists of the following:
+	'lshr' operation ('r.V') [65]  (0 ns)
+	'select' operation ('val') [70]  (4.42 ns)
+
+ <State 33>: 6.91ns
+The critical path consists of the following:
+	wire read on port 'p_9' (dfg_199.c:7) [20]  (0 ns)
+	'mul' operation ('mul_ln25', dfg_199.c:25) [72]  (6.91 ns)
+
+ <State 34>: 6.91ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln25', dfg_199.c:25) [72]  (6.91 ns)
+
+ <State 35>: 6.89ns
+The critical path consists of the following:
+	'lshr' operation ('r.V') [86]  (0 ns)
+	'select' operation ('val') [91]  (0 ns)
+	'sub' operation ('sub_ln25', dfg_199.c:25) [92]  (4.42 ns)
+	'icmp' operation ('icmp_ln25', dfg_199.c:25) [93]  (2.47 ns)
+
+ <State 36>: 5.07ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln27', dfg_199.c:27) [102]  (5.07 ns)
+
+ <State 37>: 5.07ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln27', dfg_199.c:27) [102]  (5.07 ns)
+
+ <State 38>: 5.07ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln27', dfg_199.c:27) [102]  (5.07 ns)
+
+ <State 39>: 5.07ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln27', dfg_199.c:27) [102]  (5.07 ns)
+
+ <State 40>: 5.07ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln27', dfg_199.c:27) [102]  (5.07 ns)
+
+ <State 41>: 5.07ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln27', dfg_199.c:27) [102]  (5.07 ns)
+
+ <State 42>: 5.07ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln27', dfg_199.c:27) [102]  (5.07 ns)
+
+ <State 43>: 5.07ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln27', dfg_199.c:27) [102]  (5.07 ns)
+
+ <State 44>: 5.07ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln27', dfg_199.c:27) [102]  (5.07 ns)
+
+ <State 45>: 5.07ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln27', dfg_199.c:27) [102]  (5.07 ns)
+
+ <State 46>: 5.07ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln27', dfg_199.c:27) [102]  (5.07 ns)
+
+ <State 47>: 5.07ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln27', dfg_199.c:27) [102]  (5.07 ns)
+
+ <State 48>: 5.07ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln27', dfg_199.c:27) [102]  (5.07 ns)
+
+ <State 49>: 5.07ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln27', dfg_199.c:27) [102]  (5.07 ns)
+
+ <State 50>: 5.07ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln27', dfg_199.c:27) [102]  (5.07 ns)
+
+ <State 51>: 5.07ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln27', dfg_199.c:27) [102]  (5.07 ns)
+
+ <State 52>: 5.07ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln27', dfg_199.c:27) [102]  (5.07 ns)
+
+ <State 53>: 5.07ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln27', dfg_199.c:27) [102]  (5.07 ns)
+
+ <State 54>: 5.07ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln27', dfg_199.c:27) [102]  (5.07 ns)
+
+ <State 55>: 5.07ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln27', dfg_199.c:27) [102]  (5.07 ns)
+
+ <State 56>: 5.07ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln27', dfg_199.c:27) [102]  (5.07 ns)
+
+ <State 57>: 5.07ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln27', dfg_199.c:27) [102]  (5.07 ns)
+
+ <State 58>: 5.07ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln27', dfg_199.c:27) [102]  (5.07 ns)
+
+ <State 59>: 5.07ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln27', dfg_199.c:27) [102]  (5.07 ns)
+
+ <State 60>: 5.07ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln27', dfg_199.c:27) [102]  (5.07 ns)
+
+ <State 61>: 5.07ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln27', dfg_199.c:27) [102]  (5.07 ns)
+
+ <State 62>: 5.07ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln27', dfg_199.c:27) [102]  (5.07 ns)
+
+ <State 63>: 5.07ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln27', dfg_199.c:27) [102]  (5.07 ns)
+
+ <State 64>: 6.98ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln26', dfg_199.c:26) [98]  (6.98 ns)
+
+ <State 65>: 6.98ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln26', dfg_199.c:26) [98]  (6.98 ns)
+
+ <State 66>: 6.98ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln26', dfg_199.c:26) [98]  (6.98 ns)
+
+ <State 67>: 6.98ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln26', dfg_199.c:26) [98]  (6.98 ns)
+
+ <State 68>: 6.98ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln26', dfg_199.c:26) [98]  (6.98 ns)
+
+ <State 69>: 6.81ns
+The critical path consists of the following:
+	'add' operation ('add_ln27_1', dfg_199.c:27) [105]  (2.55 ns)
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 70>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 71>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 72>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 73>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 74>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 75>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 76>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 77>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 78>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 79>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 80>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 81>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 82>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 83>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 84>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 85>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 86>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 87>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 88>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 89>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 90>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 91>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 92>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 93>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 94>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 95>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 96>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 97>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 98>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 99>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 100>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 101>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 102>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 103>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 104>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 105>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 106>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 107>: 4.25ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+
+ <State 108>: 6.72ns
+The critical path consists of the following:
+	'udiv' operation ('udiv_ln26', dfg_199.c:26) [107]  (4.25 ns)
+	'icmp' operation ('icmp_ln26', dfg_199.c:26) [109]  (2.46 ns)
+
+ <State 109>: 2.53ns
+The critical path consists of the following:
+	wire read on port 'p_7' (dfg_199.c:7) [21]  (0 ns)
+	'icmp' operation ('icmp_ln28', dfg_199.c:28) [110]  (1.55 ns)
+	'and' operation ('and_ln28', dfg_199.c:28) [116]  (0 ns)
+	'and' operation ('and_ln27', dfg_199.c:27) [117]  (0.978 ns)
+
+ <State 110>: 6.41ns
+The critical path consists of the following:
+	'uitofp' operation ('result', dfg_199.c:26) [119]  (6.41 ns)
+
+ <State 111>: 6.41ns
+The critical path consists of the following:
+	'uitofp' operation ('result', dfg_199.c:26) [119]  (6.41 ns)
+
+ <State 112>: 6.41ns
+The critical path consists of the following:
+	'uitofp' operation ('result', dfg_199.c:26) [119]  (6.41 ns)
+
+ <State 113>: 6.41ns
+The critical path consists of the following:
+	'uitofp' operation ('result', dfg_199.c:26) [119]  (6.41 ns)
+
+ <State 114>: 6.41ns
+The critical path consists of the following:
+	'uitofp' operation ('result', dfg_199.c:26) [119]  (6.41 ns)
+
+ <State 115>: 6.41ns
+The critical path consists of the following:
+	'uitofp' operation ('result', dfg_199.c:26) [119]  (6.41 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+	State 57
+	State 58
+	State 59
+	State 60
+	State 61
+	State 62
+	State 63
+	State 64
+	State 65
+	State 66
+	State 67
+	State 68
+	State 69
+	State 70
+	State 71
+	State 72
+	State 73
+	State 74
+	State 75
+	State 76
+	State 77
+	State 78
+	State 79
+	State 80
+	State 81
+	State 82
+	State 83
+	State 84
+	State 85
+	State 86
+	State 87
+	State 88
+	State 89
+	State 90
+	State 91
+	State 92
+	State 93
+	State 94
+	State 95
+	State 96
+	State 97
+	State 98
+	State 99
+	State 100
+	State 101
+	State 102
+	State 103
+	State 104
+	State 105
+	State 106
+	State 107
+	State 108
+	State 109
+	State 110
+	State 111
+	State 112
+	State 113
+	State 114
+	State 115
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

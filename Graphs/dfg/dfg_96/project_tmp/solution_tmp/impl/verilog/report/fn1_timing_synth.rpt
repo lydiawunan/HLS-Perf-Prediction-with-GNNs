@@ -1,0 +1,349 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+| Date         : Sat May  1 01:56:52 2021
+| Host         : seal-lambda running 64-bit Ubuntu 18.04.5 LTS
+| Command      : report_timing_summary -file ./report/fn1_timing_synth.rpt
+| Design       : bd_0_wrapper
+| Device       : 7z020-clg484
+| Speed File   : -1  PRODUCTION 1.12 2019-11-22
+------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (0)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (0)
+4. checking unconstrained_internal_endpoints (0)
+5. checking no_input_delay (170)
+6. checking no_output_delay (13)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (0)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (0)
+
+1. checking no_clock (0)
+------------------------
+ There are 0 register/latch pins with no clock.
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (0)
+---------------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints (0)
+------------------------------------------------
+ There are 0 pins that are not constrained for maximum delay.
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (170)
+--------------------------------
+ There are 170 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay (13)
+--------------------------------
+ There are 13 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (0)
+---------------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (0)
+----------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+      1.451        0.000                      0                 1917        0.193        0.000                      0                 1917        4.020        0.000                       0                  1152  
+
+
+All user specified timing constraints are met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock   Waveform(ns)       Period(ns)      Frequency(MHz)
+-----   ------------       ----------      --------------
+ap_clk  {0.000 5.000}      10.000          100.000         
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+ap_clk              1.451        0.000                      0                 1917        0.193        0.000                      0                 1917        4.020        0.000                       0                  1152  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  ap_clk
+  To Clock:  ap_clk
+
+Setup :            0  Failing Endpoints,  Worst Slack        1.451ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.193ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        4.020ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             1.451ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/udiv_ln13_reg_352_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p_reg[47]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        8.574ns  (logic 5.084ns (59.296%)  route 3.490ns (40.704%))
+  Logic Levels:           17  (CARRY4=13 LUT3=2 LUT4=1 LUT5=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=1151, unset)         0.973     0.973    bd_0_i/hls_inst/inst/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/inst/udiv_ln13_reg_352_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_fdre_C_Q)         0.518     1.491 r  bd_0_i/hls_inst/inst/udiv_ln13_reg_352_reg[0]/Q
+                         net (fo=28, unplaced)        0.734     2.225    bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/Q[0]
+                         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.808     3.033 r  bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p_reg[3]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.009     3.042    bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p_reg[3]_i_1_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     3.159 r  bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p_reg[5]_i_2/CO[3]
+                         net (fo=1, unplaced)         0.000     3.159    bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p_reg[5]_i_2_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     3.276 r  bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p_reg[18]_i_26/CO[3]
+                         net (fo=1, unplaced)         0.000     3.276    bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p_reg[18]_i_26_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     3.393 r  bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p_reg[18]_i_25/CO[3]
+                         net (fo=1, unplaced)         0.000     3.393    bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p_reg[18]_i_25_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     3.510 r  bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p_reg[26]_i_38/CO[3]
+                         net (fo=1, unplaced)         0.000     3.510    bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p_reg[26]_i_38_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     3.627 r  bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p_reg[30]_i_38/CO[3]
+                         net (fo=1, unplaced)         0.000     3.627    bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p_reg[30]_i_38_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     3.744 r  bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p_reg[34]_i_38/CO[3]
+                         net (fo=1, unplaced)         0.000     3.744    bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p_reg[34]_i_38_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     3.861 r  bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p_reg[38]_i_38/CO[3]
+                         net (fo=1, unplaced)         0.000     3.861    bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p_reg[38]_i_38_n_0
+                         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.252     4.113 f  bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p_reg[47]_i_24/CO[2]
+                         net (fo=24, unplaced)        0.516     4.629    bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p_reg[47]_i_24_n_1
+                         LUT3 (Prop_lut3_I0_O)        0.305     4.934 r  bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p[42]_i_24/O
+                         net (fo=2, unplaced)         0.485     5.419    bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p[42]_i_24_n_0
+                         LUT4 (Prop_lut4_I3_O)        0.355     5.774 r  bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p[42]_i_28/O
+                         net (fo=1, unplaced)         0.000     5.774    bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p[42]_i_28_n_0
+                         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     6.287 r  bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p_reg[42]_i_13/CO[3]
+                         net (fo=1, unplaced)         0.000     6.287    bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p_reg[42]_i_13_n_0
+                         CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.331     6.618 r  bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p_reg[46]_i_12/O[3]
+                         net (fo=3, unplaced)         0.636     7.254    bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p_reg[46]_i_12_n_4
+                         LUT3 (Prop_lut3_I1_O)        0.307     7.561 r  bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p[46]_i_13/O
+                         net (fo=2, unplaced)         0.460     8.021    bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p[46]_i_13_n_0
+                         LUT5 (Prop_lut5_I1_O)        0.124     8.145 r  bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p[46]_i_4/O
+                         net (fo=2, unplaced)         0.650     8.795    bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p[46]_i_4_n_0
+                         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.520     9.315 r  bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p_reg[46]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.000     9.315    bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p_reg[46]_i_1_n_0
+                         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.232     9.547 r  bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p_reg[47]_i_1/O[0]
+                         net (fo=1, unplaced)         0.000     9.547    bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/tmp_product[47]
+                         FDRE                                         r  bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p_reg[47]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=1151, unset)         0.924    10.924    bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p_reg[47]/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+                         FDRE (Setup_fdre_C_D)        0.109    10.998    bd_0_i/hls_inst/inst/mul_32ns_17ns_48_2_1_U4/fn1_mul_32ns_17ns_48_2_1_Multiplier_1_U/p_reg[47]
+  -------------------------------------------------------------------
+                         required time                         10.998    
+                         arrival time                          -9.547    
+  -------------------------------------------------------------------
+                         slack                                  1.451    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.193ns  (arrival time - required time)
+  Source:                 bd_0_i/hls_inst/inst/udiv_64ns_9ns_8_68_seq_1_U3/fn1_udiv_64ns_9ns_8_68_seq_1_div_U/fn1_udiv_64ns_9ns_8_68_seq_1_div_u_0/r_stage_reg[32]_srl32___udiv_64ns_9ns_8_68_seq_1_U3_fn1_udiv_64ns_9ns_8_68_seq_1_div_U_fn1_udiv_64ns_9ns_8_68_seq_1_div_u_0_r_stage_reg_r_30/CLK
+                            (rising edge-triggered cell SRLC32E clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/udiv_64ns_9ns_8_68_seq_1_U3/fn1_udiv_64ns_9ns_8_68_seq_1_div_U/fn1_udiv_64ns_9ns_8_68_seq_1_div_u_0/r_stage_reg[62]_srl30___udiv_64ns_9ns_8_68_seq_1_U3_fn1_udiv_64ns_9ns_8_68_seq_1_div_U_fn1_udiv_64ns_9ns_8_68_seq_1_div_u_0_r_stage_reg_r_60/D
+                            (rising edge-triggered cell SRLC32E clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ap_clk rise@0.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.332ns  (logic 0.332ns (100.000%)  route 0.000ns (0.000%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.022ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.432ns
+    Source Clock Delay      (SCD):    0.410ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=1151, unset)         0.410     0.410    bd_0_i/hls_inst/inst/udiv_64ns_9ns_8_68_seq_1_U3/fn1_udiv_64ns_9ns_8_68_seq_1_div_U/fn1_udiv_64ns_9ns_8_68_seq_1_div_u_0/ap_clk
+                         SRLC32E                                      r  bd_0_i/hls_inst/inst/udiv_64ns_9ns_8_68_seq_1_U3/fn1_udiv_64ns_9ns_8_68_seq_1_div_U/fn1_udiv_64ns_9ns_8_68_seq_1_div_u_0/r_stage_reg[32]_srl32___udiv_64ns_9ns_8_68_seq_1_U3_fn1_udiv_64ns_9ns_8_68_seq_1_div_U_fn1_udiv_64ns_9ns_8_68_seq_1_div_u_0_r_stage_reg_r_30/CLK
+  -------------------------------------------------------------------    -------------------
+                         SRLC32E (Prop_srlc32e_CLK_Q31)
+                                                      0.332     0.742 r  bd_0_i/hls_inst/inst/udiv_64ns_9ns_8_68_seq_1_U3/fn1_udiv_64ns_9ns_8_68_seq_1_div_U/fn1_udiv_64ns_9ns_8_68_seq_1_div_u_0/r_stage_reg[32]_srl32___udiv_64ns_9ns_8_68_seq_1_U3_fn1_udiv_64ns_9ns_8_68_seq_1_div_U_fn1_udiv_64ns_9ns_8_68_seq_1_div_u_0_r_stage_reg_r_30/Q31
+                         net (fo=1, unplaced)         0.000     0.742    bd_0_i/hls_inst/inst/udiv_64ns_9ns_8_68_seq_1_U3/fn1_udiv_64ns_9ns_8_68_seq_1_div_U/fn1_udiv_64ns_9ns_8_68_seq_1_div_u_0/r_stage_reg[32]_srl32___udiv_64ns_9ns_8_68_seq_1_U3_fn1_udiv_64ns_9ns_8_68_seq_1_div_U_fn1_udiv_64ns_9ns_8_68_seq_1_div_u_0_r_stage_reg_r_30_n_1
+                         SRLC32E                                      r  bd_0_i/hls_inst/inst/udiv_64ns_9ns_8_68_seq_1_U3/fn1_udiv_64ns_9ns_8_68_seq_1_div_U/fn1_udiv_64ns_9ns_8_68_seq_1_div_u_0/r_stage_reg[62]_srl30___udiv_64ns_9ns_8_68_seq_1_U3_fn1_udiv_64ns_9ns_8_68_seq_1_div_U_fn1_udiv_64ns_9ns_8_68_seq_1_div_u_0_r_stage_reg_r_60/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=1151, unset)         0.432     0.432    bd_0_i/hls_inst/inst/udiv_64ns_9ns_8_68_seq_1_U3/fn1_udiv_64ns_9ns_8_68_seq_1_div_U/fn1_udiv_64ns_9ns_8_68_seq_1_div_u_0/ap_clk
+                         SRLC32E                                      r  bd_0_i/hls_inst/inst/udiv_64ns_9ns_8_68_seq_1_U3/fn1_udiv_64ns_9ns_8_68_seq_1_div_U/fn1_udiv_64ns_9ns_8_68_seq_1_div_u_0/r_stage_reg[62]_srl30___udiv_64ns_9ns_8_68_seq_1_U3_fn1_udiv_64ns_9ns_8_68_seq_1_div_U_fn1_udiv_64ns_9ns_8_68_seq_1_div_u_0_r_stage_reg_r_60/CLK
+                         clock pessimism              0.000     0.432    
+                         SRLC32E (Hold_srlc32e_CLK_D)
+                                                      0.117     0.549    bd_0_i/hls_inst/inst/udiv_64ns_9ns_8_68_seq_1_U3/fn1_udiv_64ns_9ns_8_68_seq_1_div_U/fn1_udiv_64ns_9ns_8_68_seq_1_div_u_0/r_stage_reg[62]_srl30___udiv_64ns_9ns_8_68_seq_1_U3_fn1_udiv_64ns_9ns_8_68_seq_1_div_U_fn1_udiv_64ns_9ns_8_68_seq_1_div_u_0_r_stage_reg_r_60
+  -------------------------------------------------------------------
+                         required time                         -0.549    
+                         arrival time                           0.742    
+  -------------------------------------------------------------------
+                         slack                                  0.193    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         ap_clk
+Waveform(ns):       { 0.000 5.000 }
+Period(ns):         10.000
+Sources:            { ap_clk }
+
+Check Type        Corner  Lib Pin      Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location  Pin
+Min Period        n/a     DSP48E1/CLK  n/a            3.884         10.000      6.116                bd_0_i/hls_inst/inst/mul_48ns_50ns_85_5_1_U5/fn1_mul_48ns_50ns_85_5_1_Multiplier_2_U/buff0_reg__0/CLK
+Low Pulse Width   Fast    SRLC32E/CLK  n/a            0.980         5.000       4.020                bd_0_i/hls_inst/inst/udiv_32ns_64ns_32_36_seq_1_U2/fn1_udiv_32ns_64ns_32_36_seq_1_div_U/fn1_udiv_32ns_64ns_32_36_seq_1_div_u_0/r_stage_reg[30]_srl30___udiv_64ns_9ns_8_68_seq_1_U3_fn1_udiv_64ns_9ns_8_68_seq_1_div_U_fn1_udiv_64ns_9ns_8_68_seq_1_div_u_0_r_stage_reg_r_28/CLK
+High Pulse Width  Slow    SRLC32E/CLK  n/a            0.980         5.000       4.020                bd_0_i/hls_inst/inst/udiv_32ns_64ns_32_36_seq_1_U2/fn1_udiv_32ns_64ns_32_36_seq_1_div_U/fn1_udiv_32ns_64ns_32_36_seq_1_div_u_0/r_stage_reg[30]_srl30___udiv_64ns_9ns_8_68_seq_1_U3_fn1_udiv_64ns_9ns_8_68_seq_1_div_U_fn1_udiv_64ns_9ns_8_68_seq_1_div_u_0_r_stage_reg_r_28/CLK
+
+
+
