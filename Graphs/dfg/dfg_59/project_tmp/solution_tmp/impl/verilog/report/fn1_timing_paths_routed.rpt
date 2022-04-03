@@ -1,0 +1,896 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+| Date         : Thu Apr 15 13:12:35 2021
+| Host         : seal-lambda running 64-bit Ubuntu 18.04.5 LTS
+| Command      : report_timing -max_paths 10 -file ./report/fn1_timing_paths_routed.rpt
+| Design       : bd_0_wrapper
+| Device       : 7z020-clg484
+| Speed File   : -1  PRODUCTION 1.12 2019-11-22
+----------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             2.085ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/din0_buf1_reg[63]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[7].CARRYS_DEL.NEED_DEL.CARRYS_FD/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        7.632ns  (logic 4.047ns (53.023%)  route 3.585ns (46.977%))
+  Logic Levels:           19  (CARRY4=17 LUT2=1 LUT4=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=1688, unset)         0.973     0.973    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/ap_clk
+    SLICE_X27Y23         FDRE                                         r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/din0_buf1_reg[63]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X27Y23         FDRE (Prop_fdre_C_Q)         0.419     1.392 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/din0_buf1_reg[63]/Q
+                         net (fo=65, routed)          2.419     3.811    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/s_axis_a_tdata[63]
+    SLICE_X24Y12         LUT2 (Prop_lut2_I0_O)        0.299     4.110 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/CHAIN_GEN[0].C_MUX.CARRY_MUX_i_1/O
+                         net (fo=1, routed)           0.000     4.110    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/A[0]
+    SLICE_X24Y12         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     4.642 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     4.642    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[3].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y13         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     4.756 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[4].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     4.756    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[7].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y14         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     4.870 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[8].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     4.870    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[11].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y15         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     4.984 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[12].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     4.984    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[15].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y16         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.098 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[16].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.098    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[19].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y17         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.212 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[20].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.212    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[23].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y18         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.326 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[24].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.326    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[27].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y19         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.440 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[28].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.440    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[31].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y20         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.554 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[32].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.554    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[35].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y21         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.668 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[36].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.668    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[39].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y22         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.782 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[40].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.782    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[43].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y23         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.896 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[44].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.896    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[47].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y24         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.010 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[48].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.009     6.019    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[51].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y25         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.133 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[52].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     6.133    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[55].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y26         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.348     6.481 f  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[56].C_MUX.CARRY_MUX_CARRY4/O[1]
+                         net (fo=2, routed)           1.158     7.638    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/Q[57]
+    SLICE_X25Y22         LUT4 (Prop_lut4_I3_O)        0.303     7.941 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/CHAIN_GEN[1].C_MUX.CARRY_MUX_i_1/O
+                         net (fo=1, routed)           0.000     7.941    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/A[1]
+    SLICE_X25Y22         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     8.491 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=2, routed)           0.000     8.491    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/carry[4]
+    SLICE_X25Y23         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.605 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[4].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     8.605    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/carry[8]
+    SLICE_X25Y23         FDRE                                         r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[7].CARRYS_DEL.NEED_DEL.CARRYS_FD/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=1688, unset)         0.924    10.924    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/aclk
+    SLICE_X25Y23         FDRE                                         r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[7].CARRYS_DEL.NEED_DEL.CARRYS_FD/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    SLICE_X25Y23         FDRE (Setup_fdre_C_D)       -0.198    10.691    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[7].CARRYS_DEL.NEED_DEL.CARRYS_FD
+  -------------------------------------------------------------------
+                         required time                         10.691    
+                         arrival time                          -8.605    
+  -------------------------------------------------------------------
+                         slack                                  2.085    
+
+Slack (MET) :             2.172ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/din0_buf1_reg[63]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[4].CARRYS_DEL.NEED_DEL.CARRYS_FD/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        7.789ns  (logic 4.204ns (53.970%)  route 3.585ns (46.030%))
+  Logic Levels:           19  (CARRY4=17 LUT2=1 LUT4=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=1688, unset)         0.973     0.973    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/ap_clk
+    SLICE_X27Y23         FDRE                                         r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/din0_buf1_reg[63]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X27Y23         FDRE (Prop_fdre_C_Q)         0.419     1.392 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/din0_buf1_reg[63]/Q
+                         net (fo=65, routed)          2.419     3.811    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/s_axis_a_tdata[63]
+    SLICE_X24Y12         LUT2 (Prop_lut2_I0_O)        0.299     4.110 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/CHAIN_GEN[0].C_MUX.CARRY_MUX_i_1/O
+                         net (fo=1, routed)           0.000     4.110    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/A[0]
+    SLICE_X24Y12         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     4.642 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     4.642    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[3].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y13         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     4.756 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[4].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     4.756    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[7].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y14         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     4.870 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[8].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     4.870    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[11].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y15         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     4.984 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[12].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     4.984    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[15].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y16         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.098 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[16].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.098    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[19].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y17         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.212 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[20].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.212    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[23].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y18         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.326 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[24].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.326    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[27].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y19         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.440 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[28].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.440    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[31].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y20         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.554 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[32].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.554    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[35].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y21         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.668 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[36].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.668    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[39].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y22         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.782 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[40].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.782    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[43].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y23         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.896 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[44].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.896    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[47].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y24         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.010 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[48].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.009     6.019    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[51].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y25         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.133 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[52].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     6.133    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[55].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y26         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.348     6.481 f  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[56].C_MUX.CARRY_MUX_CARRY4/O[1]
+                         net (fo=2, routed)           1.158     7.638    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/Q[57]
+    SLICE_X25Y22         LUT4 (Prop_lut4_I3_O)        0.303     7.941 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/CHAIN_GEN[1].C_MUX.CARRY_MUX_i_1/O
+                         net (fo=1, routed)           0.000     7.941    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/A[1]
+    SLICE_X25Y22         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     8.491 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=2, routed)           0.000     8.491    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/carry[4]
+    SLICE_X25Y23         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     8.762 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[4].C_MUX.CARRY_MUX_CARRY4/CO[0]
+                         net (fo=1, routed)           0.000     8.762    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/carry[5]
+    SLICE_X25Y23         FDRE                                         r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[4].CARRYS_DEL.NEED_DEL.CARRYS_FD/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=1688, unset)         0.924    10.924    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/aclk
+    SLICE_X25Y23         FDRE                                         r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[4].CARRYS_DEL.NEED_DEL.CARRYS_FD/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    SLICE_X25Y23         FDRE (Setup_fdre_C_D)        0.046    10.935    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[4].CARRYS_DEL.NEED_DEL.CARRYS_FD
+  -------------------------------------------------------------------
+                         required time                         10.935    
+                         arrival time                          -8.762    
+  -------------------------------------------------------------------
+                         slack                                  2.172    
+
+Slack (MET) :             2.215ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/din0_buf1_reg[63]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[6].CARRYS_DEL.NEED_DEL.CARRYS_FD/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        7.746ns  (logic 4.161ns (53.715%)  route 3.585ns (46.285%))
+  Logic Levels:           19  (CARRY4=17 LUT2=1 LUT4=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=1688, unset)         0.973     0.973    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/ap_clk
+    SLICE_X27Y23         FDRE                                         r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/din0_buf1_reg[63]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X27Y23         FDRE (Prop_fdre_C_Q)         0.419     1.392 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/din0_buf1_reg[63]/Q
+                         net (fo=65, routed)          2.419     3.811    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/s_axis_a_tdata[63]
+    SLICE_X24Y12         LUT2 (Prop_lut2_I0_O)        0.299     4.110 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/CHAIN_GEN[0].C_MUX.CARRY_MUX_i_1/O
+                         net (fo=1, routed)           0.000     4.110    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/A[0]
+    SLICE_X24Y12         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     4.642 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     4.642    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[3].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y13         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     4.756 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[4].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     4.756    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[7].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y14         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     4.870 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[8].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     4.870    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[11].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y15         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     4.984 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[12].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     4.984    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[15].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y16         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.098 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[16].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.098    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[19].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y17         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.212 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[20].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.212    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[23].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y18         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.326 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[24].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.326    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[27].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y19         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.440 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[28].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.440    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[31].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y20         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.554 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[32].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.554    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[35].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y21         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.668 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[36].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.668    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[39].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y22         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.782 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[40].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.782    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[43].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y23         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.896 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[44].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.896    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[47].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y24         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.010 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[48].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.009     6.019    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[51].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y25         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.133 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[52].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     6.133    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[55].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y26         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.348     6.481 f  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[56].C_MUX.CARRY_MUX_CARRY4/O[1]
+                         net (fo=2, routed)           1.158     7.638    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/Q[57]
+    SLICE_X25Y22         LUT4 (Prop_lut4_I3_O)        0.303     7.941 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/CHAIN_GEN[1].C_MUX.CARRY_MUX_i_1/O
+                         net (fo=1, routed)           0.000     7.941    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/A[1]
+    SLICE_X25Y22         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     8.491 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=2, routed)           0.000     8.491    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/carry[4]
+    SLICE_X25Y23         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.228     8.719 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[4].C_MUX.CARRY_MUX_CARRY4/CO[2]
+                         net (fo=1, routed)           0.000     8.719    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/carry[7]
+    SLICE_X25Y23         FDRE                                         r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[6].CARRYS_DEL.NEED_DEL.CARRYS_FD/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=1688, unset)         0.924    10.924    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/aclk
+    SLICE_X25Y23         FDRE                                         r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[6].CARRYS_DEL.NEED_DEL.CARRYS_FD/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    SLICE_X25Y23         FDRE (Setup_fdre_C_D)        0.046    10.935    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[6].CARRYS_DEL.NEED_DEL.CARRYS_FD
+  -------------------------------------------------------------------
+                         required time                         10.935    
+                         arrival time                          -8.719    
+  -------------------------------------------------------------------
+                         slack                                  2.215    
+
+Slack (MET) :             2.286ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/din0_buf1_reg[63]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[5].CARRYS_DEL.NEED_DEL.CARRYS_FD/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        7.675ns  (logic 4.090ns (53.286%)  route 3.585ns (46.714%))
+  Logic Levels:           19  (CARRY4=17 LUT2=1 LUT4=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=1688, unset)         0.973     0.973    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/ap_clk
+    SLICE_X27Y23         FDRE                                         r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/din0_buf1_reg[63]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X27Y23         FDRE (Prop_fdre_C_Q)         0.419     1.392 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/din0_buf1_reg[63]/Q
+                         net (fo=65, routed)          2.419     3.811    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/s_axis_a_tdata[63]
+    SLICE_X24Y12         LUT2 (Prop_lut2_I0_O)        0.299     4.110 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/CHAIN_GEN[0].C_MUX.CARRY_MUX_i_1/O
+                         net (fo=1, routed)           0.000     4.110    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/A[0]
+    SLICE_X24Y12         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     4.642 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     4.642    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[3].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y13         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     4.756 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[4].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     4.756    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[7].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y14         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     4.870 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[8].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     4.870    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[11].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y15         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     4.984 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[12].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     4.984    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[15].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y16         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.098 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[16].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.098    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[19].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y17         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.212 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[20].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.212    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[23].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y18         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.326 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[24].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.326    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[27].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y19         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.440 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[28].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.440    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[31].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y20         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.554 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[32].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.554    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[35].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y21         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.668 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[36].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.668    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[39].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y22         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.782 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[40].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.782    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[43].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y23         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.896 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[44].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.896    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[47].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y24         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.010 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[48].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.009     6.019    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[51].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y25         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.133 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[52].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     6.133    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[55].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y26         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.348     6.481 f  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[56].C_MUX.CARRY_MUX_CARRY4/O[1]
+                         net (fo=2, routed)           1.158     7.638    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/Q[57]
+    SLICE_X25Y22         LUT4 (Prop_lut4_I3_O)        0.303     7.941 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/CHAIN_GEN[1].C_MUX.CARRY_MUX_i_1/O
+                         net (fo=1, routed)           0.000     7.941    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/A[1]
+    SLICE_X25Y22         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     8.491 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=2, routed)           0.000     8.491    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/carry[4]
+    SLICE_X25Y23         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157     8.648 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[4].C_MUX.CARRY_MUX_CARRY4/CO[1]
+                         net (fo=1, routed)           0.000     8.648    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/carry[6]
+    SLICE_X25Y23         FDRE                                         r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[5].CARRYS_DEL.NEED_DEL.CARRYS_FD/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=1688, unset)         0.924    10.924    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/aclk
+    SLICE_X25Y23         FDRE                                         r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[5].CARRYS_DEL.NEED_DEL.CARRYS_FD/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    SLICE_X25Y23         FDRE (Setup_fdre_C_D)        0.046    10.935    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[5].CARRYS_DEL.NEED_DEL.CARRYS_FD
+  -------------------------------------------------------------------
+                         required time                         10.935    
+                         arrival time                          -8.648    
+  -------------------------------------------------------------------
+                         slack                                  2.286    
+
+Slack (MET) :             2.423ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/din0_buf1_reg[63]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[2].CARRYS_DEL.NEED_DEL.CARRYS_FD/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        7.538ns  (logic 3.953ns (52.438%)  route 3.585ns (47.562%))
+  Logic Levels:           18  (CARRY4=16 LUT2=1 LUT4=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=1688, unset)         0.973     0.973    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/ap_clk
+    SLICE_X27Y23         FDRE                                         r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/din0_buf1_reg[63]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X27Y23         FDRE (Prop_fdre_C_Q)         0.419     1.392 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/din0_buf1_reg[63]/Q
+                         net (fo=65, routed)          2.419     3.811    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/s_axis_a_tdata[63]
+    SLICE_X24Y12         LUT2 (Prop_lut2_I0_O)        0.299     4.110 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/CHAIN_GEN[0].C_MUX.CARRY_MUX_i_1/O
+                         net (fo=1, routed)           0.000     4.110    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/A[0]
+    SLICE_X24Y12         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     4.642 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     4.642    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[3].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y13         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     4.756 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[4].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     4.756    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[7].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y14         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     4.870 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[8].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     4.870    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[11].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y15         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     4.984 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[12].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     4.984    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[15].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y16         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.098 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[16].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.098    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[19].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y17         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.212 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[20].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.212    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[23].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y18         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.326 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[24].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.326    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[27].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y19         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.440 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[28].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.440    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[31].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y20         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.554 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[32].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.554    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[35].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y21         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.668 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[36].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.668    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[39].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y22         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.782 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[40].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.782    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[43].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y23         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.896 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[44].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.896    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[47].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y24         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.010 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[48].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.009     6.019    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[51].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y25         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.133 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[52].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     6.133    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[55].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y26         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.348     6.481 f  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[56].C_MUX.CARRY_MUX_CARRY4/O[1]
+                         net (fo=2, routed)           1.158     7.638    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/Q[57]
+    SLICE_X25Y22         LUT4 (Prop_lut4_I3_O)        0.303     7.941 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/CHAIN_GEN[1].C_MUX.CARRY_MUX_i_1/O
+                         net (fo=1, routed)           0.000     7.941    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/A[1]
+    SLICE_X25Y22         CARRY4 (Prop_carry4_S[1]_CO[2])
+                                                      0.570     8.511 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4/CO[2]
+                         net (fo=1, routed)           0.000     8.511    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/carry[3]
+    SLICE_X25Y22         FDRE                                         r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[2].CARRYS_DEL.NEED_DEL.CARRYS_FD/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=1688, unset)         0.924    10.924    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/aclk
+    SLICE_X25Y22         FDRE                                         r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[2].CARRYS_DEL.NEED_DEL.CARRYS_FD/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    SLICE_X25Y22         FDRE (Setup_fdre_C_D)        0.046    10.935    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[2].CARRYS_DEL.NEED_DEL.CARRYS_FD
+  -------------------------------------------------------------------
+                         required time                         10.935    
+                         arrival time                          -8.511    
+  -------------------------------------------------------------------
+                         slack                                  2.423    
+
+Slack (MET) :             2.495ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[9]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        7.483ns  (logic 4.650ns (62.138%)  route 2.833ns (37.862%))
+  Logic Levels:           8  (CARRY4=4 DSP48E1=1 LUT3=2 LUT5=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=1688, unset)         0.973     0.973    bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/aclk
+    SLICE_X27Y0          FDRE                                         r  bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X27Y0          FDRE (Prop_fdre_C_Q)         0.456     1.429 r  bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]/Q
+                         net (fo=1, routed)           0.636     2.065    bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/part_norm_mant_ext[3]
+    SLICE_X27Y0          LUT3 (Prop_lut3_I0_O)        0.124     2.189 r  bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/CHAIN_GEN[0].C_MUX.CARRY_MUX_i_3__0/O
+                         net (fo=1, routed)           0.612     2.801    bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/RND_BIT_GEN/NORM_1_OR_0.STRUCT_REQ.SPECIAL.RND_CHAIN/i_no_versal_es1_workaround.DSP
+    SLICE_X35Y0          CARRY4 (Prop_carry4_CYINIT_CO[0])
+                                                      0.536     3.337 r  bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/RND_BIT_GEN/NORM_1_OR_0.STRUCT_REQ.SPECIAL.RND_CHAIN/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4/CO[0]
+                         net (fo=1, routed)           0.381     3.718    bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/DSP48_E1.DSP48E1_ADD.DSP48E1_ADD/B[0]
+    DSP48_X2Y0           DSP48E1 (Prop_dsp48e1_B[1]_P[47])
+                                                      2.306     6.024 r  bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/DSP48_E1.DSP48E1_ADD.DSP48E1_ADD/i_no_versal_es1_workaround.DSP/P[47]
+                         net (fo=7, routed)           0.801     6.825    bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/DSP48_E1.DSP_LOGIC_ADDERS.RND_1/P[0]
+    SLICE_X36Y7          LUT3 (Prop_lut3_I1_O)        0.124     6.949 r  bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/DSP48_E1.DSP_LOGIC_ADDERS.RND_1/RESULT_REG.NORMAL.exp_op[3]_i_7/O
+                         net (fo=1, routed)           0.403     7.352    bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[3]
+    SLICE_X37Y8          LUT5 (Prop_lut5_I3_O)        0.124     7.476 r  bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op[3]_i_6/O
+                         net (fo=1, routed)           0.000     7.476    bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op[3]_i_6_n_0
+    SLICE_X37Y8          CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     8.008 r  bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[3]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.008    bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[3]_i_1_n_0
+    SLICE_X37Y9          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.122 r  bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[7]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.122    bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[7]_i_1_n_0
+    SLICE_X37Y10         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     8.456 r  bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[10]_i_1/O[1]
+                         net (fo=1, routed)           0.000     8.456    bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/exp_pre_op[9]
+    SLICE_X37Y10         FDRE                                         r  bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[9]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=1688, unset)         0.924    10.924    bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/aclk
+    SLICE_X37Y10         FDRE                                         r  bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[9]/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    SLICE_X37Y10         FDRE (Setup_fdre_C_D)        0.062    10.951    bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[9]
+  -------------------------------------------------------------------
+                         required time                         10.951    
+                         arrival time                          -8.456    
+  -------------------------------------------------------------------
+                         slack                                  2.495    
+
+Slack (MET) :             2.502ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/din0_buf1_reg[63]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[1].CARRYS_DEL.NEED_DEL.CARRYS_FD/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        7.459ns  (logic 3.874ns (51.934%)  route 3.585ns (48.066%))
+  Logic Levels:           18  (CARRY4=16 LUT2=1 LUT4=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=1688, unset)         0.973     0.973    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/ap_clk
+    SLICE_X27Y23         FDRE                                         r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/din0_buf1_reg[63]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X27Y23         FDRE (Prop_fdre_C_Q)         0.419     1.392 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/din0_buf1_reg[63]/Q
+                         net (fo=65, routed)          2.419     3.811    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/s_axis_a_tdata[63]
+    SLICE_X24Y12         LUT2 (Prop_lut2_I0_O)        0.299     4.110 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/CHAIN_GEN[0].C_MUX.CARRY_MUX_i_1/O
+                         net (fo=1, routed)           0.000     4.110    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/A[0]
+    SLICE_X24Y12         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     4.642 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     4.642    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[3].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y13         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     4.756 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[4].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     4.756    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[7].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y14         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     4.870 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[8].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     4.870    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[11].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y15         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     4.984 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[12].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     4.984    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[15].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y16         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.098 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[16].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.098    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[19].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y17         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.212 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[20].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.212    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[23].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y18         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.326 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[24].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.326    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[27].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y19         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.440 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[28].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.440    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[31].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y20         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.554 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[32].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.554    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[35].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y21         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.668 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[36].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.668    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[39].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y22         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.782 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[40].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.782    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[43].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y23         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.896 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[44].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.896    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[47].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y24         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.010 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[48].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.009     6.019    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[51].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y25         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.133 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[52].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     6.133    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[55].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y26         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.348     6.481 f  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[56].C_MUX.CARRY_MUX_CARRY4/O[1]
+                         net (fo=2, routed)           1.158     7.638    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/Q[57]
+    SLICE_X25Y22         LUT4 (Prop_lut4_I3_O)        0.303     7.941 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/CHAIN_GEN[1].C_MUX.CARRY_MUX_i_1/O
+                         net (fo=1, routed)           0.000     7.941    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/A[1]
+    SLICE_X25Y22         CARRY4 (Prop_carry4_S[1]_CO[1])
+                                                      0.491     8.432 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4/CO[1]
+                         net (fo=1, routed)           0.000     8.432    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/carry[2]
+    SLICE_X25Y22         FDRE                                         r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[1].CARRYS_DEL.NEED_DEL.CARRYS_FD/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=1688, unset)         0.924    10.924    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/aclk
+    SLICE_X25Y22         FDRE                                         r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[1].CARRYS_DEL.NEED_DEL.CARRYS_FD/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    SLICE_X25Y22         FDRE (Setup_fdre_C_D)        0.046    10.935    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[1].CARRYS_DEL.NEED_DEL.CARRYS_FD
+  -------------------------------------------------------------------
+                         required time                         10.935    
+                         arrival time                          -8.432    
+  -------------------------------------------------------------------
+                         slack                                  2.502    
+
+Slack (MET) :             2.535ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/din0_buf1_reg[63]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[3].CARRYS_DEL.NEED_DEL.CARRYS_FD/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        7.518ns  (logic 3.933ns (52.311%)  route 3.585ns (47.689%))
+  Logic Levels:           18  (CARRY4=16 LUT2=1 LUT4=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=1688, unset)         0.973     0.973    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/ap_clk
+    SLICE_X27Y23         FDRE                                         r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/din0_buf1_reg[63]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X27Y23         FDRE (Prop_fdre_C_Q)         0.419     1.392 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/din0_buf1_reg[63]/Q
+                         net (fo=65, routed)          2.419     3.811    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/s_axis_a_tdata[63]
+    SLICE_X24Y12         LUT2 (Prop_lut2_I0_O)        0.299     4.110 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/CHAIN_GEN[0].C_MUX.CARRY_MUX_i_1/O
+                         net (fo=1, routed)           0.000     4.110    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/A[0]
+    SLICE_X24Y12         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     4.642 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     4.642    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[3].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y13         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     4.756 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[4].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     4.756    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[7].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y14         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     4.870 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[8].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     4.870    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[11].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y15         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     4.984 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[12].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     4.984    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[15].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y16         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.098 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[16].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.098    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[19].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y17         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.212 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[20].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.212    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[23].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y18         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.326 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[24].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.326    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[27].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y19         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.440 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[28].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.440    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[31].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y20         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.554 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[32].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.554    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[35].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y21         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.668 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[36].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.668    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[39].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y22         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.782 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[40].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.782    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[43].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y23         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.896 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[44].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     5.896    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[47].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y24         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.010 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[48].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.009     6.019    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[51].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y25         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.133 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[52].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=1, routed)           0.000     6.133    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[55].C_MUX.CARRY_MUX_n_0
+    SLICE_X24Y26         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.348     6.481 f  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/FIXED_DATA_SIGNED.M_ABS/CHAIN_GEN[56].C_MUX.CARRY_MUX_CARRY4/O[1]
+                         net (fo=2, routed)           1.158     7.638    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/Q[57]
+    SLICE_X25Y22         LUT4 (Prop_lut4_I3_O)        0.303     7.941 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/CHAIN_GEN[1].C_MUX.CARRY_MUX_i_1/O
+                         net (fo=1, routed)           0.000     7.941    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/A[1]
+    SLICE_X25Y22         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     8.491 r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4/CO[3]
+                         net (fo=2, routed)           0.000     8.491    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/carry[4]
+    SLICE_X25Y22         FDRE                                         r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[3].CARRYS_DEL.NEED_DEL.CARRYS_FD/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=1688, unset)         0.924    10.924    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/aclk
+    SLICE_X25Y22         FDRE                                         r  bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[3].CARRYS_DEL.NEED_DEL.CARRYS_FD/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    SLICE_X25Y22         FDRE (Setup_fdre_C_D)        0.138    11.027    bd_0_i/hls_inst/inst/sitodp_64ns_64_6_no_dsp_1_U3/fn1_ap_sitodp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_1/CHAIN_GEN[3].CARRYS_DEL.NEED_DEL.CARRYS_FD
+  -------------------------------------------------------------------
+                         required time                         11.027    
+                         arrival time                          -8.491    
+  -------------------------------------------------------------------
+                         slack                                  2.535    
+
+Slack (MET) :             2.553ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/dc_reg_275_reg[57]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/val_reg_285_reg[25]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        7.394ns  (logic 1.730ns (23.399%)  route 5.664ns (76.601%))
+  Logic Levels:           6  (LUT3=1 LUT4=1 LUT6=4)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=1688, unset)         0.973     0.973    bd_0_i/hls_inst/inst/ap_clk
+    SLICE_X38Y9          FDRE                                         r  bd_0_i/hls_inst/inst/dc_reg_275_reg[57]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X38Y9          FDRE (Prop_fdre_C_Q)         0.518     1.491 f  bd_0_i/hls_inst/inst/dc_reg_275_reg[57]/Q
+                         net (fo=6, routed)           1.048     2.539    bd_0_i/hls_inst/inst/zext_ln510_fu_134_p1[5]
+    SLICE_X40Y8          LUT6 (Prop_lut6_I0_O)        0.124     2.663 r  bd_0_i/hls_inst/inst/val_reg_285[63]_i_10/O
+                         net (fo=3, routed)           0.318     2.980    bd_0_i/hls_inst/inst/val_reg_285[63]_i_10_n_0
+    SLICE_X39Y8          LUT6 (Prop_lut6_I3_O)        0.124     3.104 r  bd_0_i/hls_inst/inst/val_reg_285[63]_i_3/O
+                         net (fo=40, routed)          1.152     4.256    bd_0_i/hls_inst/inst/p_0_in
+    SLICE_X43Y4          LUT4 (Prop_lut4_I2_O)        0.150     4.406 r  bd_0_i/hls_inst/inst/val_reg_285[61]_i_11/O
+                         net (fo=51, routed)          1.149     5.555    bd_0_i/hls_inst/inst/val_reg_285[61]_i_11_n_0
+    SLICE_X43Y2          LUT6 (Prop_lut6_I3_O)        0.332     5.887 r  bd_0_i/hls_inst/inst/val_reg_285[57]_i_9/O
+                         net (fo=4, routed)           1.178     7.065    bd_0_i/hls_inst/inst/val_reg_285[57]_i_9_n_0
+    SLICE_X45Y8          LUT3 (Prop_lut3_I2_O)        0.150     7.215 r  bd_0_i/hls_inst/inst/val_reg_285[57]_i_3/O
+                         net (fo=2, routed)           0.820     8.035    bd_0_i/hls_inst/inst/val_reg_285[57]_i_3_n_0
+    SLICE_X44Y8          LUT6 (Prop_lut6_I1_O)        0.332     8.367 r  bd_0_i/hls_inst/inst/val_reg_285[25]_i_1/O
+                         net (fo=1, routed)           0.000     8.367    bd_0_i/hls_inst/inst/val_fu_212_p3[25]
+    SLICE_X44Y8          FDRE                                         r  bd_0_i/hls_inst/inst/val_reg_285_reg[25]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=1688, unset)         0.924    10.924    bd_0_i/hls_inst/inst/ap_clk
+    SLICE_X44Y8          FDRE                                         r  bd_0_i/hls_inst/inst/val_reg_285_reg[25]/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    SLICE_X44Y8          FDRE (Setup_fdre_C_D)        0.031    10.920    bd_0_i/hls_inst/inst/val_reg_285_reg[25]
+  -------------------------------------------------------------------
+                         required time                         10.920    
+                         arrival time                          -8.367    
+  -------------------------------------------------------------------
+                         slack                                  2.553    
+
+Slack (MET) :             2.590ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[10]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        7.388ns  (logic 4.555ns (61.651%)  route 2.833ns (38.349%))
+  Logic Levels:           8  (CARRY4=4 DSP48E1=1 LUT3=2 LUT5=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=1688, unset)         0.973     0.973    bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/aclk
+    SLICE_X27Y0          FDRE                                         r  bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X27Y0          FDRE (Prop_fdre_C_Q)         0.456     1.429 r  bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/opt_has_pipe.first_q_reg[54]/Q
+                         net (fo=1, routed)           0.636     2.065    bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/part_norm_mant_ext[3]
+    SLICE_X27Y0          LUT3 (Prop_lut3_I0_O)        0.124     2.189 r  bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/NORM_SHIFT/MUX_LOOP[2].DEL_SHIFT/i_pipe/CHAIN_GEN[0].C_MUX.CARRY_MUX_i_3__0/O
+                         net (fo=1, routed)           0.612     2.801    bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/RND_BIT_GEN/NORM_1_OR_0.STRUCT_REQ.SPECIAL.RND_CHAIN/i_no_versal_es1_workaround.DSP
+    SLICE_X35Y0          CARRY4 (Prop_carry4_CYINIT_CO[0])
+                                                      0.536     3.337 r  bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/RND_BIT_GEN/NORM_1_OR_0.STRUCT_REQ.SPECIAL.RND_CHAIN/CHAIN_GEN[0].C_MUX.CARRY_MUX_CARRY4/CO[0]
+                         net (fo=1, routed)           0.381     3.718    bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/DSP48_E1.DSP48E1_ADD.DSP48E1_ADD/B[0]
+    DSP48_X2Y0           DSP48E1 (Prop_dsp48e1_B[1]_P[47])
+                                                      2.306     6.024 r  bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/DSP48_E1.DSP48E1_ADD.DSP48E1_ADD/i_no_versal_es1_workaround.DSP/P[47]
+                         net (fo=7, routed)           0.801     6.825    bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/DSP48_E1.DSP_LOGIC_ADDERS.RND_1/P[0]
+    SLICE_X36Y7          LUT3 (Prop_lut3_I1_O)        0.124     6.949 r  bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/NORM/ROUND/DSP48_E1.DSP_LOGIC_ADDERS.RND_1/RESULT_REG.NORMAL.exp_op[3]_i_7/O
+                         net (fo=1, routed)           0.403     7.352    bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[3]
+    SLICE_X37Y8          LUT5 (Prop_lut5_I3_O)        0.124     7.476 r  bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op[3]_i_6/O
+                         net (fo=1, routed)           0.000     7.476    bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op[3]_i_6_n_0
+    SLICE_X37Y8          CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     8.008 r  bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[3]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.008    bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[3]_i_1_n_0
+    SLICE_X37Y9          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.122 r  bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[7]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.122    bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[7]_i_1_n_0
+    SLICE_X37Y10         CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.239     8.361 r  bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/STATE_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op_reg[10]_i_1/O[2]
+                         net (fo=1, routed)           0.000     8.361    bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/exp_pre_op[10]
+    SLICE_X37Y10         FDRE                                         r  bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[10]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=1688, unset)         0.924    10.924    bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/aclk
+    SLICE_X37Y10         FDRE                                         r  bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[10]/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    SLICE_X37Y10         FDRE (Setup_fdre_C_D)        0.062    10.951    bd_0_i/hls_inst/inst/dsub_64ns_64ns_64_7_full_dsp_1_U2/fn1_ap_dsub_5_full_dsp_64_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/OP/RESULT_REG.NORMAL.exp_op_reg[10]
+  -------------------------------------------------------------------
+                         required time                         10.951    
+                         arrival time                          -8.361    
+  -------------------------------------------------------------------
+                         slack                                  2.590    
+
+
+
+

@@ -1,0 +1,496 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+| Date         : Wed Apr 28 10:04:51 2021
+| Host         : seal-lambda running 64-bit Ubuntu 18.04.5 LTS
+| Command      : report_timing -max_paths 10 -file ./report/fn1_timing_paths_routed.rpt
+| Design       : bd_0_wrapper
+| Device       : 7z020-clg484
+| Speed File   : -1  PRODUCTION 1.12 2019-11-22
+----------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             1.462ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP/D[1]
+                            (rising edge-triggered cell DSP48E1 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        2.910ns  (logic 0.670ns (23.024%)  route 2.240ns (76.976%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=8509, unset)         0.973     0.973    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/aclk
+    SLICE_X30Y63         FDRE                                         r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X30Y63         FDRE (Prop_fdre_C_Q)         0.518     1.491 r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/Q
+                         net (fo=54, routed)          1.251     2.742    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/A_IP_DELAY/i_pipe/CARRY_OUT
+    SLICE_X33Y57         LUT3 (Prop_lut3_I2_O)        0.152     2.894 r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/A_IP_DELAY/i_pipe/i_no_versal_es1_workaround.DSP_i_25/O
+                         net (fo=2, routed)           0.989     3.883    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP_3[15]
+    DSP48_X2Y23          DSP48E1                                      r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP/D[1]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=8509, unset)         0.924    10.924    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/aclk
+    DSP48_X2Y23          DSP48E1                                      r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP/CLK
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    DSP48_X2Y23          DSP48E1 (Setup_dsp48e1_CLK_D[1])
+                                                     -5.544     5.345    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP
+  -------------------------------------------------------------------
+                         required time                          5.345    
+                         arrival time                          -3.883    
+  -------------------------------------------------------------------
+                         slack                                  1.462    
+
+Slack (MET) :             1.553ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP/A[20]
+                            (rising edge-triggered cell DSP48E1 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        2.665ns  (logic 0.668ns (25.062%)  route 1.997ns (74.938%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=8509, unset)         0.973     0.973    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/aclk
+    SLICE_X30Y63         FDRE                                         r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X30Y63         FDRE (Prop_fdre_C_Q)         0.518     1.491 r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/Q
+                         net (fo=54, routed)          1.231     2.722    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/A_IP_DELAY/i_pipe/CARRY_OUT
+    SLICE_X36Y56         LUT2 (Prop_lut2_I1_O)        0.150     2.872 r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/A_IP_DELAY/i_pipe/i_no_versal_es1_workaround.DSP_i_20/O
+                         net (fo=2, routed)           0.767     3.638    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP_3[20]
+    DSP48_X2Y23          DSP48E1                                      r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP/A[20]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=8509, unset)         0.924    10.924    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/aclk
+    DSP48_X2Y23          DSP48E1                                      r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP/CLK
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    DSP48_X2Y23          DSP48E1 (Setup_dsp48e1_CLK_A[20])
+                                                     -5.698     5.191    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP
+  -------------------------------------------------------------------
+                         required time                          5.191    
+                         arrival time                          -3.638    
+  -------------------------------------------------------------------
+                         slack                                  1.553    
+
+Slack (MET) :             1.575ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP/A[15]
+                            (rising edge-triggered cell DSP48E1 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        2.665ns  (logic 0.670ns (25.137%)  route 1.995ns (74.863%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=8509, unset)         0.973     0.973    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/aclk
+    SLICE_X30Y63         FDRE                                         r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X30Y63         FDRE (Prop_fdre_C_Q)         0.518     1.491 r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/Q
+                         net (fo=54, routed)          1.251     2.742    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/A_IP_DELAY/i_pipe/CARRY_OUT
+    SLICE_X33Y57         LUT3 (Prop_lut3_I2_O)        0.152     2.894 r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/A_IP_DELAY/i_pipe/i_no_versal_es1_workaround.DSP_i_25/O
+                         net (fo=2, routed)           0.745     3.638    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP_3[15]
+    DSP48_X2Y23          DSP48E1                                      r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP/A[15]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=8509, unset)         0.924    10.924    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/aclk
+    DSP48_X2Y23          DSP48E1                                      r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP/CLK
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    DSP48_X2Y23          DSP48E1 (Setup_dsp48e1_CLK_A[15])
+                                                     -5.676     5.213    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP
+  -------------------------------------------------------------------
+                         required time                          5.213    
+                         arrival time                          -3.638    
+  -------------------------------------------------------------------
+                         slack                                  1.575    
+
+Slack (MET) :             1.577ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP/A[0]
+                            (rising edge-triggered cell DSP48E1 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        2.661ns  (logic 0.668ns (25.103%)  route 1.993ns (74.897%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=8509, unset)         0.973     0.973    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/aclk
+    SLICE_X30Y63         FDRE                                         r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X30Y63         FDRE (Prop_fdre_C_Q)         0.518     1.491 r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/Q
+                         net (fo=54, routed)          1.451     2.942    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/A_IP_DELAY/i_pipe/CARRY_OUT
+    SLICE_X32Y56         LUT3 (Prop_lut3_I2_O)        0.150     3.092 r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/A_IP_DELAY/i_pipe/i_no_versal_es1_workaround.DSP_i_40/O
+                         net (fo=1, routed)           0.542     3.634    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP_3[0]
+    DSP48_X2Y23          DSP48E1                                      r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP/A[0]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=8509, unset)         0.924    10.924    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/aclk
+    DSP48_X2Y23          DSP48E1                                      r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP/CLK
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    DSP48_X2Y23          DSP48E1 (Setup_dsp48e1_CLK_A[0])
+                                                     -5.678     5.211    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP
+  -------------------------------------------------------------------
+                         required time                          5.211    
+                         arrival time                          -3.634    
+  -------------------------------------------------------------------
+                         slack                                  1.577    
+
+Slack (MET) :             1.596ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP/D[3]
+                            (rising edge-triggered cell DSP48E1 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        2.774ns  (logic 0.634ns (22.856%)  route 2.140ns (77.144%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=8509, unset)         0.973     0.973    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/aclk
+    SLICE_X30Y63         FDRE                                         r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X30Y63         FDRE (Prop_fdre_C_Q)         0.518     1.491 r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/Q
+                         net (fo=54, routed)          1.264     2.755    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/A_IP_DELAY/i_pipe/CARRY_OUT
+    SLICE_X36Y57         LUT2 (Prop_lut2_I1_O)        0.116     2.871 r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/A_IP_DELAY/i_pipe/i_no_versal_es1_workaround.DSP_i_23/O
+                         net (fo=2, routed)           0.876     3.747    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP_3[17]
+    DSP48_X2Y23          DSP48E1                                      r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP/D[3]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=8509, unset)         0.924    10.924    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/aclk
+    DSP48_X2Y23          DSP48E1                                      r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP/CLK
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    DSP48_X2Y23          DSP48E1 (Setup_dsp48e1_CLK_D[3])
+                                                     -5.546     5.343    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP
+  -------------------------------------------------------------------
+                         required time                          5.343    
+                         arrival time                          -3.747    
+  -------------------------------------------------------------------
+                         slack                                  1.596    
+
+Slack (MET) :             1.602ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP/A[2]
+                            (rising edge-triggered cell DSP48E1 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        2.638ns  (logic 0.670ns (25.395%)  route 1.968ns (74.605%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=8509, unset)         0.973     0.973    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/aclk
+    SLICE_X30Y63         FDRE                                         r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X30Y63         FDRE (Prop_fdre_C_Q)         0.518     1.491 r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/Q
+                         net (fo=54, routed)          1.436     2.927    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/A_IP_DELAY/i_pipe/CARRY_OUT
+    SLICE_X33Y56         LUT3 (Prop_lut3_I2_O)        0.152     3.079 r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/A_IP_DELAY/i_pipe/i_no_versal_es1_workaround.DSP_i_38/O
+                         net (fo=1, routed)           0.532     3.611    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP_3[2]
+    DSP48_X2Y23          DSP48E1                                      r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP/A[2]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=8509, unset)         0.924    10.924    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/aclk
+    DSP48_X2Y23          DSP48E1                                      r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP/CLK
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    DSP48_X2Y23          DSP48E1 (Setup_dsp48e1_CLK_A[2])
+                                                     -5.676     5.213    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP
+  -------------------------------------------------------------------
+                         required time                          5.213    
+                         arrival time                          -3.611    
+  -------------------------------------------------------------------
+                         slack                                  1.602    
+
+Slack (MET) :             1.616ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP/D[5]
+                            (rising edge-triggered cell DSP48E1 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        2.750ns  (logic 0.670ns (24.361%)  route 2.080ns (75.639%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=8509, unset)         0.973     0.973    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/aclk
+    SLICE_X30Y63         FDRE                                         r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X30Y63         FDRE (Prop_fdre_C_Q)         0.518     1.491 r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/Q
+                         net (fo=54, routed)          1.253     2.744    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/A_IP_DELAY/i_pipe/CARRY_OUT
+    SLICE_X33Y57         LUT3 (Prop_lut3_I2_O)        0.152     2.896 r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/A_IP_DELAY/i_pipe/i_no_versal_es1_workaround.DSP_i_21/O
+                         net (fo=2, routed)           0.828     3.723    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP_3[19]
+    DSP48_X2Y23          DSP48E1                                      r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP/D[5]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=8509, unset)         0.924    10.924    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/aclk
+    DSP48_X2Y23          DSP48E1                                      r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP/CLK
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    DSP48_X2Y23          DSP48E1 (Setup_dsp48e1_CLK_D[5])
+                                                     -5.550     5.339    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP
+  -------------------------------------------------------------------
+                         required time                          5.339    
+                         arrival time                          -3.723    
+  -------------------------------------------------------------------
+                         slack                                  1.616    
+
+Slack (MET) :             1.618ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP/A[19]
+                            (rising edge-triggered cell DSP48E1 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        2.616ns  (logic 0.670ns (25.616%)  route 1.946ns (74.384%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=8509, unset)         0.973     0.973    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/aclk
+    SLICE_X30Y63         FDRE                                         r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X30Y63         FDRE (Prop_fdre_C_Q)         0.518     1.491 r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/Q
+                         net (fo=54, routed)          1.253     2.744    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/A_IP_DELAY/i_pipe/CARRY_OUT
+    SLICE_X33Y57         LUT3 (Prop_lut3_I2_O)        0.152     2.896 r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/A_IP_DELAY/i_pipe/i_no_versal_es1_workaround.DSP_i_21/O
+                         net (fo=2, routed)           0.693     3.589    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP_3[19]
+    DSP48_X2Y23          DSP48E1                                      r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP/A[19]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=8509, unset)         0.924    10.924    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/aclk
+    DSP48_X2Y23          DSP48E1                                      r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP/CLK
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    DSP48_X2Y23          DSP48E1 (Setup_dsp48e1_CLK_A[19])
+                                                     -5.682     5.207    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP
+  -------------------------------------------------------------------
+                         required time                          5.207    
+                         arrival time                          -3.589    
+  -------------------------------------------------------------------
+                         slack                                  1.618    
+
+Slack (MET) :             1.640ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP/A[18]
+                            (rising edge-triggered cell DSP48E1 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        2.598ns  (logic 0.666ns (25.637%)  route 1.932ns (74.363%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=8509, unset)         0.973     0.973    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/aclk
+    SLICE_X30Y63         FDRE                                         r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X30Y63         FDRE (Prop_fdre_C_Q)         0.518     1.491 r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/Q
+                         net (fo=54, routed)          1.233     2.724    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/A_IP_DELAY/i_pipe/CARRY_OUT
+    SLICE_X36Y56         LUT2 (Prop_lut2_I1_O)        0.148     2.872 r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/A_IP_DELAY/i_pipe/i_no_versal_es1_workaround.DSP_i_22/O
+                         net (fo=2, routed)           0.699     3.571    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP_3[18]
+    DSP48_X2Y23          DSP48E1                                      r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP/A[18]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=8509, unset)         0.924    10.924    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/aclk
+    DSP48_X2Y23          DSP48E1                                      r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP/CLK
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    DSP48_X2Y23          DSP48E1 (Setup_dsp48e1_CLK_A[18])
+                                                     -5.678     5.211    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP
+  -------------------------------------------------------------------
+                         required time                          5.211    
+                         arrival time                          -3.571    
+  -------------------------------------------------------------------
+                         slack                                  1.640    
+
+Slack (MET) :             1.656ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP/A[3]
+                            (rising edge-triggered cell DSP48E1 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        2.578ns  (logic 0.670ns (25.987%)  route 1.908ns (74.013%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=8509, unset)         0.973     0.973    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/aclk
+    SLICE_X30Y63         FDRE                                         r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X30Y63         FDRE (Prop_fdre_C_Q)         0.518     1.491 r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/Q
+                         net (fo=54, routed)          1.224     2.715    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/A_IP_DELAY/i_pipe/CARRY_OUT
+    SLICE_X33Y56         LUT2 (Prop_lut2_I1_O)        0.152     2.867 r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/A_IP_DELAY/i_pipe/i_no_versal_es1_workaround.DSP_i_37/O
+                         net (fo=1, routed)           0.684     3.551    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP_3[3]
+    DSP48_X2Y23          DSP48E1                                      r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP/A[3]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=8509, unset)         0.924    10.924    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/aclk
+    DSP48_X2Y23          DSP48E1                                      r  bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP/CLK
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    DSP48_X2Y23          DSP48E1 (Setup_dsp48e1_CLK_A[3])
+                                                     -5.682     5.207    bd_0_i/hls_inst/inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/fn1_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP
+  -------------------------------------------------------------------
+                         required time                          5.207    
+                         arrival time                          -3.551    
+  -------------------------------------------------------------------
+                         slack                                  1.656    
+
+
+
+

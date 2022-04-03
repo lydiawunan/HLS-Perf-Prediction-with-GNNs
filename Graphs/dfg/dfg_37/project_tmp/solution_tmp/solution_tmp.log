@@ -1,0 +1,62 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020clg484-1 
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 155.762 MB.
+INFO: [HLS 200-10] Analyzing design file 'dfg_199.c' ... 
+WARNING: [HLS 207-4957] logical not is only applied to the left hand side of this bitwise operator: dfg_199.c:27:52
+INFO: [HLS 207-4276] add parentheses after the '!' to evaluate the bitwise operator first: dfg_199.c:27:52
+INFO: [HLS 207-4277] add parentheses around left hand side expression to silence this warning: dfg_199.c:27:52
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.63 seconds. CPU system time: 0.35 seconds. Elapsed time: 0.49 seconds; current allocated memory: 156.919 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::fp_struct(double)' into 'unsigned long generic_cast_IEEE754<unsigned long, (ap_q_mode)6, double>(double, bool, hls::enable_if<!(std::numeric_limits<unsigned long>::is_signed), bool>::type)' (/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:65:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::mantissa() const' into 'unsigned long generic_cast_IEEE754<unsigned long, (ap_q_mode)6, double>(double, bool, hls::enable_if<!(std::numeric_limits<unsigned long>::is_signed), bool>::type)' (/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:65:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::expv() const' into 'unsigned long generic_cast_IEEE754<unsigned long, (ap_q_mode)6, double>(double, bool, hls::enable_if<!(std::numeric_limits<unsigned long>::is_signed), bool>::type)' (/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:65:0)
+INFO: [HLS 214-178] Inlining function 'unsigned long generic_cast_IEEE754<unsigned long, (ap_q_mode)6, double>(double, bool, hls::enable_if<!(std::numeric_limits<unsigned long>::is_signed), bool>::type)' into 'unsigned long generic_cast_IEEE754<unsigned long, double>(double, bool)' (/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116:0)
+INFO: [HLS 214-178] Inlining function 'unsigned long generic_cast_IEEE754<unsigned long, double>(double, bool)' into '__hls_fptoui_double_i64' (/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/src/lib_floatconversion.cpp:70:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::fp_struct(float)' into 'long generic_cast_IEEE754<long, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<long>::is_signed, bool>::type)' (/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::mantissa() const' into 'long generic_cast_IEEE754<long, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<long>::is_signed, bool>::type)' (/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::expv() const' into 'long generic_cast_IEEE754<long, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<long>::is_signed, bool>::type)' (/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::__signbit() const' into 'long generic_cast_IEEE754<long, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<long>::is_signed, bool>::type)' (/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'long generic_cast_IEEE754<long, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<long>::is_signed, bool>::type)' into 'long generic_cast_IEEE754<long, float>(float, bool)' (/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116:0)
+INFO: [HLS 214-178] Inlining function 'long generic_cast_IEEE754<long, float>(float, bool)' into '__hls_fptosi_float_i64' (/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/src/lib_floatconversion.cpp:52:0)
+INFO: [HLS 214-178] Inlining function '__hls_fptoui_double_i64' into 'fn1' (dfg_199.c:9:0)
+INFO: [HLS 214-178] Inlining function '__hls_fptosi_float_i64' into 'fn1' (dfg_199.c:9:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.46 seconds. CPU system time: 0.39 seconds. Elapsed time: 3.63 seconds; current allocated memory: 157.891 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 157.893 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.06 seconds; current allocated memory: 171.743 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.14 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.14 seconds; current allocated memory: 192.874 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.19 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.2 seconds; current allocated memory: 235.475 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.13 seconds. CPU system time: 0 seconds. Elapsed time: 0.14 seconds; current allocated memory: 238.198 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'fn1' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fn1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.15 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.16 seconds; current allocated memory: 238.751 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.4 seconds. CPU system time: 0 seconds. Elapsed time: 0.4 seconds; current allocated memory: 239.408 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fn1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'fn1/p' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fn1/p_11' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fn1/p_13' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fn1/p_15' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'fn1' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Generating core module 'fsub_32ns_32ns_32_5_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8ns_32s_32_2_1': 1 instance(s).

@@ -1,0 +1,77 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020clg484-1 
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 155.762 MB.
+INFO: [HLS 200-10] Analyzing design file 'dfg_199.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.63 seconds. CPU system time: 0.35 seconds. Elapsed time: 0.49 seconds; current allocated memory: 156.409 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::fp_struct(float)' into 'short generic_cast_IEEE754<short, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<short>::is_signed, bool>::type)' (/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::mantissa() const' into 'short generic_cast_IEEE754<short, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<short>::is_signed, bool>::type)' (/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::expv() const' into 'short generic_cast_IEEE754<short, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<short>::is_signed, bool>::type)' (/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::__signbit() const' into 'short generic_cast_IEEE754<short, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<short>::is_signed, bool>::type)' (/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'short generic_cast_IEEE754<short, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<short>::is_signed, bool>::type)' into 'short generic_cast_IEEE754<short, float>(float, bool)' (/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116:0)
+INFO: [HLS 214-178] Inlining function 'short generic_cast_IEEE754<short, float>(float, bool)' into '__hls_fptosi_float_i16' (/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/src/lib_floatconversion.cpp:50:0)
+INFO: [HLS 214-178] Inlining function '__hls_fptosi_float_i16' into 'fn1' (dfg_199.c:8:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.52 seconds. CPU system time: 0.44 seconds. Elapsed time: 3.69 seconds; current allocated memory: 158.335 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 158.336 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.07 seconds; current allocated memory: 172.378 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+WARNING: [SYNCHK 200-18] dfg_199.c:27: unsafe type casting from type 'long long unsigned int' to type 'single_cast'.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.15 seconds. CPU system time: 0 seconds. Elapsed time: 0.16 seconds; current allocated memory: 193.836 MB.
+INFO: [XFORM 203-11] Balancing expressions in function 'fn1' (dfg_199.c:7)...3 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.2 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.2 seconds; current allocated memory: 236.804 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.14 seconds. CPU system time: 0 seconds. Elapsed time: 0.13 seconds; current allocated memory: 239.750 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'fn1' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fn1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln26) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.24 seconds. CPU system time: 0 seconds. Elapsed time: 0.25 seconds; current allocated memory: 240.690 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.53 seconds. CPU system time: 0 seconds. Elapsed time: 0.53 seconds; current allocated memory: 241.659 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fn1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'fn1/p' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fn1/p_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'fn1' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_5_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_64s_64_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_64s_66ns_129_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_mul_17s_8ns_25_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sdiv_17s_32ns_17_21_seq_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sitofp_64s_32_6_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'srem_31s_32ns_32_35_seq_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'uitofp_64ns_32_6_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'urem_64s_64ns_64_68_seq_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'urem_7ns_64ns_6_11_seq_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fn1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.26 seconds. CPU system time: 0 seconds. Elapsed time: 0.26 seconds; current allocated memory: 243.869 MB.
+INFO: [RTMG 210-282] Generating pipelined core: 'fn1_urem_64s_64ns_64_68_seq_1_div'
+INFO: [RTMG 210-282] Generating pipelined core: 'fn1_urem_7ns_64ns_6_11_seq_1_div'
+INFO: [RTMG 210-282] Generating pipelined core: 'fn1_sdiv_17s_32ns_17_21_seq_1_div'
+INFO: [RTMG 210-282] Generating pipelined core: 'fn1_srem_31s_32ns_32_35_seq_1_div'
+INFO: [RTMG 210-282] Generating pipelined core: 'fn1_mul_64s_66ns_129_5_1_Multiplier_0'
+INFO: [RTMG 210-282] Generating pipelined core: 'fn1_mul_32s_64s_64_5_1_Multiplier_1'
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1.51 seconds. CPU system time: 0.05 seconds. Elapsed time: 1.55 seconds; current allocated memory: 253.193 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for fn1.
+INFO: [VLOG 209-307] Generating Verilog RTL for fn1.
+INFO: [HLS 200-789] **** Estimated Fmax: 137.82 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 7.3 seconds. CPU system time: 0.86 seconds. Elapsed time: 7.41 seconds; current allocated memory: 253.339 MB.

@@ -1,0 +1,1010 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+| Date         : Tue Apr 27 11:07:24 2021
+| Host         : seal-lambda running 64-bit Ubuntu 18.04.5 LTS
+| Command      : report_timing -max_paths 10 -file ./report/fn1_timing_paths_routed.rpt
+| Design       : bd_0_wrapper
+| Device       : 7z020-clg484
+| Speed File   : -1  PRODUCTION 1.12 2019-11-22
+----------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             1.327ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/ush_1_reg_957_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[63]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        8.651ns  (logic 3.948ns (45.635%)  route 4.703ns (54.365%))
+  Logic Levels:           21  (CARRY4=16 LUT3=2 LUT4=1 LUT6=2)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=2303, unset)         0.973     0.973    bd_0_i/hls_inst/inst/ap_clk
+    SLICE_X38Y72         FDRE                                         r  bd_0_i/hls_inst/inst/ush_1_reg_957_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X38Y72         FDRE (Prop_fdre_C_Q)         0.478     1.451 r  bd_0_i/hls_inst/inst/ush_1_reg_957_reg[0]/Q
+                         net (fo=54, routed)          1.232     2.683    bd_0_i/hls_inst/inst/ush_1_reg_957[0]
+    SLICE_X40Y70         LUT4 (Prop_lut4_I2_O)        0.301     2.984 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_31/O
+                         net (fo=1, routed)           0.669     3.653    bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_31_n_0
+    SLICE_X40Y70         LUT6 (Prop_lut6_I5_O)        0.124     3.777 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_29/O
+                         net (fo=2, routed)           0.638     4.415    bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_29_n_0
+    SLICE_X40Y71         LUT3 (Prop_lut3_I2_O)        0.152     4.567 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_23/O
+                         net (fo=3, routed)           0.700     5.268    bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_23_n_0
+    SLICE_X43Y73         LUT3 (Prop_lut3_I0_O)        0.332     5.600 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[53]_i_10/O
+                         net (fo=5, routed)           0.842     6.442    bd_0_i/hls_inst/inst/add_ln29_reg_967[53]_i_10_n_0
+    SLICE_X45Y64         LUT6 (Prop_lut6_I2_O)        0.124     6.566 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[5]_i_4/O
+                         net (fo=1, routed)           0.612     7.178    bd_0_i/hls_inst/inst/val_fu_570_p3__0[3]
+    SLICE_X44Y64         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.507     7.685 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[5]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.685    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[5]_i_1_n_0
+    SLICE_X44Y65         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.799 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[9]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.799    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[9]_i_1_n_0
+    SLICE_X44Y66         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.913 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[13]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.913    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[13]_i_1_n_0
+    SLICE_X44Y67         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.027 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[17]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.027    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[17]_i_1_n_0
+    SLICE_X44Y68         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.141 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[21]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.141    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[21]_i_1_n_0
+    SLICE_X44Y69         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.255 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[25]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.255    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[25]_i_1_n_0
+    SLICE_X44Y70         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.369 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[29]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.369    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[29]_i_1_n_0
+    SLICE_X44Y71         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.483 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[33]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.483    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[33]_i_1_n_0
+    SLICE_X44Y72         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.597 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[37]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.597    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[37]_i_1_n_0
+    SLICE_X44Y73         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.711 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[41]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.711    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[41]_i_1_n_0
+    SLICE_X44Y74         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.825 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[45]_i_1/CO[3]
+                         net (fo=1, routed)           0.009     8.834    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[45]_i_1_n_0
+    SLICE_X44Y75         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.948 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[49]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.948    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[49]_i_1_n_0
+    SLICE_X44Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.062 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[53]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     9.062    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[53]_i_1_n_0
+    SLICE_X44Y77         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.176 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[57]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     9.176    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[57]_i_1_n_0
+    SLICE_X44Y78         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.290 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[61]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     9.290    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[61]_i_1_n_0
+    SLICE_X44Y79         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     9.624 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[63]_i_1/O[1]
+                         net (fo=1, routed)           0.000     9.624    bd_0_i/hls_inst/inst/add_ln29_fu_577_p2[63]
+    SLICE_X44Y79         FDRE                                         r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[63]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=2303, unset)         0.924    10.924    bd_0_i/hls_inst/inst/ap_clk
+    SLICE_X44Y79         FDRE                                         r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[63]/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    SLICE_X44Y79         FDRE (Setup_fdre_C_D)        0.062    10.951    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[63]
+  -------------------------------------------------------------------
+                         required time                         10.951    
+                         arrival time                          -9.624    
+  -------------------------------------------------------------------
+                         slack                                  1.327    
+
+Slack (MET) :             1.438ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/ush_1_reg_957_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[62]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        8.540ns  (logic 3.837ns (44.929%)  route 4.703ns (55.071%))
+  Logic Levels:           21  (CARRY4=16 LUT3=2 LUT4=1 LUT6=2)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=2303, unset)         0.973     0.973    bd_0_i/hls_inst/inst/ap_clk
+    SLICE_X38Y72         FDRE                                         r  bd_0_i/hls_inst/inst/ush_1_reg_957_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X38Y72         FDRE (Prop_fdre_C_Q)         0.478     1.451 r  bd_0_i/hls_inst/inst/ush_1_reg_957_reg[0]/Q
+                         net (fo=54, routed)          1.232     2.683    bd_0_i/hls_inst/inst/ush_1_reg_957[0]
+    SLICE_X40Y70         LUT4 (Prop_lut4_I2_O)        0.301     2.984 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_31/O
+                         net (fo=1, routed)           0.669     3.653    bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_31_n_0
+    SLICE_X40Y70         LUT6 (Prop_lut6_I5_O)        0.124     3.777 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_29/O
+                         net (fo=2, routed)           0.638     4.415    bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_29_n_0
+    SLICE_X40Y71         LUT3 (Prop_lut3_I2_O)        0.152     4.567 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_23/O
+                         net (fo=3, routed)           0.700     5.268    bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_23_n_0
+    SLICE_X43Y73         LUT3 (Prop_lut3_I0_O)        0.332     5.600 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[53]_i_10/O
+                         net (fo=5, routed)           0.842     6.442    bd_0_i/hls_inst/inst/add_ln29_reg_967[53]_i_10_n_0
+    SLICE_X45Y64         LUT6 (Prop_lut6_I2_O)        0.124     6.566 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[5]_i_4/O
+                         net (fo=1, routed)           0.612     7.178    bd_0_i/hls_inst/inst/val_fu_570_p3__0[3]
+    SLICE_X44Y64         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.507     7.685 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[5]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.685    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[5]_i_1_n_0
+    SLICE_X44Y65         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.799 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[9]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.799    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[9]_i_1_n_0
+    SLICE_X44Y66         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.913 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[13]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.913    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[13]_i_1_n_0
+    SLICE_X44Y67         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.027 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[17]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.027    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[17]_i_1_n_0
+    SLICE_X44Y68         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.141 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[21]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.141    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[21]_i_1_n_0
+    SLICE_X44Y69         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.255 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[25]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.255    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[25]_i_1_n_0
+    SLICE_X44Y70         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.369 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[29]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.369    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[29]_i_1_n_0
+    SLICE_X44Y71         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.483 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[33]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.483    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[33]_i_1_n_0
+    SLICE_X44Y72         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.597 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[37]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.597    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[37]_i_1_n_0
+    SLICE_X44Y73         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.711 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[41]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.711    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[41]_i_1_n_0
+    SLICE_X44Y74         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.825 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[45]_i_1/CO[3]
+                         net (fo=1, routed)           0.009     8.834    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[45]_i_1_n_0
+    SLICE_X44Y75         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.948 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[49]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.948    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[49]_i_1_n_0
+    SLICE_X44Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.062 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[53]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     9.062    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[53]_i_1_n_0
+    SLICE_X44Y77         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.176 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[57]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     9.176    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[57]_i_1_n_0
+    SLICE_X44Y78         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.290 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[61]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     9.290    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[61]_i_1_n_0
+    SLICE_X44Y79         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.223     9.513 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[63]_i_1/O[0]
+                         net (fo=1, routed)           0.000     9.513    bd_0_i/hls_inst/inst/add_ln29_fu_577_p2[62]
+    SLICE_X44Y79         FDRE                                         r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[62]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=2303, unset)         0.924    10.924    bd_0_i/hls_inst/inst/ap_clk
+    SLICE_X44Y79         FDRE                                         r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[62]/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    SLICE_X44Y79         FDRE (Setup_fdre_C_D)        0.062    10.951    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[62]
+  -------------------------------------------------------------------
+                         required time                         10.951    
+                         arrival time                          -9.513    
+  -------------------------------------------------------------------
+                         slack                                  1.438    
+
+Slack (MET) :             1.441ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/ush_1_reg_957_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[59]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        8.537ns  (logic 3.834ns (44.909%)  route 4.703ns (55.090%))
+  Logic Levels:           20  (CARRY4=15 LUT3=2 LUT4=1 LUT6=2)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=2303, unset)         0.973     0.973    bd_0_i/hls_inst/inst/ap_clk
+    SLICE_X38Y72         FDRE                                         r  bd_0_i/hls_inst/inst/ush_1_reg_957_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X38Y72         FDRE (Prop_fdre_C_Q)         0.478     1.451 r  bd_0_i/hls_inst/inst/ush_1_reg_957_reg[0]/Q
+                         net (fo=54, routed)          1.232     2.683    bd_0_i/hls_inst/inst/ush_1_reg_957[0]
+    SLICE_X40Y70         LUT4 (Prop_lut4_I2_O)        0.301     2.984 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_31/O
+                         net (fo=1, routed)           0.669     3.653    bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_31_n_0
+    SLICE_X40Y70         LUT6 (Prop_lut6_I5_O)        0.124     3.777 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_29/O
+                         net (fo=2, routed)           0.638     4.415    bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_29_n_0
+    SLICE_X40Y71         LUT3 (Prop_lut3_I2_O)        0.152     4.567 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_23/O
+                         net (fo=3, routed)           0.700     5.268    bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_23_n_0
+    SLICE_X43Y73         LUT3 (Prop_lut3_I0_O)        0.332     5.600 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[53]_i_10/O
+                         net (fo=5, routed)           0.842     6.442    bd_0_i/hls_inst/inst/add_ln29_reg_967[53]_i_10_n_0
+    SLICE_X45Y64         LUT6 (Prop_lut6_I2_O)        0.124     6.566 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[5]_i_4/O
+                         net (fo=1, routed)           0.612     7.178    bd_0_i/hls_inst/inst/val_fu_570_p3__0[3]
+    SLICE_X44Y64         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.507     7.685 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[5]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.685    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[5]_i_1_n_0
+    SLICE_X44Y65         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.799 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[9]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.799    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[9]_i_1_n_0
+    SLICE_X44Y66         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.913 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[13]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.913    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[13]_i_1_n_0
+    SLICE_X44Y67         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.027 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[17]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.027    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[17]_i_1_n_0
+    SLICE_X44Y68         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.141 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[21]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.141    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[21]_i_1_n_0
+    SLICE_X44Y69         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.255 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[25]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.255    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[25]_i_1_n_0
+    SLICE_X44Y70         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.369 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[29]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.369    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[29]_i_1_n_0
+    SLICE_X44Y71         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.483 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[33]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.483    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[33]_i_1_n_0
+    SLICE_X44Y72         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.597 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[37]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.597    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[37]_i_1_n_0
+    SLICE_X44Y73         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.711 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[41]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.711    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[41]_i_1_n_0
+    SLICE_X44Y74         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.825 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[45]_i_1/CO[3]
+                         net (fo=1, routed)           0.009     8.834    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[45]_i_1_n_0
+    SLICE_X44Y75         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.948 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[49]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.948    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[49]_i_1_n_0
+    SLICE_X44Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.062 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[53]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     9.062    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[53]_i_1_n_0
+    SLICE_X44Y77         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.176 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[57]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     9.176    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[57]_i_1_n_0
+    SLICE_X44Y78         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     9.510 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[61]_i_1/O[1]
+                         net (fo=1, routed)           0.000     9.510    bd_0_i/hls_inst/inst/add_ln29_fu_577_p2[59]
+    SLICE_X44Y78         FDRE                                         r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[59]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=2303, unset)         0.924    10.924    bd_0_i/hls_inst/inst/ap_clk
+    SLICE_X44Y78         FDRE                                         r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[59]/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    SLICE_X44Y78         FDRE (Setup_fdre_C_D)        0.062    10.951    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[59]
+  -------------------------------------------------------------------
+                         required time                         10.951    
+                         arrival time                          -9.510    
+  -------------------------------------------------------------------
+                         slack                                  1.441    
+
+Slack (MET) :             1.462ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/ush_1_reg_957_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[61]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        8.516ns  (logic 3.813ns (44.774%)  route 4.703ns (55.226%))
+  Logic Levels:           20  (CARRY4=15 LUT3=2 LUT4=1 LUT6=2)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=2303, unset)         0.973     0.973    bd_0_i/hls_inst/inst/ap_clk
+    SLICE_X38Y72         FDRE                                         r  bd_0_i/hls_inst/inst/ush_1_reg_957_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X38Y72         FDRE (Prop_fdre_C_Q)         0.478     1.451 r  bd_0_i/hls_inst/inst/ush_1_reg_957_reg[0]/Q
+                         net (fo=54, routed)          1.232     2.683    bd_0_i/hls_inst/inst/ush_1_reg_957[0]
+    SLICE_X40Y70         LUT4 (Prop_lut4_I2_O)        0.301     2.984 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_31/O
+                         net (fo=1, routed)           0.669     3.653    bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_31_n_0
+    SLICE_X40Y70         LUT6 (Prop_lut6_I5_O)        0.124     3.777 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_29/O
+                         net (fo=2, routed)           0.638     4.415    bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_29_n_0
+    SLICE_X40Y71         LUT3 (Prop_lut3_I2_O)        0.152     4.567 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_23/O
+                         net (fo=3, routed)           0.700     5.268    bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_23_n_0
+    SLICE_X43Y73         LUT3 (Prop_lut3_I0_O)        0.332     5.600 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[53]_i_10/O
+                         net (fo=5, routed)           0.842     6.442    bd_0_i/hls_inst/inst/add_ln29_reg_967[53]_i_10_n_0
+    SLICE_X45Y64         LUT6 (Prop_lut6_I2_O)        0.124     6.566 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[5]_i_4/O
+                         net (fo=1, routed)           0.612     7.178    bd_0_i/hls_inst/inst/val_fu_570_p3__0[3]
+    SLICE_X44Y64         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.507     7.685 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[5]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.685    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[5]_i_1_n_0
+    SLICE_X44Y65         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.799 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[9]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.799    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[9]_i_1_n_0
+    SLICE_X44Y66         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.913 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[13]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.913    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[13]_i_1_n_0
+    SLICE_X44Y67         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.027 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[17]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.027    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[17]_i_1_n_0
+    SLICE_X44Y68         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.141 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[21]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.141    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[21]_i_1_n_0
+    SLICE_X44Y69         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.255 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[25]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.255    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[25]_i_1_n_0
+    SLICE_X44Y70         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.369 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[29]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.369    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[29]_i_1_n_0
+    SLICE_X44Y71         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.483 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[33]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.483    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[33]_i_1_n_0
+    SLICE_X44Y72         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.597 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[37]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.597    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[37]_i_1_n_0
+    SLICE_X44Y73         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.711 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[41]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.711    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[41]_i_1_n_0
+    SLICE_X44Y74         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.825 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[45]_i_1/CO[3]
+                         net (fo=1, routed)           0.009     8.834    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[45]_i_1_n_0
+    SLICE_X44Y75         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.948 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[49]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.948    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[49]_i_1_n_0
+    SLICE_X44Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.062 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[53]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     9.062    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[53]_i_1_n_0
+    SLICE_X44Y77         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.176 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[57]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     9.176    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[57]_i_1_n_0
+    SLICE_X44Y78         CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.313     9.489 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[61]_i_1/O[3]
+                         net (fo=1, routed)           0.000     9.489    bd_0_i/hls_inst/inst/add_ln29_fu_577_p2[61]
+    SLICE_X44Y78         FDRE                                         r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[61]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=2303, unset)         0.924    10.924    bd_0_i/hls_inst/inst/ap_clk
+    SLICE_X44Y78         FDRE                                         r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[61]/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    SLICE_X44Y78         FDRE (Setup_fdre_C_D)        0.062    10.951    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[61]
+  -------------------------------------------------------------------
+                         required time                         10.951    
+                         arrival time                          -9.489    
+  -------------------------------------------------------------------
+                         slack                                  1.462    
+
+Slack (MET) :             1.536ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/ush_1_reg_957_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[60]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        8.442ns  (logic 3.739ns (44.290%)  route 4.703ns (55.710%))
+  Logic Levels:           20  (CARRY4=15 LUT3=2 LUT4=1 LUT6=2)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=2303, unset)         0.973     0.973    bd_0_i/hls_inst/inst/ap_clk
+    SLICE_X38Y72         FDRE                                         r  bd_0_i/hls_inst/inst/ush_1_reg_957_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X38Y72         FDRE (Prop_fdre_C_Q)         0.478     1.451 r  bd_0_i/hls_inst/inst/ush_1_reg_957_reg[0]/Q
+                         net (fo=54, routed)          1.232     2.683    bd_0_i/hls_inst/inst/ush_1_reg_957[0]
+    SLICE_X40Y70         LUT4 (Prop_lut4_I2_O)        0.301     2.984 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_31/O
+                         net (fo=1, routed)           0.669     3.653    bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_31_n_0
+    SLICE_X40Y70         LUT6 (Prop_lut6_I5_O)        0.124     3.777 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_29/O
+                         net (fo=2, routed)           0.638     4.415    bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_29_n_0
+    SLICE_X40Y71         LUT3 (Prop_lut3_I2_O)        0.152     4.567 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_23/O
+                         net (fo=3, routed)           0.700     5.268    bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_23_n_0
+    SLICE_X43Y73         LUT3 (Prop_lut3_I0_O)        0.332     5.600 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[53]_i_10/O
+                         net (fo=5, routed)           0.842     6.442    bd_0_i/hls_inst/inst/add_ln29_reg_967[53]_i_10_n_0
+    SLICE_X45Y64         LUT6 (Prop_lut6_I2_O)        0.124     6.566 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[5]_i_4/O
+                         net (fo=1, routed)           0.612     7.178    bd_0_i/hls_inst/inst/val_fu_570_p3__0[3]
+    SLICE_X44Y64         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.507     7.685 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[5]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.685    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[5]_i_1_n_0
+    SLICE_X44Y65         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.799 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[9]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.799    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[9]_i_1_n_0
+    SLICE_X44Y66         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.913 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[13]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.913    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[13]_i_1_n_0
+    SLICE_X44Y67         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.027 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[17]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.027    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[17]_i_1_n_0
+    SLICE_X44Y68         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.141 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[21]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.141    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[21]_i_1_n_0
+    SLICE_X44Y69         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.255 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[25]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.255    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[25]_i_1_n_0
+    SLICE_X44Y70         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.369 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[29]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.369    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[29]_i_1_n_0
+    SLICE_X44Y71         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.483 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[33]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.483    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[33]_i_1_n_0
+    SLICE_X44Y72         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.597 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[37]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.597    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[37]_i_1_n_0
+    SLICE_X44Y73         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.711 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[41]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.711    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[41]_i_1_n_0
+    SLICE_X44Y74         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.825 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[45]_i_1/CO[3]
+                         net (fo=1, routed)           0.009     8.834    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[45]_i_1_n_0
+    SLICE_X44Y75         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.948 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[49]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.948    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[49]_i_1_n_0
+    SLICE_X44Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.062 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[53]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     9.062    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[53]_i_1_n_0
+    SLICE_X44Y77         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.176 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[57]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     9.176    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[57]_i_1_n_0
+    SLICE_X44Y78         CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.239     9.415 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[61]_i_1/O[2]
+                         net (fo=1, routed)           0.000     9.415    bd_0_i/hls_inst/inst/add_ln29_fu_577_p2[60]
+    SLICE_X44Y78         FDRE                                         r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[60]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=2303, unset)         0.924    10.924    bd_0_i/hls_inst/inst/ap_clk
+    SLICE_X44Y78         FDRE                                         r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[60]/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    SLICE_X44Y78         FDRE (Setup_fdre_C_D)        0.062    10.951    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[60]
+  -------------------------------------------------------------------
+                         required time                         10.951    
+                         arrival time                          -9.415    
+  -------------------------------------------------------------------
+                         slack                                  1.536    
+
+Slack (MET) :             1.552ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/ush_1_reg_957_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[58]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        8.426ns  (logic 3.723ns (44.184%)  route 4.703ns (55.816%))
+  Logic Levels:           20  (CARRY4=15 LUT3=2 LUT4=1 LUT6=2)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=2303, unset)         0.973     0.973    bd_0_i/hls_inst/inst/ap_clk
+    SLICE_X38Y72         FDRE                                         r  bd_0_i/hls_inst/inst/ush_1_reg_957_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X38Y72         FDRE (Prop_fdre_C_Q)         0.478     1.451 r  bd_0_i/hls_inst/inst/ush_1_reg_957_reg[0]/Q
+                         net (fo=54, routed)          1.232     2.683    bd_0_i/hls_inst/inst/ush_1_reg_957[0]
+    SLICE_X40Y70         LUT4 (Prop_lut4_I2_O)        0.301     2.984 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_31/O
+                         net (fo=1, routed)           0.669     3.653    bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_31_n_0
+    SLICE_X40Y70         LUT6 (Prop_lut6_I5_O)        0.124     3.777 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_29/O
+                         net (fo=2, routed)           0.638     4.415    bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_29_n_0
+    SLICE_X40Y71         LUT3 (Prop_lut3_I2_O)        0.152     4.567 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_23/O
+                         net (fo=3, routed)           0.700     5.268    bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_23_n_0
+    SLICE_X43Y73         LUT3 (Prop_lut3_I0_O)        0.332     5.600 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[53]_i_10/O
+                         net (fo=5, routed)           0.842     6.442    bd_0_i/hls_inst/inst/add_ln29_reg_967[53]_i_10_n_0
+    SLICE_X45Y64         LUT6 (Prop_lut6_I2_O)        0.124     6.566 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[5]_i_4/O
+                         net (fo=1, routed)           0.612     7.178    bd_0_i/hls_inst/inst/val_fu_570_p3__0[3]
+    SLICE_X44Y64         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.507     7.685 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[5]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.685    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[5]_i_1_n_0
+    SLICE_X44Y65         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.799 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[9]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.799    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[9]_i_1_n_0
+    SLICE_X44Y66         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.913 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[13]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.913    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[13]_i_1_n_0
+    SLICE_X44Y67         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.027 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[17]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.027    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[17]_i_1_n_0
+    SLICE_X44Y68         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.141 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[21]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.141    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[21]_i_1_n_0
+    SLICE_X44Y69         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.255 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[25]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.255    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[25]_i_1_n_0
+    SLICE_X44Y70         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.369 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[29]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.369    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[29]_i_1_n_0
+    SLICE_X44Y71         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.483 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[33]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.483    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[33]_i_1_n_0
+    SLICE_X44Y72         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.597 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[37]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.597    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[37]_i_1_n_0
+    SLICE_X44Y73         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.711 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[41]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.711    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[41]_i_1_n_0
+    SLICE_X44Y74         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.825 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[45]_i_1/CO[3]
+                         net (fo=1, routed)           0.009     8.834    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[45]_i_1_n_0
+    SLICE_X44Y75         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.948 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[49]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.948    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[49]_i_1_n_0
+    SLICE_X44Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.062 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[53]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     9.062    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[53]_i_1_n_0
+    SLICE_X44Y77         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.176 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[57]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     9.176    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[57]_i_1_n_0
+    SLICE_X44Y78         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.223     9.399 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[61]_i_1/O[0]
+                         net (fo=1, routed)           0.000     9.399    bd_0_i/hls_inst/inst/add_ln29_fu_577_p2[58]
+    SLICE_X44Y78         FDRE                                         r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[58]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=2303, unset)         0.924    10.924    bd_0_i/hls_inst/inst/ap_clk
+    SLICE_X44Y78         FDRE                                         r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[58]/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    SLICE_X44Y78         FDRE (Setup_fdre_C_D)        0.062    10.951    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[58]
+  -------------------------------------------------------------------
+                         required time                         10.951    
+                         arrival time                          -9.399    
+  -------------------------------------------------------------------
+                         slack                                  1.552    
+
+Slack (MET) :             1.555ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/ush_1_reg_957_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[55]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        8.423ns  (logic 3.720ns (44.164%)  route 4.703ns (55.836%))
+  Logic Levels:           19  (CARRY4=14 LUT3=2 LUT4=1 LUT6=2)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=2303, unset)         0.973     0.973    bd_0_i/hls_inst/inst/ap_clk
+    SLICE_X38Y72         FDRE                                         r  bd_0_i/hls_inst/inst/ush_1_reg_957_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X38Y72         FDRE (Prop_fdre_C_Q)         0.478     1.451 r  bd_0_i/hls_inst/inst/ush_1_reg_957_reg[0]/Q
+                         net (fo=54, routed)          1.232     2.683    bd_0_i/hls_inst/inst/ush_1_reg_957[0]
+    SLICE_X40Y70         LUT4 (Prop_lut4_I2_O)        0.301     2.984 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_31/O
+                         net (fo=1, routed)           0.669     3.653    bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_31_n_0
+    SLICE_X40Y70         LUT6 (Prop_lut6_I5_O)        0.124     3.777 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_29/O
+                         net (fo=2, routed)           0.638     4.415    bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_29_n_0
+    SLICE_X40Y71         LUT3 (Prop_lut3_I2_O)        0.152     4.567 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_23/O
+                         net (fo=3, routed)           0.700     5.268    bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_23_n_0
+    SLICE_X43Y73         LUT3 (Prop_lut3_I0_O)        0.332     5.600 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[53]_i_10/O
+                         net (fo=5, routed)           0.842     6.442    bd_0_i/hls_inst/inst/add_ln29_reg_967[53]_i_10_n_0
+    SLICE_X45Y64         LUT6 (Prop_lut6_I2_O)        0.124     6.566 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[5]_i_4/O
+                         net (fo=1, routed)           0.612     7.178    bd_0_i/hls_inst/inst/val_fu_570_p3__0[3]
+    SLICE_X44Y64         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.507     7.685 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[5]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.685    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[5]_i_1_n_0
+    SLICE_X44Y65         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.799 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[9]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.799    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[9]_i_1_n_0
+    SLICE_X44Y66         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.913 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[13]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.913    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[13]_i_1_n_0
+    SLICE_X44Y67         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.027 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[17]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.027    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[17]_i_1_n_0
+    SLICE_X44Y68         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.141 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[21]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.141    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[21]_i_1_n_0
+    SLICE_X44Y69         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.255 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[25]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.255    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[25]_i_1_n_0
+    SLICE_X44Y70         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.369 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[29]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.369    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[29]_i_1_n_0
+    SLICE_X44Y71         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.483 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[33]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.483    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[33]_i_1_n_0
+    SLICE_X44Y72         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.597 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[37]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.597    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[37]_i_1_n_0
+    SLICE_X44Y73         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.711 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[41]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.711    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[41]_i_1_n_0
+    SLICE_X44Y74         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.825 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[45]_i_1/CO[3]
+                         net (fo=1, routed)           0.009     8.834    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[45]_i_1_n_0
+    SLICE_X44Y75         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.948 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[49]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.948    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[49]_i_1_n_0
+    SLICE_X44Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.062 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[53]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     9.062    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[53]_i_1_n_0
+    SLICE_X44Y77         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     9.396 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[57]_i_1/O[1]
+                         net (fo=1, routed)           0.000     9.396    bd_0_i/hls_inst/inst/add_ln29_fu_577_p2[55]
+    SLICE_X44Y77         FDRE                                         r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[55]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=2303, unset)         0.924    10.924    bd_0_i/hls_inst/inst/ap_clk
+    SLICE_X44Y77         FDRE                                         r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[55]/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    SLICE_X44Y77         FDRE (Setup_fdre_C_D)        0.062    10.951    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[55]
+  -------------------------------------------------------------------
+                         required time                         10.951    
+                         arrival time                          -9.396    
+  -------------------------------------------------------------------
+                         slack                                  1.555    
+
+Slack (MET) :             1.576ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/ush_1_reg_957_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[57]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        8.402ns  (logic 3.699ns (44.024%)  route 4.703ns (55.976%))
+  Logic Levels:           19  (CARRY4=14 LUT3=2 LUT4=1 LUT6=2)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=2303, unset)         0.973     0.973    bd_0_i/hls_inst/inst/ap_clk
+    SLICE_X38Y72         FDRE                                         r  bd_0_i/hls_inst/inst/ush_1_reg_957_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X38Y72         FDRE (Prop_fdre_C_Q)         0.478     1.451 r  bd_0_i/hls_inst/inst/ush_1_reg_957_reg[0]/Q
+                         net (fo=54, routed)          1.232     2.683    bd_0_i/hls_inst/inst/ush_1_reg_957[0]
+    SLICE_X40Y70         LUT4 (Prop_lut4_I2_O)        0.301     2.984 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_31/O
+                         net (fo=1, routed)           0.669     3.653    bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_31_n_0
+    SLICE_X40Y70         LUT6 (Prop_lut6_I5_O)        0.124     3.777 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_29/O
+                         net (fo=2, routed)           0.638     4.415    bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_29_n_0
+    SLICE_X40Y71         LUT3 (Prop_lut3_I2_O)        0.152     4.567 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_23/O
+                         net (fo=3, routed)           0.700     5.268    bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_23_n_0
+    SLICE_X43Y73         LUT3 (Prop_lut3_I0_O)        0.332     5.600 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[53]_i_10/O
+                         net (fo=5, routed)           0.842     6.442    bd_0_i/hls_inst/inst/add_ln29_reg_967[53]_i_10_n_0
+    SLICE_X45Y64         LUT6 (Prop_lut6_I2_O)        0.124     6.566 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[5]_i_4/O
+                         net (fo=1, routed)           0.612     7.178    bd_0_i/hls_inst/inst/val_fu_570_p3__0[3]
+    SLICE_X44Y64         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.507     7.685 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[5]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.685    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[5]_i_1_n_0
+    SLICE_X44Y65         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.799 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[9]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.799    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[9]_i_1_n_0
+    SLICE_X44Y66         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.913 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[13]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.913    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[13]_i_1_n_0
+    SLICE_X44Y67         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.027 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[17]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.027    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[17]_i_1_n_0
+    SLICE_X44Y68         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.141 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[21]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.141    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[21]_i_1_n_0
+    SLICE_X44Y69         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.255 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[25]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.255    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[25]_i_1_n_0
+    SLICE_X44Y70         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.369 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[29]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.369    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[29]_i_1_n_0
+    SLICE_X44Y71         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.483 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[33]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.483    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[33]_i_1_n_0
+    SLICE_X44Y72         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.597 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[37]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.597    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[37]_i_1_n_0
+    SLICE_X44Y73         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.711 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[41]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.711    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[41]_i_1_n_0
+    SLICE_X44Y74         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.825 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[45]_i_1/CO[3]
+                         net (fo=1, routed)           0.009     8.834    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[45]_i_1_n_0
+    SLICE_X44Y75         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.948 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[49]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.948    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[49]_i_1_n_0
+    SLICE_X44Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.062 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[53]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     9.062    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[53]_i_1_n_0
+    SLICE_X44Y77         CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.313     9.375 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[57]_i_1/O[3]
+                         net (fo=1, routed)           0.000     9.375    bd_0_i/hls_inst/inst/add_ln29_fu_577_p2[57]
+    SLICE_X44Y77         FDRE                                         r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[57]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=2303, unset)         0.924    10.924    bd_0_i/hls_inst/inst/ap_clk
+    SLICE_X44Y77         FDRE                                         r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[57]/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    SLICE_X44Y77         FDRE (Setup_fdre_C_D)        0.062    10.951    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[57]
+  -------------------------------------------------------------------
+                         required time                         10.951    
+                         arrival time                          -9.375    
+  -------------------------------------------------------------------
+                         slack                                  1.576    
+
+Slack (MET) :             1.650ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/ush_1_reg_957_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[56]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        8.328ns  (logic 3.625ns (43.527%)  route 4.703ns (56.473%))
+  Logic Levels:           19  (CARRY4=14 LUT3=2 LUT4=1 LUT6=2)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=2303, unset)         0.973     0.973    bd_0_i/hls_inst/inst/ap_clk
+    SLICE_X38Y72         FDRE                                         r  bd_0_i/hls_inst/inst/ush_1_reg_957_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X38Y72         FDRE (Prop_fdre_C_Q)         0.478     1.451 r  bd_0_i/hls_inst/inst/ush_1_reg_957_reg[0]/Q
+                         net (fo=54, routed)          1.232     2.683    bd_0_i/hls_inst/inst/ush_1_reg_957[0]
+    SLICE_X40Y70         LUT4 (Prop_lut4_I2_O)        0.301     2.984 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_31/O
+                         net (fo=1, routed)           0.669     3.653    bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_31_n_0
+    SLICE_X40Y70         LUT6 (Prop_lut6_I5_O)        0.124     3.777 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_29/O
+                         net (fo=2, routed)           0.638     4.415    bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_29_n_0
+    SLICE_X40Y71         LUT3 (Prop_lut3_I2_O)        0.152     4.567 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_23/O
+                         net (fo=3, routed)           0.700     5.268    bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_23_n_0
+    SLICE_X43Y73         LUT3 (Prop_lut3_I0_O)        0.332     5.600 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[53]_i_10/O
+                         net (fo=5, routed)           0.842     6.442    bd_0_i/hls_inst/inst/add_ln29_reg_967[53]_i_10_n_0
+    SLICE_X45Y64         LUT6 (Prop_lut6_I2_O)        0.124     6.566 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[5]_i_4/O
+                         net (fo=1, routed)           0.612     7.178    bd_0_i/hls_inst/inst/val_fu_570_p3__0[3]
+    SLICE_X44Y64         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.507     7.685 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[5]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.685    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[5]_i_1_n_0
+    SLICE_X44Y65         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.799 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[9]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.799    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[9]_i_1_n_0
+    SLICE_X44Y66         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.913 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[13]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.913    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[13]_i_1_n_0
+    SLICE_X44Y67         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.027 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[17]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.027    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[17]_i_1_n_0
+    SLICE_X44Y68         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.141 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[21]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.141    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[21]_i_1_n_0
+    SLICE_X44Y69         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.255 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[25]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.255    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[25]_i_1_n_0
+    SLICE_X44Y70         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.369 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[29]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.369    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[29]_i_1_n_0
+    SLICE_X44Y71         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.483 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[33]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.483    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[33]_i_1_n_0
+    SLICE_X44Y72         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.597 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[37]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.597    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[37]_i_1_n_0
+    SLICE_X44Y73         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.711 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[41]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.711    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[41]_i_1_n_0
+    SLICE_X44Y74         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.825 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[45]_i_1/CO[3]
+                         net (fo=1, routed)           0.009     8.834    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[45]_i_1_n_0
+    SLICE_X44Y75         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.948 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[49]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.948    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[49]_i_1_n_0
+    SLICE_X44Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.062 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[53]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     9.062    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[53]_i_1_n_0
+    SLICE_X44Y77         CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.239     9.301 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[57]_i_1/O[2]
+                         net (fo=1, routed)           0.000     9.301    bd_0_i/hls_inst/inst/add_ln29_fu_577_p2[56]
+    SLICE_X44Y77         FDRE                                         r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[56]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=2303, unset)         0.924    10.924    bd_0_i/hls_inst/inst/ap_clk
+    SLICE_X44Y77         FDRE                                         r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[56]/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    SLICE_X44Y77         FDRE (Setup_fdre_C_D)        0.062    10.951    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[56]
+  -------------------------------------------------------------------
+                         required time                         10.951    
+                         arrival time                          -9.301    
+  -------------------------------------------------------------------
+                         slack                                  1.650    
+
+Slack (MET) :             1.666ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/ush_1_reg_957_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[54]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        8.312ns  (logic 3.609ns (43.418%)  route 4.703ns (56.582%))
+  Logic Levels:           19  (CARRY4=14 LUT3=2 LUT4=1 LUT6=2)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=2303, unset)         0.973     0.973    bd_0_i/hls_inst/inst/ap_clk
+    SLICE_X38Y72         FDRE                                         r  bd_0_i/hls_inst/inst/ush_1_reg_957_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X38Y72         FDRE (Prop_fdre_C_Q)         0.478     1.451 r  bd_0_i/hls_inst/inst/ush_1_reg_957_reg[0]/Q
+                         net (fo=54, routed)          1.232     2.683    bd_0_i/hls_inst/inst/ush_1_reg_957[0]
+    SLICE_X40Y70         LUT4 (Prop_lut4_I2_O)        0.301     2.984 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_31/O
+                         net (fo=1, routed)           0.669     3.653    bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_31_n_0
+    SLICE_X40Y70         LUT6 (Prop_lut6_I5_O)        0.124     3.777 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_29/O
+                         net (fo=2, routed)           0.638     4.415    bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_29_n_0
+    SLICE_X40Y71         LUT3 (Prop_lut3_I2_O)        0.152     4.567 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_23/O
+                         net (fo=3, routed)           0.700     5.268    bd_0_i/hls_inst/inst/add_ln29_reg_967[61]_i_23_n_0
+    SLICE_X43Y73         LUT3 (Prop_lut3_I0_O)        0.332     5.600 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[53]_i_10/O
+                         net (fo=5, routed)           0.842     6.442    bd_0_i/hls_inst/inst/add_ln29_reg_967[53]_i_10_n_0
+    SLICE_X45Y64         LUT6 (Prop_lut6_I2_O)        0.124     6.566 r  bd_0_i/hls_inst/inst/add_ln29_reg_967[5]_i_4/O
+                         net (fo=1, routed)           0.612     7.178    bd_0_i/hls_inst/inst/val_fu_570_p3__0[3]
+    SLICE_X44Y64         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.507     7.685 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[5]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.685    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[5]_i_1_n_0
+    SLICE_X44Y65         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.799 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[9]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.799    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[9]_i_1_n_0
+    SLICE_X44Y66         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.913 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[13]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.913    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[13]_i_1_n_0
+    SLICE_X44Y67         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.027 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[17]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.027    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[17]_i_1_n_0
+    SLICE_X44Y68         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.141 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[21]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.141    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[21]_i_1_n_0
+    SLICE_X44Y69         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.255 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[25]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.255    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[25]_i_1_n_0
+    SLICE_X44Y70         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.369 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[29]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.369    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[29]_i_1_n_0
+    SLICE_X44Y71         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.483 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[33]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.483    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[33]_i_1_n_0
+    SLICE_X44Y72         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.597 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[37]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.597    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[37]_i_1_n_0
+    SLICE_X44Y73         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.711 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[41]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.711    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[41]_i_1_n_0
+    SLICE_X44Y74         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.825 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[45]_i_1/CO[3]
+                         net (fo=1, routed)           0.009     8.834    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[45]_i_1_n_0
+    SLICE_X44Y75         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.948 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[49]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.948    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[49]_i_1_n_0
+    SLICE_X44Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.062 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[53]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     9.062    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[53]_i_1_n_0
+    SLICE_X44Y77         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.223     9.285 r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[57]_i_1/O[0]
+                         net (fo=1, routed)           0.000     9.285    bd_0_i/hls_inst/inst/add_ln29_fu_577_p2[54]
+    SLICE_X44Y77         FDRE                                         r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[54]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=2303, unset)         0.924    10.924    bd_0_i/hls_inst/inst/ap_clk
+    SLICE_X44Y77         FDRE                                         r  bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[54]/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    SLICE_X44Y77         FDRE (Setup_fdre_C_D)        0.062    10.951    bd_0_i/hls_inst/inst/add_ln29_reg_967_reg[54]
+  -------------------------------------------------------------------
+                         required time                         10.951    
+                         arrival time                          -9.285    
+  -------------------------------------------------------------------
+                         slack                                  1.666    
+
+
+
+

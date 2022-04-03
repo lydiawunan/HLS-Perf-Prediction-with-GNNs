@@ -1,0 +1,78 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020clg484-1 
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 155.809 MB.
+INFO: [HLS 200-10] Analyzing design file 'dfg_199.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.64 seconds. CPU system time: 0.37 seconds. Elapsed time: 0.51 seconds; current allocated memory: 156.409 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::fp_struct(double)' into 'long generic_cast_IEEE754<long, (ap_q_mode)6, double>(double, bool, hls::enable_if<std::numeric_limits<long>::is_signed, bool>::type)' (/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::mantissa() const' into 'long generic_cast_IEEE754<long, (ap_q_mode)6, double>(double, bool, hls::enable_if<std::numeric_limits<long>::is_signed, bool>::type)' (/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::expv() const' into 'long generic_cast_IEEE754<long, (ap_q_mode)6, double>(double, bool, hls::enable_if<std::numeric_limits<long>::is_signed, bool>::type)' (/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::__signbit() const' into 'long generic_cast_IEEE754<long, (ap_q_mode)6, double>(double, bool, hls::enable_if<std::numeric_limits<long>::is_signed, bool>::type)' (/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'long generic_cast_IEEE754<long, (ap_q_mode)6, double>(double, bool, hls::enable_if<std::numeric_limits<long>::is_signed, bool>::type)' into 'long generic_cast_IEEE754<long, double>(double, bool)' (/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116:0)
+INFO: [HLS 214-178] Inlining function 'long generic_cast_IEEE754<long, double>(double, bool)' into '__hls_fptosi_double_i64' (/wrk/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/src/lib_floatconversion.cpp:56:0)
+INFO: [HLS 214-178] Inlining function '__hls_fptosi_double_i64' into 'fn1' (dfg_199.c:8:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.52 seconds. CPU system time: 0.43 seconds. Elapsed time: 3.79 seconds; current allocated memory: 157.676 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 157.693 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 172.177 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.16 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.17 seconds; current allocated memory: 194.500 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.23 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.24 seconds; current allocated memory: 238.266 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.13 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.14 seconds; current allocated memory: 241.491 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'fn1' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fn1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.19 seconds. CPU system time: 0 seconds. Elapsed time: 0.19 seconds; current allocated memory: 242.209 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.5 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.52 seconds; current allocated memory: 243.045 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fn1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'fn1/p' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fn1/p_9' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fn1/p_11' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fn1/p_13' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fn1/p_19' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'fn1' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Generating core module 'dadd_64ns_64ns_64_7_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'ddiv_64ns_64ns_64_59_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_5_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fpext_32ns_64_2_no_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sdiv_17ns_17ns_9_21_seq_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sdiv_64ns_11ns_16_68_seq_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sitodp_32s_64_6_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sitofp_32ns_32_6_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'srem_16ns_11ns_16_20_seq_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'srem_8s_11ns_11_12_seq_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'srem_9s_17ns_17_13_seq_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fn1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.24 seconds. CPU system time: 0 seconds. Elapsed time: 0.24 seconds; current allocated memory: 245.064 MB.
+INFO: [RTMG 210-282] Generating pipelined core: 'fn1_srem_8s_11ns_11_12_seq_1_div'
+INFO: [RTMG 210-282] Generating pipelined core: 'fn1_srem_9s_17ns_17_13_seq_1_div'
+INFO: [RTMG 210-282] Generating pipelined core: 'fn1_sdiv_17ns_17ns_9_21_seq_1_div'
+INFO: [RTMG 210-282] Generating pipelined core: 'fn1_sdiv_64ns_11ns_16_68_seq_1_div'
+INFO: [RTMG 210-282] Generating pipelined core: 'fn1_srem_16ns_11ns_16_20_seq_1_div'
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1.45 seconds. CPU system time: 0.04 seconds. Elapsed time: 1.48 seconds; current allocated memory: 254.195 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for fn1.
+INFO: [VLOG 209-307] Generating Verilog RTL for fn1.
+INFO: [HLS 200-789] **** Estimated Fmax: 137.04 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 7.19 seconds. CPU system time: 0.89 seconds. Elapsed time: 7.41 seconds; current allocated memory: 254.339 MB.
+INFO: [HLS 200-1510] Running: export_design -evaluate verilog -format ip_catalog 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+INFO: [IMPL 213-8] Starting RTL evaluation using Vivado ...
