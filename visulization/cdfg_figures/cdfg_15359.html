@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html><body>
+<style>
+    text.label_nRILofhp {
+        text-anchor: middle;
+        font-size: 8px;
+        font-family: Arial, Helvetica, sans-serif;
+        fill: #ff0000;
+        stroke: #ffffff;
+        stroke-width: 0.1px;
+        opacity: 1.0;
+    }
+    .links_nRILofhp line {
+    stroke-opacity: 1.0;
+    }
+    .arrows svg:path {
+        stroke: #666;
+    }
+    .nodes_nRILofhp circle {
+    stroke: #fff;
+    stroke-width: 0.5px;
+    }
+</style>
+
+<svg width="1200" height="1200" id="nRILofhp">        
+    <text x="20" y="20" font-family="sans-serif" font-size="14px" fill="#666" style="cursor: pointer"
+        id='nRILofhp_svg_txt'>[save svg]</text>
+</svg>
+
+<script charset="utf-8" src="https://d3js.org/d3.v4.min.js"></script>
+<script charset="utf-8">
+
+// Load via requireJS if available (jupyter notebook environment)
+try {
+    // Problem: require.config will raise an exception when called for the second time 
+    require.config({
+        paths: {
+            //d3: "https://d3js.org/d3.v4.min"
+            d3: "https://d3js.org/d3.v4.min.js".replace(".js", "")
+        }
+    });
+    console.log("Detected requireJS");
+}
+catch(err){
+    // a reference error indicates that requireJS does not exist. 
+    // other errors may occur due to multiple calls to config
+    if (err instanceof ReferenceError){
+        console.log("Detected no requireJS");
+
+        // Helper function that waits for d3js to be loaded
+        require = function require(symbols, callback) {
+            var ms = 5;
+            window.setTimeout(function(t) {
+                if (window[symbols[0]])
+                    callback(window[symbols[0]]);
+                else 
+                    window.setTimeout(arguments.callee, ms);
+            }, ms);
+        }
+    }
+}
+
+// wait until d3js has been loaded
+require(["d3"], function(d3) {
+    var svg = d3.select("#"+"nRILofhp"), radius = 6, width = +svg.attr("width"), height = +svg.attr("height");
+
+    var color = d3.scaleOrdinal(d3.schemeCategory20);
+
+    var graph = {"links": [{"source": "n_5_misc", "target": "n_7_read", "color": "#999999", "width": 0.5, "weight": 1.0}, {"source": "n_7_read", "target": "n_62_dadd", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_4_misc", "target": "n_8_read", "color": "#999999", "width": 0.5, "weight": 1.0}, {"source": "n_8_read", "target": "n_12_sub", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_8_read", "target": "n_63_uitodp", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_8_read", "target": "n_54_icmp", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_8_read", "target": "n_57_sub", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_3_misc", "target": "n_9_read", "color": "#999999", "width": 0.5, "weight": 1.0}, {"source": "n_9_read", "target": "n_139_icmp", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_2_misc", "target": "n_10_read", "color": "#999999", "width": 0.5, "weight": 1.0}, {"source": "n_10_read", "target": "n_24_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_10_read", "target": "n_49_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_10_read", "target": "n_50_icmp", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_10_read", "target": "n_53_trunc", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_1_misc", "target": "n_11_read", "color": "#999999", "width": 0.5, "weight": 1.0}, {"source": "n_11_read", "target": "n_26_add", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_11_read", "target": "n_145_add", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_12_sub", "target": "n_125_urem", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_24_zext", "target": "n_25_uitodp", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_25_uitodp", "target": "n_89_bitcast", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_26_add", "target": "n_27_udiv", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_27_udiv", "target": "n_28_uitodp", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_28_uitodp", "target": "n_29_dmul", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_29_dmul", "target": "n_30_bitcast", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_30_bitcast", "target": "n_31_partselect", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_30_bitcast", "target": "n_32_trunc", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_31_partselect", "target": "n_35_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_31_partselect", "target": "n_38_sub", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_32_trunc", "target": "n_33_bitconcatenate", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_33_bitconcatenate", "target": "n_34_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_34_zext", "target": "n_43_lshr", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_34_zext", "target": "n_44_shl", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_35_zext", "target": "n_36_add", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_36_add", "target": "n_37_bitselect", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_36_add", "target": "n_40_select", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_37_bitselect", "target": "n_40_select", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_37_bitselect", "target": "n_48_select", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_38_sub", "target": "n_39_sext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_39_sext", "target": "n_40_select", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_40_select", "target": "n_41_sext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_41_sext", "target": "n_42_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_42_zext", "target": "n_43_lshr", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_42_zext", "target": "n_44_shl", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_43_lshr", "target": "n_45_bitselect", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_44_shl", "target": "n_47_partselect", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_45_bitselect", "target": "n_46_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_46_zext", "target": "n_48_select", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_47_partselect", "target": "n_48_select", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_48_select", "target": "n_50_icmp", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_49_zext", "target": "n_137_sub", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_50_icmp", "target": "n_51_br", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_61_misc", "target": "n_51_br", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_61_misc", "target": "n_114_phi", "color": "#999999", "width": 0.5, "weight": 0.25}, {"source": "n_61_misc", "target": "n_115_phi", "color": "#999999", "width": 0.5, "weight": 0.25}, {"source": "n_61_misc", "target": "n_116_phi", "color": "#999999", "width": 0.5, "weight": 0.25}, {"source": "n_61_misc", "target": "n_136_misc", "color": "#999999", "width": 0.5, "weight": 0.16666666666666666}, {"source": "n_113_misc", "target": "n_51_br", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_113_misc", "target": "n_114_phi", "color": "#999999", "width": 0.5, "weight": 0.25}, {"source": "n_113_misc", "target": "n_115_phi", "color": "#999999", "width": 0.5, "weight": 0.25}, {"source": "n_113_misc", "target": "n_116_phi", "color": "#999999", "width": 0.5, "weight": 0.25}, {"source": "n_113_misc", "target": "n_136_misc", "color": "#999999", "width": 0.5, "weight": 0.16666666666666666}, {"source": "n_62_dadd", "target": "n_65_ddiv", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_63_uitodp", "target": "n_64_dadd", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_64_dadd", "target": "n_65_ddiv", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_65_ddiv", "target": "n_66_dadd", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_66_dadd", "target": "n_67_bitcast", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_67_bitcast", "target": "n_68_bitselect", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_67_bitcast", "target": "n_69_partselect", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_67_bitcast", "target": "n_70_trunc", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_68_bitselect", "target": "n_88_select", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_69_partselect", "target": "n_73_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_69_partselect", "target": "n_76_sub", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_70_trunc", "target": "n_71_bitconcatenate", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_71_bitconcatenate", "target": "n_72_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_72_zext", "target": "n_81_lshr", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_72_zext", "target": "n_82_shl", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_73_zext", "target": "n_74_add", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_74_add", "target": "n_75_bitselect", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_74_add", "target": "n_78_select", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_75_bitselect", "target": "n_78_select", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_75_bitselect", "target": "n_86_select", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_76_sub", "target": "n_77_sext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_77_sext", "target": "n_78_select", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_78_select", "target": "n_79_sext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_79_sext", "target": "n_80_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_80_zext", "target": "n_81_lshr", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_80_zext", "target": "n_82_shl", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_81_lshr", "target": "n_83_bitselect", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_82_shl", "target": "n_85_partselect", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_83_bitselect", "target": "n_84_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_84_zext", "target": "n_86_select", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_85_partselect", "target": "n_86_select", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_86_select", "target": "n_87_sub", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_86_select", "target": "n_88_select", "color": "#999999", "width": 0.5, "weight": 0.25}, {"source": "n_87_sub", "target": "n_88_select", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_88_select", "target": "n_114_phi", "color": "#999999", "width": 0.5, "weight": 0.25}, {"source": "n_89_bitcast", "target": "n_90_bitselect", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_89_bitcast", "target": "n_91_partselect", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_89_bitcast", "target": "n_92_trunc", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_90_bitselect", "target": "n_110_select", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_91_partselect", "target": "n_95_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_91_partselect", "target": "n_98_sub", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_92_trunc", "target": "n_93_bitconcatenate", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_93_bitconcatenate", "target": "n_94_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_94_zext", "target": "n_103_lshr", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_94_zext", "target": "n_104_shl", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_95_zext", "target": "n_96_add", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_96_add", "target": "n_97_bitselect", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_96_add", "target": "n_100_select", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_97_bitselect", "target": "n_100_select", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_97_bitselect", "target": "n_108_select", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_98_sub", "target": "n_99_sext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_99_sext", "target": "n_100_select", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_100_select", "target": "n_101_sext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_101_sext", "target": "n_102_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_102_zext", "target": "n_103_lshr", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_102_zext", "target": "n_104_shl", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_103_lshr", "target": "n_105_bitselect", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_104_shl", "target": "n_107_partselect", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_105_bitselect", "target": "n_106_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_106_zext", "target": "n_108_select", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_107_partselect", "target": "n_108_select", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_108_select", "target": "n_109_sub", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_108_select", "target": "n_110_select", "color": "#999999", "width": 0.5, "weight": 0.25}, {"source": "n_109_sub", "target": "n_110_select", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_110_select", "target": "n_111_xor", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_111_xor", "target": "n_115_phi", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_136_misc", "target": "n_112_br", "color": "#999999", "width": 0.5, "weight": 1.0}, {"source": "n_136_misc", "target": "n_60_br", "color": "#999999", "width": 0.5, "weight": 1.0}, {"source": "n_136_misc", "target": "n_153_misc", "color": "#999999", "width": 0.5, "weight": 0.25}, {"source": "n_136_misc", "target": "n_144_misc", "color": "#999999", "width": 0.5, "weight": 0.25}, {"source": "n_53_trunc", "target": "n_55_and", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_54_icmp", "target": "n_55_and", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_55_and", "target": "n_56_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_56_zext", "target": "n_58_udiv", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_57_sub", "target": "n_58_udiv", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_58_udiv", "target": "n_59_trunc", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_59_trunc", "target": "n_116_phi", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_114_phi", "target": "n_131_sext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_115_phi", "target": "n_130_sext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_116_phi", "target": "n_117_sext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_117_sext", "target": "n_118_add", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_118_add", "target": "n_119_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_119_zext", "target": "n_120_urem", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_120_urem", "target": "n_121_trunc", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_121_trunc", "target": "n_122_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_122_zext", "target": "n_123_add", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_123_add", "target": "n_124_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_124_zext", "target": "n_125_urem", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_125_urem", "target": "n_126_trunc", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_126_trunc", "target": "n_127_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_127_zext", "target": "n_128_sub", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_128_sub", "target": "n_129_sext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_129_sext", "target": "n_134_icmp", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_130_sext", "target": "n_132_mul", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_131_sext", "target": "n_132_mul", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_132_mul", "target": "n_133_xor", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_133_xor", "target": "n_134_icmp", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_134_icmp", "target": "n_135_br", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_144_misc", "target": "n_135_br", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_144_misc", "target": "n_154_phi", "color": "#999999", "width": 0.5, "weight": 0.25}, {"source": "n_144_misc", "target": "n_157_misc", "color": "#999999", "width": 0.5, "weight": 0.25}, {"source": "n_153_misc", "target": "n_135_br", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_153_misc", "target": "n_154_phi", "color": "#999999", "width": 0.5, "weight": 0.25}, {"source": "n_153_misc", "target": "n_157_misc", "color": "#999999", "width": 0.5, "weight": 0.25}, {"source": "n_145_add", "target": "n_146_udiv", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_146_udiv", "target": "n_147_partselect", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_146_udiv", "target": "n_148_bitselect", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_146_udiv", "target": "n_149_trunc", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_147_partselect", "target": "n_150_bitconcatenate", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_148_bitselect", "target": "n_150_bitconcatenate", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_149_trunc", "target": "n_150_bitconcatenate", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_150_bitconcatenate", "target": "n_151_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_151_zext", "target": "n_154_phi", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_157_misc", "target": "n_152_br", "color": "#999999", "width": 0.5, "weight": 1.0}, {"source": "n_157_misc", "target": "n_143_br", "color": "#999999", "width": 0.5, "weight": 1.0}, {"source": "n_137_sub", "target": "n_138_sext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_138_sext", "target": "n_141_urem", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_139_icmp", "target": "n_140_select", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_140_select", "target": "n_141_urem", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_141_urem", "target": "n_142_trunc", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_142_trunc", "target": "n_154_phi", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_154_phi", "target": "n_155_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_155_zext", "target": "n_156_ret", "color": "#999999", "width": 0.5, "weight": 1.0}, {"source": "n_52_misc", "target": "n_113_misc", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_52_misc", "target": "n_61_misc", "color": "#999999", "width": 0.5, "weight": 0.5}], "nodes": [{"id": "n_5_misc", "text": "n_5_misc", "color": "#8338EC", "size": 5.0}, {"id": "n_7_read", "text": "n_7_read", "color": "#EAAA00", "size": 5.0}, {"id": "n_62_dadd", "text": "n_62_dadd", "color": "#857437", "size": 5.0}, {"id": "n_4_misc", "text": "n_4_misc", "color": "#8338EC", "size": 5.0}, {"id": "n_8_read", "text": "n_8_read", "color": "#EAAA00", "size": 5.0}, {"id": "n_12_sub", "text": "n_12_sub", "color": "#857437", "size": 5.0}, {"id": "n_63_uitodp", "text": "n_63_uitodp", "color": "#EAAA00", "size": 5.0}, {"id": "n_54_icmp", "text": "n_54_icmp", "color": "#EAAA00", "size": 5.0}, {"id": "n_57_sub", "text": "n_57_sub", "color": "#857437", "size": 5.0}, {"id": "n_3_misc", "text": "n_3_misc", "color": "#8338EC", "size": 5.0}, {"id": "n_9_read", "text": "n_9_read", "color": "#EAAA00", "size": 5.0}, {"id": "n_139_icmp", "text": "n_139_icmp", "color": "#EAAA00", "size": 5.0}, {"id": "n_2_misc", "text": "n_2_misc", "color": "#8338EC", "size": 5.0}, {"id": "n_10_read", "text": "n_10_read", "color": "#EAAA00", "size": 5.0}, {"id": "n_24_zext", "text": "n_24_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_49_zext", "text": "n_49_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_50_icmp", "text": "n_50_icmp", "color": "#EAAA00", "size": 5.0}, {"id": "n_53_trunc", "text": "n_53_trunc", "color": "#EAAA00", "size": 5.0}, {"id": "n_1_misc", "text": "n_1_misc", "color": "#8338EC", "size": 5.0}, {"id": "n_11_read", "text": "n_11_read", "color": "#EAAA00", "size": 5.0}, {"id": "n_26_add", "text": "n_26_add", "color": "#857437", "size": 5.0}, {"id": "n_145_add", "text": "n_145_add", "color": "#857437", "size": 5.0}, {"id": "n_125_urem", "text": "n_125_urem", "color": "#857437", "size": 5.0}, {"id": "n_25_uitodp", "text": "n_25_uitodp", "color": "#EAAA00", "size": 5.0}, {"id": "n_89_bitcast", "text": "n_89_bitcast", "color": "#EAAA00", "size": 5.0}, {"id": "n_27_udiv", "text": "n_27_udiv", "color": "#857437", "size": 5.0}, {"id": "n_28_uitodp", "text": "n_28_uitodp", "color": "#EAAA00", "size": 5.0}, {"id": "n_29_dmul", "text": "n_29_dmul", "color": "#857437", "size": 5.0}, {"id": "n_30_bitcast", "text": "n_30_bitcast", "color": "#EAAA00", "size": 5.0}, {"id": "n_31_partselect", "text": "n_31_partselect", "color": "#EAAA00", "size": 5.0}, {"id": "n_32_trunc", "text": "n_32_trunc", "color": "#EAAA00", "size": 5.0}, {"id": "n_35_zext", "text": "n_35_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_38_sub", "text": "n_38_sub", "color": "#857437", "size": 5.0}, {"id": "n_33_bitconcatenate", "text": "n_33_bitconcatenate", "color": "#EAAA00", "size": 5.0}, {"id": "n_34_zext", "text": "n_34_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_43_lshr", "text": "n_43_lshr", "color": "#EAAA00", "size": 5.0}, {"id": "n_44_shl", "text": "n_44_shl", "color": "#EAAA00", "size": 5.0}, {"id": "n_36_add", "text": "n_36_add", "color": "#857437", "size": 5.0}, {"id": "n_37_bitselect", "text": "n_37_bitselect", "color": "#EAAA00", "size": 5.0}, {"id": "n_40_select", "text": "n_40_select", "color": "#EAAA00", "size": 5.0}, {"id": "n_48_select", "text": "n_48_select", "color": "#EAAA00", "size": 5.0}, {"id": "n_39_sext", "text": "n_39_sext", "color": "#EAAA00", "size": 5.0}, {"id": "n_41_sext", "text": "n_41_sext", "color": "#EAAA00", "size": 5.0}, {"id": "n_42_zext", "text": "n_42_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_45_bitselect", "text": "n_45_bitselect", "color": "#EAAA00", "size": 5.0}, {"id": "n_47_partselect", "text": "n_47_partselect", "color": "#EAAA00", "size": 5.0}, {"id": "n_46_zext", "text": "n_46_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_137_sub", "text": "n_137_sub", "color": "#857437", "size": 5.0}, {"id": "n_51_br", "text": "n_51_br", "color": "#EAAA00", "size": 5.0}, {"id": "n_61_misc", "text": "n_61_misc", "color": "#FF006E", "size": 5.0}, {"id": "n_114_phi", "text": "n_114_phi", "color": "#EAAA00", "size": 5.0}, {"id": "n_115_phi", "text": "n_115_phi", "color": "#EAAA00", "size": 5.0}, {"id": "n_116_phi", "text": "n_116_phi", "color": "#EAAA00", "size": 5.0}, {"id": "n_136_misc", "text": "n_136_misc", "color": "#FF006E", "size": 5.0}, {"id": "n_113_misc", "text": "n_113_misc", "color": "#FF006E", "size": 5.0}, {"id": "n_65_ddiv", "text": "n_65_ddiv", "color": "#857437", "size": 5.0}, {"id": "n_64_dadd", "text": "n_64_dadd", "color": "#857437", "size": 5.0}, {"id": "n_66_dadd", "text": "n_66_dadd", "color": "#857437", "size": 5.0}, {"id": "n_67_bitcast", "text": "n_67_bitcast", "color": "#EAAA00", "size": 5.0}, {"id": "n_68_bitselect", "text": "n_68_bitselect", "color": "#EAAA00", "size": 5.0}, {"id": "n_69_partselect", "text": "n_69_partselect", "color": "#EAAA00", "size": 5.0}, {"id": "n_70_trunc", "text": "n_70_trunc", "color": "#EAAA00", "size": 5.0}, {"id": "n_88_select", "text": "n_88_select", "color": "#EAAA00", "size": 5.0}, {"id": "n_73_zext", "text": "n_73_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_76_sub", "text": "n_76_sub", "color": "#857437", "size": 5.0}, {"id": "n_71_bitconcatenate", "text": "n_71_bitconcatenate", "color": "#EAAA00", "size": 5.0}, {"id": "n_72_zext", "text": "n_72_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_81_lshr", "text": "n_81_lshr", "color": "#EAAA00", "size": 5.0}, {"id": "n_82_shl", "text": "n_82_shl", "color": "#EAAA00", "size": 5.0}, {"id": "n_74_add", "text": "n_74_add", "color": "#857437", "size": 5.0}, {"id": "n_75_bitselect", "text": "n_75_bitselect", "color": "#EAAA00", "size": 5.0}, {"id": "n_78_select", "text": "n_78_select", "color": "#EAAA00", "size": 5.0}, {"id": "n_86_select", "text": "n_86_select", "color": "#EAAA00", "size": 5.0}, {"id": "n_77_sext", "text": "n_77_sext", "color": "#EAAA00", "size": 5.0}, {"id": "n_79_sext", "text": "n_79_sext", "color": "#EAAA00", "size": 5.0}, {"id": "n_80_zext", "text": "n_80_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_83_bitselect", "text": "n_83_bitselect", "color": "#EAAA00", "size": 5.0}, {"id": "n_85_partselect", "text": "n_85_partselect", "color": "#EAAA00", "size": 5.0}, {"id": "n_84_zext", "text": "n_84_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_87_sub", "text": "n_87_sub", "color": "#857437", "size": 5.0}, {"id": "n_90_bitselect", "text": "n_90_bitselect", "color": "#EAAA00", "size": 5.0}, {"id": "n_91_partselect", "text": "n_91_partselect", "color": "#EAAA00", "size": 5.0}, {"id": "n_92_trunc", "text": "n_92_trunc", "color": "#EAAA00", "size": 5.0}, {"id": "n_110_select", "text": "n_110_select", "color": "#EAAA00", "size": 5.0}, {"id": "n_95_zext", "text": "n_95_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_98_sub", "text": "n_98_sub", "color": "#857437", "size": 5.0}, {"id": "n_93_bitconcatenate", "text": "n_93_bitconcatenate", "color": "#EAAA00", "size": 5.0}, {"id": "n_94_zext", "text": "n_94_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_103_lshr", "text": "n_103_lshr", "color": "#EAAA00", "size": 5.0}, {"id": "n_104_shl", "text": "n_104_shl", "color": "#EAAA00", "size": 5.0}, {"id": "n_96_add", "text": "n_96_add", "color": "#857437", "size": 5.0}, {"id": "n_97_bitselect", "text": "n_97_bitselect", "color": "#EAAA00", "size": 5.0}, {"id": "n_100_select", "text": "n_100_select", "color": "#EAAA00", "size": 5.0}, {"id": "n_108_select", "text": "n_108_select", "color": "#EAAA00", "size": 5.0}, {"id": "n_99_sext", "text": "n_99_sext", "color": "#EAAA00", "size": 5.0}, {"id": "n_101_sext", "text": "n_101_sext", "color": "#EAAA00", "size": 5.0}, {"id": "n_102_zext", "text": "n_102_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_105_bitselect", "text": "n_105_bitselect", "color": "#EAAA00", "size": 5.0}, {"id": "n_107_partselect", "text": "n_107_partselect", "color": "#EAAA00", "size": 5.0}, {"id": "n_106_zext", "text": "n_106_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_109_sub", "text": "n_109_sub", "color": "#857437", "size": 5.0}, {"id": "n_111_xor", "text": "n_111_xor", "color": "#EAAA00", "size": 5.0}, {"id": "n_112_br", "text": "n_112_br", "color": "#EAAA00", "size": 5.0}, {"id": "n_60_br", "text": "n_60_br", "color": "#EAAA00", "size": 5.0}, {"id": "n_153_misc", "text": "n_153_misc", "color": "#FF006E", "size": 5.0}, {"id": "n_144_misc", "text": "n_144_misc", "color": "#FF006E", "size": 5.0}, {"id": "n_55_and", "text": "n_55_and", "color": "#EAAA00", "size": 5.0}, {"id": "n_56_zext", "text": "n_56_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_58_udiv", "text": "n_58_udiv", "color": "#857437", "size": 5.0}, {"id": "n_59_trunc", "text": "n_59_trunc", "color": "#EAAA00", "size": 5.0}, {"id": "n_131_sext", "text": "n_131_sext", "color": "#EAAA00", "size": 5.0}, {"id": "n_130_sext", "text": "n_130_sext", "color": "#EAAA00", "size": 5.0}, {"id": "n_117_sext", "text": "n_117_sext", "color": "#EAAA00", "size": 5.0}, {"id": "n_118_add", "text": "n_118_add", "color": "#857437", "size": 5.0}, {"id": "n_119_zext", "text": "n_119_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_120_urem", "text": "n_120_urem", "color": "#857437", "size": 5.0}, {"id": "n_121_trunc", "text": "n_121_trunc", "color": "#EAAA00", "size": 5.0}, {"id": "n_122_zext", "text": "n_122_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_123_add", "text": "n_123_add", "color": "#857437", "size": 5.0}, {"id": "n_124_zext", "text": "n_124_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_126_trunc", "text": "n_126_trunc", "color": "#EAAA00", "size": 5.0}, {"id": "n_127_zext", "text": "n_127_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_128_sub", "text": "n_128_sub", "color": "#857437", "size": 5.0}, {"id": "n_129_sext", "text": "n_129_sext", "color": "#EAAA00", "size": 5.0}, {"id": "n_134_icmp", "text": "n_134_icmp", "color": "#EAAA00", "size": 5.0}, {"id": "n_132_mul", "text": "n_132_mul", "color": "#857437", "size": 5.0}, {"id": "n_133_xor", "text": "n_133_xor", "color": "#EAAA00", "size": 5.0}, {"id": "n_135_br", "text": "n_135_br", "color": "#EAAA00", "size": 5.0}, {"id": "n_154_phi", "text": "n_154_phi", "color": "#EAAA00", "size": 5.0}, {"id": "n_157_misc", "text": "n_157_misc", "color": "#FF006E", "size": 5.0}, {"id": "n_146_udiv", "text": "n_146_udiv", "color": "#857437", "size": 5.0}, {"id": "n_147_partselect", "text": "n_147_partselect", "color": "#EAAA00", "size": 5.0}, {"id": "n_148_bitselect", "text": "n_148_bitselect", "color": "#EAAA00", "size": 5.0}, {"id": "n_149_trunc", "text": "n_149_trunc", "color": "#EAAA00", "size": 5.0}, {"id": "n_150_bitconcatenate", "text": "n_150_bitconcatenate", "color": "#EAAA00", "size": 5.0}, {"id": "n_151_zext", "text": "n_151_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_152_br", "text": "n_152_br", "color": "#EAAA00", "size": 5.0}, {"id": "n_143_br", "text": "n_143_br", "color": "#EAAA00", "size": 5.0}, {"id": "n_138_sext", "text": "n_138_sext", "color": "#EAAA00", "size": 5.0}, {"id": "n_141_urem", "text": "n_141_urem", "color": "#857437", "size": 5.0}, {"id": "n_140_select", "text": "n_140_select", "color": "#EAAA00", "size": 5.0}, {"id": "n_142_trunc", "text": "n_142_trunc", "color": "#EAAA00", "size": 5.0}, {"id": "n_155_zext", "text": "n_155_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_156_ret", "text": "n_156_ret", "color": "#3A86FF", "size": 5.0}, {"id": "n_52_misc", "text": "n_52_misc", "color": "#FF006E", "size": 5.0}]};
+    var directed = true;
+
+    var simulation = d3.forceSimulation()        
+       .force("link", d3.forceLink().id(function(d) { return d.id; }).strength(function(d){return d.weight;}))
+        .force("charge", d3.forceManyBody().strength(-20).distanceMax(1200))
+       .force("repelForce", d3.forceManyBody().strength(-200).distanceMax(100))
+       .force("center", d3.forceCenter(1200 / 2, 1200 / 2))
+       .alphaTarget(0.0);
+
+    svg.append("defs").selectAll("marker")
+        .data(["end"])
+    .enter().append("marker")
+        .attr("id", String)
+        .attr("viewBox", "0 -5 20 20")
+        .attr("refX", 34)
+        .attr("refY", 0)
+        .attr("markerWidth", 15)
+        .attr("markerHeight", 15)
+        .attr("orient", "auto")
+    .append("path")
+        // draws a filled path (triangle) between three points
+        .attr("d", "M0,-5 L20,0 L0,5 z")
+        .attr("fill", '#999')
+        .attr("stroke", 'none');
+
+    var g = svg.append("g")
+        .attr("class", "everything");
+
+    var link = g.append("g")
+        .attr("class", "links_nRILofhp")
+        .selectAll("line")
+        .data(graph.links)
+        .enter().append("line")
+        .attr("stroke-width", function(d) { return d.width; })
+        .attr("stroke", function(d) { return d.color; } );
+
+    if (directed)
+        link.attr("marker-end", "url(#end)");
+
+    var node_g = g.append("g")
+        .attr("class", "nodes_nRILofhp")
+        .selectAll("circle")
+        .data(graph.nodes)
+        .enter()
+        .append("g"); 
+
+    var node = node_g.append("circle")
+        .attr('id', function(d) { return d.id; })
+        .attr("r", function(d) { return d.size; })
+        .attr("fill", function(d) { return d.color; })
+        .call(d3.drag()
+            .on("start", dragstarted)
+            .on("drag", dragged)
+            .on("end", dragended));
+
+    var text = node_g.append("text")
+    .attr("x", [0, -10][0])
+    .attr("y", [0, -10][1]+3)
+    .attr("id", function(d) {return d.id; })
+    .attr("class", "label_nRILofhp")
+    .text(function(d) { return d.id; });
+
+    node.append("title")
+        .text(function(d) { return d.text; });
+
+    var zoom_handler = d3.zoom()
+        .on("zoom", zoom_actions);
+    zoom_handler(svg);
+
+    // attach event handler for svg export
+    d3.select('#nRILofhp_svg_txt').on("click", save_svg);
+
+    simulation
+        .nodes(graph.nodes)
+        .on("tick", ticked);
+
+    simulation.force("link")
+        .links(graph.links);
+
+    function ticked() {
+        link.attr("x1", function(d) { return d.source.x; })
+            .attr("y1", function(d) { return d.source.y; })
+            .attr("x2", function(d) { return d.target.x; })
+            .attr("y2", function(d) { return d.target.y; });
+
+         text.attr("transform", transform);
+
+
+        text.attr("cx", function(d) { return d.x; })
+            .attr("cy", function(d) { return d.y; });
+
+        node.attr("cx", function(d) { return d.x; })
+            .attr("cy", function(d) { return d.y; });
+    }
+
+    function transform(d) {
+        return "translate(" + d.x + "," + d.y + ")";
+    }
+
+    function dragstarted(d) {
+    if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+    d.fx = d.x;
+    d.fy = d.y;
+    }
+
+    function zoom_actions(){
+        g.attr("transform", d3.event.transform)
+    }    
+
+    function dragged(d) {
+    d.fx = d3.event.x;
+    d.fy = d3.event.y;
+    }
+
+    function dragended(d) {
+    if (!d3.event.active) simulation.alphaTarget(0);
+    d.fx = null;
+    d.fy = null;
+    }
+
+    function to_svg() {
+        // Returns a SVG representation of the current state of the visualisation
+	    var svg  = document.getElementById('nRILofhp');
+	    var xml = (new XMLSerializer).serializeToString(svg);
+        return xml;
+    }
+
+    function save_svg() {
+        var svg  = document.getElementById('nRILofhp');
+        var xml = (new XMLSerializer).serializeToString(svg);        
+        var blob = new Blob([xml], {type: 'text/xml'});
+        if(window.navigator.msSaveOrOpenBlob) {
+            window.navigator.msSaveBlob(blob, 'network.svg');
+        }
+        else{
+            var elem = window.document.createElement('a');
+            elem.href = window.URL.createObjectURL(blob);
+            elem.download = 'network.svg';
+            document.body.appendChild(elem);
+            elem.click();
+            document.body.removeChild(elem);
+        }
+    }
+});
+</script></body>
+</html>

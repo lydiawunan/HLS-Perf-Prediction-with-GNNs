@@ -1,0 +1,1016 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+| Date         : Wed Apr 14 14:05:49 2021
+| Host         : seal-lambda running 64-bit Ubuntu 18.04.5 LTS
+| Command      : report_timing -max_paths 10 -file ./report/fn1_timing_paths_routed.rpt
+| Design       : bd_0_wrapper
+| Device       : 7z020-clg484
+| Speed File   : -1  PRODUCTION 1.12 2019-11-22
+----------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             0.901ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[6]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        9.046ns  (logic 3.361ns (37.154%)  route 5.685ns (62.846%))
+  Logic Levels:           19  (CARRY4=17 LUT3=1 LUT4=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=1744, unset)         0.973     0.973    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/ap_clk
+    SLICE_X105Y80        FDRE                                         r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X105Y80        FDRE (Prop_fdre_C_Q)         0.456     1.429 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg[0]/Q
+                         net (fo=129, routed)         3.669     5.098    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg_n_0_[0]
+    SLICE_X84Y70         LUT3 (Prop_lut3_I0_O)        0.124     5.222 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry_i_7__0/O
+                         net (fo=1, routed)           0.000     5.222    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry_i_7__0_n_0
+    SLICE_X84Y70         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     5.772 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry/CO[3]
+                         net (fo=1, routed)           0.000     5.772    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry_n_0
+    SLICE_X84Y71         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.886 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     5.886    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__0_n_0
+    SLICE_X84Y72         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.000 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     6.000    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__1_n_0
+    SLICE_X84Y73         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.114 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     6.114    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__2_n_0
+    SLICE_X84Y74         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.228 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__3/CO[3]
+                         net (fo=1, routed)           0.009     6.237    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__3_n_0
+    SLICE_X84Y75         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.351 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     6.351    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__4_n_0
+    SLICE_X84Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.465 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     6.465    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__5_n_0
+    SLICE_X84Y77         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.579 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__6/CO[3]
+                         net (fo=1, routed)           0.000     6.579    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__6_n_0
+    SLICE_X84Y78         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.693 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__7/CO[3]
+                         net (fo=1, routed)           0.000     6.693    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__7_n_0
+    SLICE_X84Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.807 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__8/CO[3]
+                         net (fo=1, routed)           0.000     6.807    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__8_n_0
+    SLICE_X84Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.921 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__9/CO[3]
+                         net (fo=1, routed)           0.000     6.921    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__9_n_0
+    SLICE_X84Y81         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.035 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__10/CO[3]
+                         net (fo=1, routed)           0.000     7.035    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__10_n_0
+    SLICE_X84Y82         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.149 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__11/CO[3]
+                         net (fo=1, routed)           0.000     7.149    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__11_n_0
+    SLICE_X84Y83         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.263 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__12/CO[3]
+                         net (fo=1, routed)           0.000     7.263    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__12_n_0
+    SLICE_X84Y84         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.377 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__13/CO[3]
+                         net (fo=1, routed)           0.000     7.377    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__13_n_0
+    SLICE_X84Y85         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.491 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__14/CO[3]
+                         net (fo=2, routed)           0.000     7.491    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/p_2_out[0]
+    SLICE_X84Y86         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222     7.713 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__15/O[0]
+                         net (fo=64, routed)          2.007     9.720    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/p_0_in
+    SLICE_X85Y71         LUT4 (Prop_lut4_I2_O)        0.299    10.019 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp[6]_i_1/O
+                         net (fo=1, routed)           0.000    10.019    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp[6]_i_1_n_0
+    SLICE_X85Y71         FDRE                                         r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[6]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=1744, unset)         0.924    10.924    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/ap_clk
+    SLICE_X85Y71         FDRE                                         r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[6]/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    SLICE_X85Y71         FDRE (Setup_fdre_C_D)        0.031    10.920    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[6]
+  -------------------------------------------------------------------
+                         required time                         10.920    
+                         arrival time                         -10.019    
+  -------------------------------------------------------------------
+                         slack                                  0.901    
+
+Slack (MET) :             0.903ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[9]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        9.044ns  (logic 3.361ns (37.163%)  route 5.683ns (62.837%))
+  Logic Levels:           19  (CARRY4=17 LUT3=1 LUT4=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=1744, unset)         0.973     0.973    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/ap_clk
+    SLICE_X105Y80        FDRE                                         r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X105Y80        FDRE (Prop_fdre_C_Q)         0.456     1.429 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg[0]/Q
+                         net (fo=129, routed)         3.669     5.098    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg_n_0_[0]
+    SLICE_X84Y70         LUT3 (Prop_lut3_I0_O)        0.124     5.222 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry_i_7__0/O
+                         net (fo=1, routed)           0.000     5.222    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry_i_7__0_n_0
+    SLICE_X84Y70         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     5.772 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry/CO[3]
+                         net (fo=1, routed)           0.000     5.772    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry_n_0
+    SLICE_X84Y71         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.886 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     5.886    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__0_n_0
+    SLICE_X84Y72         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.000 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     6.000    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__1_n_0
+    SLICE_X84Y73         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.114 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     6.114    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__2_n_0
+    SLICE_X84Y74         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.228 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__3/CO[3]
+                         net (fo=1, routed)           0.009     6.237    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__3_n_0
+    SLICE_X84Y75         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.351 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     6.351    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__4_n_0
+    SLICE_X84Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.465 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     6.465    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__5_n_0
+    SLICE_X84Y77         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.579 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__6/CO[3]
+                         net (fo=1, routed)           0.000     6.579    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__6_n_0
+    SLICE_X84Y78         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.693 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__7/CO[3]
+                         net (fo=1, routed)           0.000     6.693    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__7_n_0
+    SLICE_X84Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.807 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__8/CO[3]
+                         net (fo=1, routed)           0.000     6.807    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__8_n_0
+    SLICE_X84Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.921 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__9/CO[3]
+                         net (fo=1, routed)           0.000     6.921    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__9_n_0
+    SLICE_X84Y81         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.035 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__10/CO[3]
+                         net (fo=1, routed)           0.000     7.035    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__10_n_0
+    SLICE_X84Y82         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.149 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__11/CO[3]
+                         net (fo=1, routed)           0.000     7.149    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__11_n_0
+    SLICE_X84Y83         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.263 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__12/CO[3]
+                         net (fo=1, routed)           0.000     7.263    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__12_n_0
+    SLICE_X84Y84         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.377 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__13/CO[3]
+                         net (fo=1, routed)           0.000     7.377    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__13_n_0
+    SLICE_X84Y85         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.491 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__14/CO[3]
+                         net (fo=2, routed)           0.000     7.491    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/p_2_out[0]
+    SLICE_X84Y86         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222     7.713 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__15/O[0]
+                         net (fo=64, routed)          2.005     9.718    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/p_0_in
+    SLICE_X85Y72         LUT4 (Prop_lut4_I2_O)        0.299    10.017 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp[9]_i_1/O
+                         net (fo=1, routed)           0.000    10.017    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp[9]_i_1_n_0
+    SLICE_X85Y72         FDRE                                         r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[9]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=1744, unset)         0.924    10.924    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/ap_clk
+    SLICE_X85Y72         FDRE                                         r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[9]/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    SLICE_X85Y72         FDRE (Setup_fdre_C_D)        0.031    10.920    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[9]
+  -------------------------------------------------------------------
+                         required time                         10.920    
+                         arrival time                         -10.017    
+  -------------------------------------------------------------------
+                         slack                                  0.903    
+
+Slack (MET) :             0.907ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[7]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        9.041ns  (logic 3.361ns (37.175%)  route 5.680ns (62.825%))
+  Logic Levels:           19  (CARRY4=17 LUT3=1 LUT4=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=1744, unset)         0.973     0.973    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/ap_clk
+    SLICE_X105Y80        FDRE                                         r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X105Y80        FDRE (Prop_fdre_C_Q)         0.456     1.429 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg[0]/Q
+                         net (fo=129, routed)         3.669     5.098    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg_n_0_[0]
+    SLICE_X84Y70         LUT3 (Prop_lut3_I0_O)        0.124     5.222 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry_i_7__0/O
+                         net (fo=1, routed)           0.000     5.222    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry_i_7__0_n_0
+    SLICE_X84Y70         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     5.772 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry/CO[3]
+                         net (fo=1, routed)           0.000     5.772    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry_n_0
+    SLICE_X84Y71         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.886 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     5.886    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__0_n_0
+    SLICE_X84Y72         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.000 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     6.000    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__1_n_0
+    SLICE_X84Y73         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.114 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     6.114    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__2_n_0
+    SLICE_X84Y74         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.228 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__3/CO[3]
+                         net (fo=1, routed)           0.009     6.237    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__3_n_0
+    SLICE_X84Y75         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.351 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     6.351    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__4_n_0
+    SLICE_X84Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.465 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     6.465    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__5_n_0
+    SLICE_X84Y77         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.579 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__6/CO[3]
+                         net (fo=1, routed)           0.000     6.579    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__6_n_0
+    SLICE_X84Y78         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.693 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__7/CO[3]
+                         net (fo=1, routed)           0.000     6.693    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__7_n_0
+    SLICE_X84Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.807 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__8/CO[3]
+                         net (fo=1, routed)           0.000     6.807    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__8_n_0
+    SLICE_X84Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.921 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__9/CO[3]
+                         net (fo=1, routed)           0.000     6.921    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__9_n_0
+    SLICE_X84Y81         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.035 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__10/CO[3]
+                         net (fo=1, routed)           0.000     7.035    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__10_n_0
+    SLICE_X84Y82         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.149 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__11/CO[3]
+                         net (fo=1, routed)           0.000     7.149    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__11_n_0
+    SLICE_X84Y83         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.263 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__12/CO[3]
+                         net (fo=1, routed)           0.000     7.263    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__12_n_0
+    SLICE_X84Y84         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.377 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__13/CO[3]
+                         net (fo=1, routed)           0.000     7.377    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__13_n_0
+    SLICE_X84Y85         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.491 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__14/CO[3]
+                         net (fo=2, routed)           0.000     7.491    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/p_2_out[0]
+    SLICE_X84Y86         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222     7.713 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__15/O[0]
+                         net (fo=64, routed)          2.002     9.715    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/p_0_in
+    SLICE_X85Y71         LUT4 (Prop_lut4_I2_O)        0.299    10.014 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp[7]_i_1/O
+                         net (fo=1, routed)           0.000    10.014    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp[7]_i_1_n_0
+    SLICE_X85Y71         FDRE                                         r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=1744, unset)         0.924    10.924    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/ap_clk
+    SLICE_X85Y71         FDRE                                         r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[7]/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    SLICE_X85Y71         FDRE (Setup_fdre_C_D)        0.032    10.921    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[7]
+  -------------------------------------------------------------------
+                         required time                         10.921    
+                         arrival time                         -10.014    
+  -------------------------------------------------------------------
+                         slack                                  0.907    
+
+Slack (MET) :             0.917ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[18]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        9.030ns  (logic 3.361ns (37.219%)  route 5.669ns (62.781%))
+  Logic Levels:           19  (CARRY4=17 LUT3=1 LUT4=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=1744, unset)         0.973     0.973    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/ap_clk
+    SLICE_X105Y80        FDRE                                         r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X105Y80        FDRE (Prop_fdre_C_Q)         0.456     1.429 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg[0]/Q
+                         net (fo=129, routed)         3.669     5.098    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg_n_0_[0]
+    SLICE_X84Y70         LUT3 (Prop_lut3_I0_O)        0.124     5.222 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry_i_7__0/O
+                         net (fo=1, routed)           0.000     5.222    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry_i_7__0_n_0
+    SLICE_X84Y70         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     5.772 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry/CO[3]
+                         net (fo=1, routed)           0.000     5.772    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry_n_0
+    SLICE_X84Y71         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.886 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     5.886    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__0_n_0
+    SLICE_X84Y72         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.000 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     6.000    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__1_n_0
+    SLICE_X84Y73         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.114 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     6.114    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__2_n_0
+    SLICE_X84Y74         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.228 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__3/CO[3]
+                         net (fo=1, routed)           0.009     6.237    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__3_n_0
+    SLICE_X84Y75         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.351 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     6.351    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__4_n_0
+    SLICE_X84Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.465 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     6.465    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__5_n_0
+    SLICE_X84Y77         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.579 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__6/CO[3]
+                         net (fo=1, routed)           0.000     6.579    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__6_n_0
+    SLICE_X84Y78         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.693 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__7/CO[3]
+                         net (fo=1, routed)           0.000     6.693    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__7_n_0
+    SLICE_X84Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.807 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__8/CO[3]
+                         net (fo=1, routed)           0.000     6.807    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__8_n_0
+    SLICE_X84Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.921 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__9/CO[3]
+                         net (fo=1, routed)           0.000     6.921    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__9_n_0
+    SLICE_X84Y81         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.035 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__10/CO[3]
+                         net (fo=1, routed)           0.000     7.035    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__10_n_0
+    SLICE_X84Y82         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.149 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__11/CO[3]
+                         net (fo=1, routed)           0.000     7.149    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__11_n_0
+    SLICE_X84Y83         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.263 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__12/CO[3]
+                         net (fo=1, routed)           0.000     7.263    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__12_n_0
+    SLICE_X84Y84         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.377 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__13/CO[3]
+                         net (fo=1, routed)           0.000     7.377    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__13_n_0
+    SLICE_X84Y85         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.491 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__14/CO[3]
+                         net (fo=2, routed)           0.000     7.491    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/p_2_out[0]
+    SLICE_X84Y86         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222     7.713 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__15/O[0]
+                         net (fo=64, routed)          1.991     9.704    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/p_0_in
+    SLICE_X85Y74         LUT4 (Prop_lut4_I2_O)        0.299    10.003 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp[18]_i_1/O
+                         net (fo=1, routed)           0.000    10.003    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp[18]_i_1_n_0
+    SLICE_X85Y74         FDRE                                         r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[18]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=1744, unset)         0.924    10.924    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/ap_clk
+    SLICE_X85Y74         FDRE                                         r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[18]/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    SLICE_X85Y74         FDRE (Setup_fdre_C_D)        0.031    10.920    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[18]
+  -------------------------------------------------------------------
+                         required time                         10.920    
+                         arrival time                         -10.003    
+  -------------------------------------------------------------------
+                         slack                                  0.917    
+
+Slack (MET) :             0.949ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        8.999ns  (logic 3.361ns (37.349%)  route 5.638ns (62.651%))
+  Logic Levels:           19  (CARRY4=17 LUT3=1 LUT5=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=1744, unset)         0.973     0.973    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/ap_clk
+    SLICE_X105Y80        FDRE                                         r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X105Y80        FDRE (Prop_fdre_C_Q)         0.456     1.429 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg[0]/Q
+                         net (fo=129, routed)         3.669     5.098    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg_n_0_[0]
+    SLICE_X84Y70         LUT3 (Prop_lut3_I0_O)        0.124     5.222 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry_i_7__0/O
+                         net (fo=1, routed)           0.000     5.222    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry_i_7__0_n_0
+    SLICE_X84Y70         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     5.772 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry/CO[3]
+                         net (fo=1, routed)           0.000     5.772    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry_n_0
+    SLICE_X84Y71         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.886 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     5.886    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__0_n_0
+    SLICE_X84Y72         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.000 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     6.000    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__1_n_0
+    SLICE_X84Y73         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.114 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     6.114    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__2_n_0
+    SLICE_X84Y74         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.228 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__3/CO[3]
+                         net (fo=1, routed)           0.009     6.237    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__3_n_0
+    SLICE_X84Y75         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.351 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     6.351    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__4_n_0
+    SLICE_X84Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.465 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     6.465    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__5_n_0
+    SLICE_X84Y77         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.579 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__6/CO[3]
+                         net (fo=1, routed)           0.000     6.579    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__6_n_0
+    SLICE_X84Y78         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.693 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__7/CO[3]
+                         net (fo=1, routed)           0.000     6.693    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__7_n_0
+    SLICE_X84Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.807 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__8/CO[3]
+                         net (fo=1, routed)           0.000     6.807    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__8_n_0
+    SLICE_X84Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.921 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__9/CO[3]
+                         net (fo=1, routed)           0.000     6.921    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__9_n_0
+    SLICE_X84Y81         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.035 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__10/CO[3]
+                         net (fo=1, routed)           0.000     7.035    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__10_n_0
+    SLICE_X84Y82         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.149 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__11/CO[3]
+                         net (fo=1, routed)           0.000     7.149    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__11_n_0
+    SLICE_X84Y83         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.263 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__12/CO[3]
+                         net (fo=1, routed)           0.000     7.263    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__12_n_0
+    SLICE_X84Y84         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.377 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__13/CO[3]
+                         net (fo=1, routed)           0.000     7.377    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__13_n_0
+    SLICE_X84Y85         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.491 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__14/CO[3]
+                         net (fo=2, routed)           0.000     7.491    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/p_2_out[0]
+    SLICE_X84Y86         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222     7.713 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__15/O[0]
+                         net (fo=64, routed)          1.960     9.673    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/p_0_in
+    SLICE_X85Y70         LUT5 (Prop_lut5_I3_O)        0.299     9.972 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp[0]_i_1/O
+                         net (fo=1, routed)           0.000     9.972    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp[0]_i_1_n_0
+    SLICE_X85Y70         FDRE                                         r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=1744, unset)         0.924    10.924    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/ap_clk
+    SLICE_X85Y70         FDRE                                         r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[0]/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    SLICE_X85Y70         FDRE (Setup_fdre_C_D)        0.032    10.921    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[0]
+  -------------------------------------------------------------------
+                         required time                         10.921    
+                         arrival time                          -9.972    
+  -------------------------------------------------------------------
+                         slack                                  0.949    
+
+Slack (MET) :             0.951ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[3]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        8.996ns  (logic 3.361ns (37.361%)  route 5.635ns (62.639%))
+  Logic Levels:           19  (CARRY4=17 LUT3=1 LUT4=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=1744, unset)         0.973     0.973    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/ap_clk
+    SLICE_X105Y80        FDRE                                         r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X105Y80        FDRE (Prop_fdre_C_Q)         0.456     1.429 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg[0]/Q
+                         net (fo=129, routed)         3.669     5.098    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg_n_0_[0]
+    SLICE_X84Y70         LUT3 (Prop_lut3_I0_O)        0.124     5.222 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry_i_7__0/O
+                         net (fo=1, routed)           0.000     5.222    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry_i_7__0_n_0
+    SLICE_X84Y70         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     5.772 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry/CO[3]
+                         net (fo=1, routed)           0.000     5.772    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry_n_0
+    SLICE_X84Y71         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.886 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     5.886    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__0_n_0
+    SLICE_X84Y72         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.000 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     6.000    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__1_n_0
+    SLICE_X84Y73         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.114 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     6.114    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__2_n_0
+    SLICE_X84Y74         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.228 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__3/CO[3]
+                         net (fo=1, routed)           0.009     6.237    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__3_n_0
+    SLICE_X84Y75         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.351 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     6.351    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__4_n_0
+    SLICE_X84Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.465 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     6.465    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__5_n_0
+    SLICE_X84Y77         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.579 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__6/CO[3]
+                         net (fo=1, routed)           0.000     6.579    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__6_n_0
+    SLICE_X84Y78         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.693 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__7/CO[3]
+                         net (fo=1, routed)           0.000     6.693    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__7_n_0
+    SLICE_X84Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.807 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__8/CO[3]
+                         net (fo=1, routed)           0.000     6.807    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__8_n_0
+    SLICE_X84Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.921 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__9/CO[3]
+                         net (fo=1, routed)           0.000     6.921    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__9_n_0
+    SLICE_X84Y81         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.035 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__10/CO[3]
+                         net (fo=1, routed)           0.000     7.035    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__10_n_0
+    SLICE_X84Y82         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.149 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__11/CO[3]
+                         net (fo=1, routed)           0.000     7.149    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__11_n_0
+    SLICE_X84Y83         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.263 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__12/CO[3]
+                         net (fo=1, routed)           0.000     7.263    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__12_n_0
+    SLICE_X84Y84         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.377 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__13/CO[3]
+                         net (fo=1, routed)           0.000     7.377    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__13_n_0
+    SLICE_X84Y85         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.491 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__14/CO[3]
+                         net (fo=2, routed)           0.000     7.491    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/p_2_out[0]
+    SLICE_X84Y86         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222     7.713 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__15/O[0]
+                         net (fo=64, routed)          1.957     9.670    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/p_0_in
+    SLICE_X85Y70         LUT4 (Prop_lut4_I2_O)        0.299     9.969 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp[3]_i_1/O
+                         net (fo=1, routed)           0.000     9.969    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp[3]_i_1_n_0
+    SLICE_X85Y70         FDRE                                         r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=1744, unset)         0.924    10.924    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/ap_clk
+    SLICE_X85Y70         FDRE                                         r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[3]/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    SLICE_X85Y70         FDRE (Setup_fdre_C_D)        0.031    10.920    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[3]
+  -------------------------------------------------------------------
+                         required time                         10.920    
+                         arrival time                          -9.969    
+  -------------------------------------------------------------------
+                         slack                                  0.951    
+
+Slack (MET) :             1.013ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[27]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        8.935ns  (logic 3.361ns (37.616%)  route 5.574ns (62.384%))
+  Logic Levels:           19  (CARRY4=17 LUT3=1 LUT4=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=1744, unset)         0.973     0.973    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/ap_clk
+    SLICE_X105Y80        FDRE                                         r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X105Y80        FDRE (Prop_fdre_C_Q)         0.456     1.429 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg[0]/Q
+                         net (fo=129, routed)         3.669     5.098    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg_n_0_[0]
+    SLICE_X84Y70         LUT3 (Prop_lut3_I0_O)        0.124     5.222 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry_i_7__0/O
+                         net (fo=1, routed)           0.000     5.222    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry_i_7__0_n_0
+    SLICE_X84Y70         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     5.772 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry/CO[3]
+                         net (fo=1, routed)           0.000     5.772    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry_n_0
+    SLICE_X84Y71         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.886 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     5.886    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__0_n_0
+    SLICE_X84Y72         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.000 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     6.000    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__1_n_0
+    SLICE_X84Y73         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.114 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     6.114    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__2_n_0
+    SLICE_X84Y74         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.228 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__3/CO[3]
+                         net (fo=1, routed)           0.009     6.237    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__3_n_0
+    SLICE_X84Y75         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.351 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     6.351    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__4_n_0
+    SLICE_X84Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.465 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     6.465    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__5_n_0
+    SLICE_X84Y77         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.579 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__6/CO[3]
+                         net (fo=1, routed)           0.000     6.579    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__6_n_0
+    SLICE_X84Y78         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.693 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__7/CO[3]
+                         net (fo=1, routed)           0.000     6.693    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__7_n_0
+    SLICE_X84Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.807 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__8/CO[3]
+                         net (fo=1, routed)           0.000     6.807    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__8_n_0
+    SLICE_X84Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.921 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__9/CO[3]
+                         net (fo=1, routed)           0.000     6.921    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__9_n_0
+    SLICE_X84Y81         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.035 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__10/CO[3]
+                         net (fo=1, routed)           0.000     7.035    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__10_n_0
+    SLICE_X84Y82         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.149 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__11/CO[3]
+                         net (fo=1, routed)           0.000     7.149    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__11_n_0
+    SLICE_X84Y83         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.263 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__12/CO[3]
+                         net (fo=1, routed)           0.000     7.263    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__12_n_0
+    SLICE_X84Y84         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.377 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__13/CO[3]
+                         net (fo=1, routed)           0.000     7.377    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__13_n_0
+    SLICE_X84Y85         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.491 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__14/CO[3]
+                         net (fo=2, routed)           0.000     7.491    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/p_2_out[0]
+    SLICE_X84Y86         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222     7.713 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__15/O[0]
+                         net (fo=64, routed)          1.896     9.609    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/p_0_in
+    SLICE_X85Y76         LUT4 (Prop_lut4_I2_O)        0.299     9.908 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp[27]_i_1/O
+                         net (fo=1, routed)           0.000     9.908    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp[27]_i_1_n_0
+    SLICE_X85Y76         FDRE                                         r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[27]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=1744, unset)         0.924    10.924    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/ap_clk
+    SLICE_X85Y76         FDRE                                         r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[27]/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    SLICE_X85Y76         FDRE (Setup_fdre_C_D)        0.032    10.921    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[27]
+  -------------------------------------------------------------------
+                         required time                         10.921    
+                         arrival time                          -9.908    
+  -------------------------------------------------------------------
+                         slack                                  1.013    
+
+Slack (MET) :             1.015ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[26]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        8.932ns  (logic 3.361ns (37.629%)  route 5.571ns (62.371%))
+  Logic Levels:           19  (CARRY4=17 LUT3=1 LUT4=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=1744, unset)         0.973     0.973    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/ap_clk
+    SLICE_X105Y80        FDRE                                         r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X105Y80        FDRE (Prop_fdre_C_Q)         0.456     1.429 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg[0]/Q
+                         net (fo=129, routed)         3.669     5.098    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg_n_0_[0]
+    SLICE_X84Y70         LUT3 (Prop_lut3_I0_O)        0.124     5.222 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry_i_7__0/O
+                         net (fo=1, routed)           0.000     5.222    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry_i_7__0_n_0
+    SLICE_X84Y70         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     5.772 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry/CO[3]
+                         net (fo=1, routed)           0.000     5.772    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry_n_0
+    SLICE_X84Y71         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.886 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     5.886    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__0_n_0
+    SLICE_X84Y72         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.000 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     6.000    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__1_n_0
+    SLICE_X84Y73         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.114 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     6.114    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__2_n_0
+    SLICE_X84Y74         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.228 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__3/CO[3]
+                         net (fo=1, routed)           0.009     6.237    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__3_n_0
+    SLICE_X84Y75         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.351 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     6.351    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__4_n_0
+    SLICE_X84Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.465 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     6.465    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__5_n_0
+    SLICE_X84Y77         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.579 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__6/CO[3]
+                         net (fo=1, routed)           0.000     6.579    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__6_n_0
+    SLICE_X84Y78         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.693 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__7/CO[3]
+                         net (fo=1, routed)           0.000     6.693    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__7_n_0
+    SLICE_X84Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.807 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__8/CO[3]
+                         net (fo=1, routed)           0.000     6.807    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__8_n_0
+    SLICE_X84Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.921 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__9/CO[3]
+                         net (fo=1, routed)           0.000     6.921    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__9_n_0
+    SLICE_X84Y81         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.035 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__10/CO[3]
+                         net (fo=1, routed)           0.000     7.035    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__10_n_0
+    SLICE_X84Y82         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.149 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__11/CO[3]
+                         net (fo=1, routed)           0.000     7.149    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__11_n_0
+    SLICE_X84Y83         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.263 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__12/CO[3]
+                         net (fo=1, routed)           0.000     7.263    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__12_n_0
+    SLICE_X84Y84         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.377 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__13/CO[3]
+                         net (fo=1, routed)           0.000     7.377    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__13_n_0
+    SLICE_X84Y85         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.491 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__14/CO[3]
+                         net (fo=2, routed)           0.000     7.491    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/p_2_out[0]
+    SLICE_X84Y86         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222     7.713 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__15/O[0]
+                         net (fo=64, routed)          1.893     9.606    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/p_0_in
+    SLICE_X85Y76         LUT4 (Prop_lut4_I2_O)        0.299     9.905 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp[26]_i_1/O
+                         net (fo=1, routed)           0.000     9.905    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp[26]_i_1_n_0
+    SLICE_X85Y76         FDRE                                         r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[26]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=1744, unset)         0.924    10.924    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/ap_clk
+    SLICE_X85Y76         FDRE                                         r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[26]/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    SLICE_X85Y76         FDRE (Setup_fdre_C_D)        0.031    10.920    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[26]
+  -------------------------------------------------------------------
+                         required time                         10.920    
+                         arrival time                          -9.905    
+  -------------------------------------------------------------------
+                         slack                                  1.015    
+
+Slack (MET) :             1.076ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[4]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        8.869ns  (logic 3.361ns (37.896%)  route 5.508ns (62.104%))
+  Logic Levels:           19  (CARRY4=17 LUT3=1 LUT4=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=1744, unset)         0.973     0.973    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/ap_clk
+    SLICE_X105Y80        FDRE                                         r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X105Y80        FDRE (Prop_fdre_C_Q)         0.456     1.429 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg[0]/Q
+                         net (fo=129, routed)         3.669     5.098    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg_n_0_[0]
+    SLICE_X84Y70         LUT3 (Prop_lut3_I0_O)        0.124     5.222 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry_i_7__0/O
+                         net (fo=1, routed)           0.000     5.222    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry_i_7__0_n_0
+    SLICE_X84Y70         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     5.772 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry/CO[3]
+                         net (fo=1, routed)           0.000     5.772    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry_n_0
+    SLICE_X84Y71         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.886 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     5.886    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__0_n_0
+    SLICE_X84Y72         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.000 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     6.000    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__1_n_0
+    SLICE_X84Y73         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.114 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     6.114    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__2_n_0
+    SLICE_X84Y74         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.228 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__3/CO[3]
+                         net (fo=1, routed)           0.009     6.237    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__3_n_0
+    SLICE_X84Y75         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.351 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     6.351    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__4_n_0
+    SLICE_X84Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.465 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     6.465    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__5_n_0
+    SLICE_X84Y77         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.579 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__6/CO[3]
+                         net (fo=1, routed)           0.000     6.579    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__6_n_0
+    SLICE_X84Y78         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.693 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__7/CO[3]
+                         net (fo=1, routed)           0.000     6.693    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__7_n_0
+    SLICE_X84Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.807 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__8/CO[3]
+                         net (fo=1, routed)           0.000     6.807    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__8_n_0
+    SLICE_X84Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.921 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__9/CO[3]
+                         net (fo=1, routed)           0.000     6.921    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__9_n_0
+    SLICE_X84Y81         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.035 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__10/CO[3]
+                         net (fo=1, routed)           0.000     7.035    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__10_n_0
+    SLICE_X84Y82         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.149 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__11/CO[3]
+                         net (fo=1, routed)           0.000     7.149    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__11_n_0
+    SLICE_X84Y83         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.263 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__12/CO[3]
+                         net (fo=1, routed)           0.000     7.263    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__12_n_0
+    SLICE_X84Y84         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.377 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__13/CO[3]
+                         net (fo=1, routed)           0.000     7.377    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__13_n_0
+    SLICE_X84Y85         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.491 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__14/CO[3]
+                         net (fo=2, routed)           0.000     7.491    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/p_2_out[0]
+    SLICE_X84Y86         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222     7.713 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__15/O[0]
+                         net (fo=64, routed)          1.830     9.543    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/p_0_in
+    SLICE_X85Y71         LUT4 (Prop_lut4_I2_O)        0.299     9.842 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp[4]_i_1/O
+                         net (fo=1, routed)           0.000     9.842    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp[4]_i_1_n_0
+    SLICE_X85Y71         FDRE                                         r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=1744, unset)         0.924    10.924    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/ap_clk
+    SLICE_X85Y71         FDRE                                         r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[4]/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    SLICE_X85Y71         FDRE (Setup_fdre_C_D)        0.029    10.918    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[4]
+  -------------------------------------------------------------------
+                         required time                         10.918    
+                         arrival time                          -9.842    
+  -------------------------------------------------------------------
+                         slack                                  1.076    
+
+Slack (MET) :             1.081ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[5]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        8.866ns  (logic 3.361ns (37.909%)  route 5.505ns (62.091%))
+  Logic Levels:           19  (CARRY4=17 LUT3=1 LUT4=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.924 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=1744, unset)         0.973     0.973    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/ap_clk
+    SLICE_X105Y80        FDRE                                         r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X105Y80        FDRE (Prop_fdre_C_Q)         0.456     1.429 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg[0]/Q
+                         net (fo=129, routed)         3.669     5.098    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/r_stage_reg_n_0_[0]
+    SLICE_X84Y70         LUT3 (Prop_lut3_I0_O)        0.124     5.222 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry_i_7__0/O
+                         net (fo=1, routed)           0.000     5.222    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry_i_7__0_n_0
+    SLICE_X84Y70         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     5.772 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry/CO[3]
+                         net (fo=1, routed)           0.000     5.772    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry_n_0
+    SLICE_X84Y71         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.886 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     5.886    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__0_n_0
+    SLICE_X84Y72         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.000 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     6.000    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__1_n_0
+    SLICE_X84Y73         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.114 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     6.114    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__2_n_0
+    SLICE_X84Y74         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.228 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__3/CO[3]
+                         net (fo=1, routed)           0.009     6.237    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__3_n_0
+    SLICE_X84Y75         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.351 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     6.351    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__4_n_0
+    SLICE_X84Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.465 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     6.465    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__5_n_0
+    SLICE_X84Y77         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.579 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__6/CO[3]
+                         net (fo=1, routed)           0.000     6.579    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__6_n_0
+    SLICE_X84Y78         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.693 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__7/CO[3]
+                         net (fo=1, routed)           0.000     6.693    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__7_n_0
+    SLICE_X84Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.807 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__8/CO[3]
+                         net (fo=1, routed)           0.000     6.807    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__8_n_0
+    SLICE_X84Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.921 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__9/CO[3]
+                         net (fo=1, routed)           0.000     6.921    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__9_n_0
+    SLICE_X84Y81         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.035 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__10/CO[3]
+                         net (fo=1, routed)           0.000     7.035    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__10_n_0
+    SLICE_X84Y82         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.149 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__11/CO[3]
+                         net (fo=1, routed)           0.000     7.149    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__11_n_0
+    SLICE_X84Y83         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.263 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__12/CO[3]
+                         net (fo=1, routed)           0.000     7.263    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__12_n_0
+    SLICE_X84Y84         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.377 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__13/CO[3]
+                         net (fo=1, routed)           0.000     7.377    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__13_n_0
+    SLICE_X84Y85         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.491 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__14/CO[3]
+                         net (fo=2, routed)           0.000     7.491    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/p_2_out[0]
+    SLICE_X84Y86         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222     7.713 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/cal_tmp_carry__15/O[0]
+                         net (fo=64, routed)          1.827     9.540    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/p_0_in
+    SLICE_X85Y71         LUT4 (Prop_lut4_I2_O)        0.299     9.839 r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp[5]_i_1/O
+                         net (fo=1, routed)           0.000     9.839    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp[5]_i_1_n_0
+    SLICE_X85Y71         FDRE                                         r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[5]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=1744, unset)         0.924    10.924    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/ap_clk
+    SLICE_X85Y71         FDRE                                         r  bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[5]/C
+                         clock pessimism              0.000    10.924    
+                         clock uncertainty           -0.035    10.889    
+    SLICE_X85Y71         FDRE (Setup_fdre_C_D)        0.031    10.920    bd_0_i/hls_inst/inst/urem_64ns_64ns_64_68_seq_1_U3/fn1_urem_64ns_64ns_64_68_seq_1_div_U/fn1_urem_64ns_64ns_64_68_seq_1_div_u_0/remd_tmp_reg[5]
+  -------------------------------------------------------------------
+                         required time                         10.920    
+                         arrival time                          -9.839    
+  -------------------------------------------------------------------
+                         slack                                  1.081    
+
+
+
+

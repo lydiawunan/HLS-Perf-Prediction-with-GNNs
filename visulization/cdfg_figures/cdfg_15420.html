@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html><body>
+<style>
+    text.label_BChAwKQP {
+        text-anchor: middle;
+        font-size: 8px;
+        font-family: Arial, Helvetica, sans-serif;
+        fill: #ff0000;
+        stroke: #ffffff;
+        stroke-width: 0.1px;
+        opacity: 1.0;
+    }
+    .links_BChAwKQP line {
+    stroke-opacity: 1.0;
+    }
+    .arrows svg:path {
+        stroke: #666;
+    }
+    .nodes_BChAwKQP circle {
+    stroke: #fff;
+    stroke-width: 0.5px;
+    }
+</style>
+
+<svg width="1200" height="1200" id="BChAwKQP">        
+    <text x="20" y="20" font-family="sans-serif" font-size="14px" fill="#666" style="cursor: pointer"
+        id='BChAwKQP_svg_txt'>[save svg]</text>
+</svg>
+
+<script charset="utf-8" src="https://d3js.org/d3.v4.min.js"></script>
+<script charset="utf-8">
+
+// Load via requireJS if available (jupyter notebook environment)
+try {
+    // Problem: require.config will raise an exception when called for the second time 
+    require.config({
+        paths: {
+            //d3: "https://d3js.org/d3.v4.min"
+            d3: "https://d3js.org/d3.v4.min.js".replace(".js", "")
+        }
+    });
+    console.log("Detected requireJS");
+}
+catch(err){
+    // a reference error indicates that requireJS does not exist. 
+    // other errors may occur due to multiple calls to config
+    if (err instanceof ReferenceError){
+        console.log("Detected no requireJS");
+
+        // Helper function that waits for d3js to be loaded
+        require = function require(symbols, callback) {
+            var ms = 5;
+            window.setTimeout(function(t) {
+                if (window[symbols[0]])
+                    callback(window[symbols[0]]);
+                else 
+                    window.setTimeout(arguments.callee, ms);
+            }, ms);
+        }
+    }
+}
+
+// wait until d3js has been loaded
+require(["d3"], function(d3) {
+    var svg = d3.select("#"+"BChAwKQP"), radius = 6, width = +svg.attr("width"), height = +svg.attr("height");
+
+    var color = d3.scaleOrdinal(d3.schemeCategory20);
+
+    var graph = {"links": [{"source": "n_5_misc", "target": "n_6_read", "color": "#999999", "width": 0.5, "weight": 1.0}, {"source": "n_6_read", "target": "n_76_sext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_2_misc", "target": "n_7_read", "color": "#999999", "width": 0.5, "weight": 1.0}, {"source": "n_7_read", "target": "n_24_bitcast", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_1_misc", "target": "n_8_read", "color": "#999999", "width": 0.5, "weight": 1.0}, {"source": "n_8_read", "target": "n_23_trunc", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_8_read", "target": "n_80_select", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_3_misc", "target": "n_9_getelementptr", "color": "#999999", "width": 0.5, "weight": 1.0}, {"source": "n_9_getelementptr", "target": "n_45_load", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_4_misc", "target": "n_10_getelementptr", "color": "#999999", "width": 0.5, "weight": 1.0}, {"source": "n_10_getelementptr", "target": "n_69_load", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_23_trunc", "target": "n_68_sext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_24_bitcast", "target": "n_25_partselect", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_24_bitcast", "target": "n_26_trunc", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_25_partselect", "target": "n_29_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_25_partselect", "target": "n_32_sub", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_26_trunc", "target": "n_27_bitconcatenate", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_27_bitconcatenate", "target": "n_28_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_28_zext", "target": "n_37_lshr", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_28_zext", "target": "n_38_shl", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_29_zext", "target": "n_30_add", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_30_add", "target": "n_31_bitselect", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_30_add", "target": "n_34_select", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_31_bitselect", "target": "n_34_select", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_31_bitselect", "target": "n_42_select", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_32_sub", "target": "n_33_sext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_33_sext", "target": "n_34_select", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_34_select", "target": "n_35_sext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_35_sext", "target": "n_36_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_36_zext", "target": "n_37_lshr", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_36_zext", "target": "n_38_shl", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_37_lshr", "target": "n_39_bitselect", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_38_shl", "target": "n_41_partselect", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_39_bitselect", "target": "n_40_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_40_zext", "target": "n_42_select", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_41_partselect", "target": "n_42_select", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_42_select", "target": "n_43_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_43_zext", "target": "n_44_sitofp", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_44_sitofp", "target": "n_48_fdiv", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_45_load", "target": "n_46_bitcast", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_46_bitcast", "target": "n_47_fadd", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_47_fadd", "target": "n_48_fdiv", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_48_fdiv", "target": "n_49_bitcast", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_49_bitcast", "target": "n_50_partselect", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_49_bitcast", "target": "n_51_trunc", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_50_partselect", "target": "n_54_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_50_partselect", "target": "n_57_sub", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_51_trunc", "target": "n_52_bitconcatenate", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_52_bitconcatenate", "target": "n_53_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_53_zext", "target": "n_62_lshr", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_53_zext", "target": "n_63_shl", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_54_zext", "target": "n_55_add", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_55_add", "target": "n_56_bitselect", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_55_add", "target": "n_59_select", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_56_bitselect", "target": "n_59_select", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_56_bitselect", "target": "n_67_select", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_57_sub", "target": "n_58_sext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_58_sext", "target": "n_59_select", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_59_select", "target": "n_60_sext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_60_sext", "target": "n_61_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_61_zext", "target": "n_62_lshr", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_61_zext", "target": "n_63_shl", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_62_lshr", "target": "n_64_bitselect", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_63_shl", "target": "n_66_partselect", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_64_bitselect", "target": "n_65_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_65_zext", "target": "n_67_select", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_66_partselect", "target": "n_67_select", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_67_select", "target": "n_79_icmp", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_68_sext", "target": "n_73_urem", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_69_load", "target": "n_70_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_70_zext", "target": "n_71_add", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_71_add", "target": "n_72_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_72_zext", "target": "n_73_urem", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_73_urem", "target": "n_74_trunc", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_74_trunc", "target": "n_75_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_75_zext", "target": "n_77_mul", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_76_sext", "target": "n_77_mul", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_77_mul", "target": "n_78_sext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_78_sext", "target": "n_79_icmp", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_79_icmp", "target": "n_80_select", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_80_select", "target": "n_81_ret", "color": "#999999", "width": 0.5, "weight": 1.0}], "nodes": [{"id": "n_5_misc", "text": "n_5_misc", "color": "#8338EC", "size": 5.0}, {"id": "n_6_read", "text": "n_6_read", "color": "#EAAA00", "size": 5.0}, {"id": "n_76_sext", "text": "n_76_sext", "color": "#EAAA00", "size": 5.0}, {"id": "n_2_misc", "text": "n_2_misc", "color": "#8338EC", "size": 5.0}, {"id": "n_7_read", "text": "n_7_read", "color": "#EAAA00", "size": 5.0}, {"id": "n_24_bitcast", "text": "n_24_bitcast", "color": "#EAAA00", "size": 5.0}, {"id": "n_1_misc", "text": "n_1_misc", "color": "#8338EC", "size": 5.0}, {"id": "n_8_read", "text": "n_8_read", "color": "#EAAA00", "size": 5.0}, {"id": "n_23_trunc", "text": "n_23_trunc", "color": "#EAAA00", "size": 5.0}, {"id": "n_80_select", "text": "n_80_select", "color": "#EAAA00", "size": 5.0}, {"id": "n_3_misc", "text": "n_3_misc", "color": "#8338EC", "size": 5.0}, {"id": "n_9_getelementptr", "text": "n_9_getelementptr", "color": "#EAAA00", "size": 5.0}, {"id": "n_45_load", "text": "n_45_load", "color": "#EAAA00", "size": 5.0}, {"id": "n_4_misc", "text": "n_4_misc", "color": "#8338EC", "size": 5.0}, {"id": "n_10_getelementptr", "text": "n_10_getelementptr", "color": "#EAAA00", "size": 5.0}, {"id": "n_69_load", "text": "n_69_load", "color": "#EAAA00", "size": 5.0}, {"id": "n_68_sext", "text": "n_68_sext", "color": "#EAAA00", "size": 5.0}, {"id": "n_25_partselect", "text": "n_25_partselect", "color": "#EAAA00", "size": 5.0}, {"id": "n_26_trunc", "text": "n_26_trunc", "color": "#EAAA00", "size": 5.0}, {"id": "n_29_zext", "text": "n_29_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_32_sub", "text": "n_32_sub", "color": "#857437", "size": 5.0}, {"id": "n_27_bitconcatenate", "text": "n_27_bitconcatenate", "color": "#EAAA00", "size": 5.0}, {"id": "n_28_zext", "text": "n_28_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_37_lshr", "text": "n_37_lshr", "color": "#EAAA00", "size": 5.0}, {"id": "n_38_shl", "text": "n_38_shl", "color": "#EAAA00", "size": 5.0}, {"id": "n_30_add", "text": "n_30_add", "color": "#857437", "size": 5.0}, {"id": "n_31_bitselect", "text": "n_31_bitselect", "color": "#EAAA00", "size": 5.0}, {"id": "n_34_select", "text": "n_34_select", "color": "#EAAA00", "size": 5.0}, {"id": "n_42_select", "text": "n_42_select", "color": "#EAAA00", "size": 5.0}, {"id": "n_33_sext", "text": "n_33_sext", "color": "#EAAA00", "size": 5.0}, {"id": "n_35_sext", "text": "n_35_sext", "color": "#EAAA00", "size": 5.0}, {"id": "n_36_zext", "text": "n_36_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_39_bitselect", "text": "n_39_bitselect", "color": "#EAAA00", "size": 5.0}, {"id": "n_41_partselect", "text": "n_41_partselect", "color": "#EAAA00", "size": 5.0}, {"id": "n_40_zext", "text": "n_40_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_43_zext", "text": "n_43_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_44_sitofp", "text": "n_44_sitofp", "color": "#EAAA00", "size": 5.0}, {"id": "n_48_fdiv", "text": "n_48_fdiv", "color": "#857437", "size": 5.0}, {"id": "n_46_bitcast", "text": "n_46_bitcast", "color": "#EAAA00", "size": 5.0}, {"id": "n_47_fadd", "text": "n_47_fadd", "color": "#857437", "size": 5.0}, {"id": "n_49_bitcast", "text": "n_49_bitcast", "color": "#EAAA00", "size": 5.0}, {"id": "n_50_partselect", "text": "n_50_partselect", "color": "#EAAA00", "size": 5.0}, {"id": "n_51_trunc", "text": "n_51_trunc", "color": "#EAAA00", "size": 5.0}, {"id": "n_54_zext", "text": "n_54_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_57_sub", "text": "n_57_sub", "color": "#857437", "size": 5.0}, {"id": "n_52_bitconcatenate", "text": "n_52_bitconcatenate", "color": "#EAAA00", "size": 5.0}, {"id": "n_53_zext", "text": "n_53_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_62_lshr", "text": "n_62_lshr", "color": "#EAAA00", "size": 5.0}, {"id": "n_63_shl", "text": "n_63_shl", "color": "#EAAA00", "size": 5.0}, {"id": "n_55_add", "text": "n_55_add", "color": "#857437", "size": 5.0}, {"id": "n_56_bitselect", "text": "n_56_bitselect", "color": "#EAAA00", "size": 5.0}, {"id": "n_59_select", "text": "n_59_select", "color": "#EAAA00", "size": 5.0}, {"id": "n_67_select", "text": "n_67_select", "color": "#EAAA00", "size": 5.0}, {"id": "n_58_sext", "text": "n_58_sext", "color": "#EAAA00", "size": 5.0}, {"id": "n_60_sext", "text": "n_60_sext", "color": "#EAAA00", "size": 5.0}, {"id": "n_61_zext", "text": "n_61_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_64_bitselect", "text": "n_64_bitselect", "color": "#EAAA00", "size": 5.0}, {"id": "n_66_partselect", "text": "n_66_partselect", "color": "#EAAA00", "size": 5.0}, {"id": "n_65_zext", "text": "n_65_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_79_icmp", "text": "n_79_icmp", "color": "#EAAA00", "size": 5.0}, {"id": "n_73_urem", "text": "n_73_urem", "color": "#857437", "size": 5.0}, {"id": "n_70_zext", "text": "n_70_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_71_add", "text": "n_71_add", "color": "#857437", "size": 5.0}, {"id": "n_72_zext", "text": "n_72_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_74_trunc", "text": "n_74_trunc", "color": "#EAAA00", "size": 5.0}, {"id": "n_75_zext", "text": "n_75_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_77_mul", "text": "n_77_mul", "color": "#857437", "size": 5.0}, {"id": "n_78_sext", "text": "n_78_sext", "color": "#EAAA00", "size": 5.0}, {"id": "n_81_ret", "text": "n_81_ret", "color": "#3A86FF", "size": 5.0}]};
+    var directed = true;
+
+    var simulation = d3.forceSimulation()        
+       .force("link", d3.forceLink().id(function(d) { return d.id; }).strength(function(d){return d.weight;}))
+        .force("charge", d3.forceManyBody().strength(-20).distanceMax(1200))
+       .force("repelForce", d3.forceManyBody().strength(-200).distanceMax(100))
+       .force("center", d3.forceCenter(1200 / 2, 1200 / 2))
+       .alphaTarget(0.0);
+
+    svg.append("defs").selectAll("marker")
+        .data(["end"])
+    .enter().append("marker")
+        .attr("id", String)
+        .attr("viewBox", "0 -5 20 20")
+        .attr("refX", 34)
+        .attr("refY", 0)
+        .attr("markerWidth", 15)
+        .attr("markerHeight", 15)
+        .attr("orient", "auto")
+    .append("path")
+        // draws a filled path (triangle) between three points
+        .attr("d", "M0,-5 L20,0 L0,5 z")
+        .attr("fill", '#999')
+        .attr("stroke", 'none');
+
+    var g = svg.append("g")
+        .attr("class", "everything");
+
+    var link = g.append("g")
+        .attr("class", "links_BChAwKQP")
+        .selectAll("line")
+        .data(graph.links)
+        .enter().append("line")
+        .attr("stroke-width", function(d) { return d.width; })
+        .attr("stroke", function(d) { return d.color; } );
+
+    if (directed)
+        link.attr("marker-end", "url(#end)");
+
+    var node_g = g.append("g")
+        .attr("class", "nodes_BChAwKQP")
+        .selectAll("circle")
+        .data(graph.nodes)
+        .enter()
+        .append("g"); 
+
+    var node = node_g.append("circle")
+        .attr('id', function(d) { return d.id; })
+        .attr("r", function(d) { return d.size; })
+        .attr("fill", function(d) { return d.color; })
+        .call(d3.drag()
+            .on("start", dragstarted)
+            .on("drag", dragged)
+            .on("end", dragended));
+
+    var text = node_g.append("text")
+    .attr("x", [0, -10][0])
+    .attr("y", [0, -10][1]+3)
+    .attr("id", function(d) {return d.id; })
+    .attr("class", "label_BChAwKQP")
+    .text(function(d) { return d.id; });
+
+    node.append("title")
+        .text(function(d) { return d.text; });
+
+    var zoom_handler = d3.zoom()
+        .on("zoom", zoom_actions);
+    zoom_handler(svg);
+
+    // attach event handler for svg export
+    d3.select('#BChAwKQP_svg_txt').on("click", save_svg);
+
+    simulation
+        .nodes(graph.nodes)
+        .on("tick", ticked);
+
+    simulation.force("link")
+        .links(graph.links);
+
+    function ticked() {
+        link.attr("x1", function(d) { return d.source.x; })
+            .attr("y1", function(d) { return d.source.y; })
+            .attr("x2", function(d) { return d.target.x; })
+            .attr("y2", function(d) { return d.target.y; });
+
+         text.attr("transform", transform);
+
+
+        text.attr("cx", function(d) { return d.x; })
+            .attr("cy", function(d) { return d.y; });
+
+        node.attr("cx", function(d) { return d.x; })
+            .attr("cy", function(d) { return d.y; });
+    }
+
+    function transform(d) {
+        return "translate(" + d.x + "," + d.y + ")";
+    }
+
+    function dragstarted(d) {
+    if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+    d.fx = d.x;
+    d.fy = d.y;
+    }
+
+    function zoom_actions(){
+        g.attr("transform", d3.event.transform)
+    }    
+
+    function dragged(d) {
+    d.fx = d3.event.x;
+    d.fy = d3.event.y;
+    }
+
+    function dragended(d) {
+    if (!d3.event.active) simulation.alphaTarget(0);
+    d.fx = null;
+    d.fy = null;
+    }
+
+    function to_svg() {
+        // Returns a SVG representation of the current state of the visualisation
+	    var svg  = document.getElementById('BChAwKQP');
+	    var xml = (new XMLSerializer).serializeToString(svg);
+        return xml;
+    }
+
+    function save_svg() {
+        var svg  = document.getElementById('BChAwKQP');
+        var xml = (new XMLSerializer).serializeToString(svg);        
+        var blob = new Blob([xml], {type: 'text/xml'});
+        if(window.navigator.msSaveOrOpenBlob) {
+            window.navigator.msSaveBlob(blob, 'network.svg');
+        }
+        else{
+            var elem = window.document.createElement('a');
+            elem.href = window.URL.createObjectURL(blob);
+            elem.download = 'network.svg';
+            document.body.appendChild(elem);
+            elem.click();
+            document.body.removeChild(elem);
+        }
+    }
+});
+</script></body>
+</html>

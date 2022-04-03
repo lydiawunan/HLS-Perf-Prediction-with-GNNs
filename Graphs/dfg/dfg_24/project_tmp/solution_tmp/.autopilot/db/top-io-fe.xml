@@ -1,0 +1,19 @@
+<root versionMajor = "1" versionMinor = "5">
+  <kernel src_name="fn1" language="c" hwCtrl="ap_ctrl_hs" mem_layout="fpga64-xilinx-none">
+    <args>
+      <arg id="0" access_type="r" src_name="p" src_type="char*" src_isptr="1" src_bitwidth="8" src_size_or_depth="9">
+        <hw hw_usage="data" hw_interface="BRAM" hw_name="p" hw_bitwidth="8" hw_size_or_depth="9">
+          <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0"/>
+        </hw>
+      </arg>
+      <arg id="1" access_type="r" src_name="p_4" src_type="unsigned short" src_isptr="0" src_bitwidth="16" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="Register" hw_name="p_4" hw_bitwidth="16" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+      </arg>
+    </args>
+    <return src_type="double" src_bitwidth="64" offset="0x0">
+      <hw hw_usage="data" hw_interface="Register" hw_name="return" hw_bitwidth="64"/>
+    </return>
+  </kernel>
+</root>

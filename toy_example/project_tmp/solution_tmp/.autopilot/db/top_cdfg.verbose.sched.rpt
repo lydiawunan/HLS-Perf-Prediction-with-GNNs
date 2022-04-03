@@ -1,0 +1,169 @@
+
+
+================================================================
+== Vitis HLS Report for 'top_cdfg'
+================================================================
+* Date:           Wed May 12 17:07:38 2021
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)
+* Project:        project_tmp
+* Solution:       solution_tmp (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.912 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       12|       12|  0.120 us|  0.120 us|   13|   13|     none|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                  |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name    |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_7_1  |       10|       10|         3|          1|          1|     9|       yes|
+        +------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 3
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 5
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 3, States = { 2 3 4 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 5 3 
+3 --> 4 
+4 --> 2 
+5 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.58>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%spectopmodule_ln0 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_1"   --->   Operation 6 'spectopmodule' 'spectopmodule_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %a"   --->   Operation 7 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %a, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 8 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %b"   --->   Operation 9 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %b, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 10 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (1.58ns)   --->   "%br_ln7 = br void" [top_cdfg.c:7]   --->   Operation 11 'br' 'br_ln7' <Predicate = true> <Delay = 1.58>
+
+State 2 <SV = 1> <Delay = 2.55>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%i = phi i4 %add_ln11, void %.split, i4 1, void" [top_cdfg.c:11]   --->   Operation 12 'phi' 'i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%sum = phi i32 %sum_1, void %.split, i32 0, void"   --->   Operation 13 'phi' 'sum' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 14 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 15 [1/1] (1.30ns)   --->   "%icmp_ln7 = icmp_eq  i4 %i, i4 10" [top_cdfg.c:7]   --->   Operation 15 'icmp' 'icmp_ln7' <Predicate = true> <Delay = 1.30> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 9, i64 9, i64 9"   --->   Operation 16 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%br_ln7 = br i1 %icmp_ln7, void %.split, void" [top_cdfg.c:7]   --->   Operation 17 'br' 'br_ln7' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (1.73ns)   --->   "%add_ln11 = add i4 %i, i4 1" [top_cdfg.c:11]   --->   Operation 18 'add' 'add_ln11' <Predicate = (!icmp_ln7)> <Delay = 1.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%a_read = read i32 @_ssdm_op_Read.ap_auto.i32P0A, i32 %a" [top_cdfg.c:8]   --->   Operation 19 'read' 'a_read' <Predicate = (!icmp_ln7)> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (2.55ns)   --->   "%sum_1 = add i32 %a_read, i32 %sum" [top_cdfg.c:8]   --->   Operation 20 'add' 'sum_1' <Predicate = (!icmp_ln7)> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%shl_ln10 = shl i32 %sum_1, i32 1" [top_cdfg.c:10]   --->   Operation 21 'shl' 'shl_ln10' <Predicate = (!icmp_ln7)> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%write_ln10 = write void @_ssdm_op_Write.ap_auto.i32P0A, i32 %a, i32 %shl_ln10" [top_cdfg.c:10]   --->   Operation 22 'write' 'write_ln10' <Predicate = (!icmp_ln7)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 6.91>
+ST_3 : Operation 23 [1/1] (0.00ns)   --->   "%zext_ln11 = zext i4 %i" [top_cdfg.c:11]   --->   Operation 23 'zext' 'zext_ln11' <Predicate = (!icmp_ln7)> <Delay = 0.00>
+ST_3 : Operation 24 [2/2] (6.91ns)   --->   "%mul_ln11 = mul i32 %sum_1, i32 %zext_ln11" [top_cdfg.c:11]   --->   Operation 24 'mul' 'mul_ln11' <Predicate = (!icmp_ln7)> <Delay = 6.91> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 1> <II = 1> <Delay = 6.91> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 4 <SV = 3> <Delay = 6.91>
+ST_4 : Operation 25 [1/1] (0.00ns)   --->   "%specloopname_ln6 = specloopname void @_ssdm_op_SpecLoopName, void @empty_2" [top_cdfg.c:6]   --->   Operation 25 'specloopname' 'specloopname_ln6' <Predicate = (!icmp_ln7)> <Delay = 0.00>
+ST_4 : Operation 26 [1/2] (6.91ns)   --->   "%mul_ln11 = mul i32 %sum_1, i32 %zext_ln11" [top_cdfg.c:11]   --->   Operation 26 'mul' 'mul_ln11' <Predicate = (!icmp_ln7)> <Delay = 6.91> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 1> <II = 1> <Delay = 6.91> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 27 [1/1] (0.00ns)   --->   "%write_ln11 = write void @_ssdm_op_Write.ap_auto.i32P0A, i32 %b, i32 %mul_ln11" [top_cdfg.c:11]   --->   Operation 27 'write' 'write_ln11' <Predicate = (!icmp_ln7)> <Delay = 0.00>
+ST_4 : Operation 28 [1/1] (0.00ns)   --->   "%br_ln0 = br void"   --->   Operation 28 'br' 'br_ln0' <Predicate = (!icmp_ln7)> <Delay = 0.00>
+
+State 5 <SV = 2> <Delay = 0.00>
+ST_5 : Operation 29 [1/1] (0.00ns)   --->   "%ret_ln13 = ret" [top_cdfg.c:13]   --->   Operation 29 'ret' 'ret_ln13' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 1.59ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i', top_cdfg.c:11) with incoming values : ('add_ln11', top_cdfg.c:11) [10]  (1.59 ns)
+
+ <State 2>: 2.55ns
+The critical path consists of the following:
+	'phi' operation ('sum') with incoming values : ('sum', top_cdfg.c:8) [11]  (0 ns)
+	'add' operation ('sum', top_cdfg.c:8) [20]  (2.55 ns)
+
+ <State 3>: 6.91ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln11', top_cdfg.c:11) [24]  (6.91 ns)
+
+ <State 4>: 6.91ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln11', top_cdfg.c:11) [24]  (6.91 ns)
+
+ <State 5>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

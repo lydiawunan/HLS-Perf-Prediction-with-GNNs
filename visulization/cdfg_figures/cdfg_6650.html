@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html><body>
+<style>
+    text.label_MKKoQJtW {
+        text-anchor: middle;
+        font-size: 8px;
+        font-family: Arial, Helvetica, sans-serif;
+        fill: #ff0000;
+        stroke: #ffffff;
+        stroke-width: 0.1px;
+        opacity: 1.0;
+    }
+    .links_MKKoQJtW line {
+    stroke-opacity: 1.0;
+    }
+    .arrows svg:path {
+        stroke: #666;
+    }
+    .nodes_MKKoQJtW circle {
+    stroke: #fff;
+    stroke-width: 0.5px;
+    }
+</style>
+
+<svg width="1200" height="1200" id="MKKoQJtW">        
+    <text x="20" y="20" font-family="sans-serif" font-size="14px" fill="#666" style="cursor: pointer"
+        id='MKKoQJtW_svg_txt'>[save svg]</text>
+</svg>
+
+<script charset="utf-8" src="https://d3js.org/d3.v4.min.js"></script>
+<script charset="utf-8">
+
+// Load via requireJS if available (jupyter notebook environment)
+try {
+    // Problem: require.config will raise an exception when called for the second time 
+    require.config({
+        paths: {
+            //d3: "https://d3js.org/d3.v4.min"
+            d3: "https://d3js.org/d3.v4.min.js".replace(".js", "")
+        }
+    });
+    console.log("Detected requireJS");
+}
+catch(err){
+    // a reference error indicates that requireJS does not exist. 
+    // other errors may occur due to multiple calls to config
+    if (err instanceof ReferenceError){
+        console.log("Detected no requireJS");
+
+        // Helper function that waits for d3js to be loaded
+        require = function require(symbols, callback) {
+            var ms = 5;
+            window.setTimeout(function(t) {
+                if (window[symbols[0]])
+                    callback(window[symbols[0]]);
+                else 
+                    window.setTimeout(arguments.callee, ms);
+            }, ms);
+        }
+    }
+}
+
+// wait until d3js has been loaded
+require(["d3"], function(d3) {
+    var svg = d3.select("#"+"MKKoQJtW"), radius = 6, width = +svg.attr("width"), height = +svg.attr("height");
+
+    var color = d3.scaleOrdinal(d3.schemeCategory20);
+
+    var graph = {"links": [{"source": "n_3_misc", "target": "n_15_read", "color": "#999999", "width": 0.5, "weight": 1.0}, {"source": "n_15_read", "target": "n_27_xor", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_2_misc", "target": "n_16_read", "color": "#999999", "width": 0.5, "weight": 1.0}, {"source": "n_16_read", "target": "n_34_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_1_misc", "target": "n_17_getelementptr", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_1_misc", "target": "n_32_getelementptr", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_17_getelementptr", "target": "n_18_load", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_18_load", "target": "n_19_add", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_19_add", "target": "n_20_sext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_20_sext", "target": "n_24_sub", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_4_misc", "target": "n_21_getelementptr", "color": "#999999", "width": 0.5, "weight": 1.0}, {"source": "n_21_getelementptr", "target": "n_22_load", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_22_load", "target": "n_23_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_23_zext", "target": "n_25_sub", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_24_sub", "target": "n_25_sub", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_25_sub", "target": "n_26_sext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_26_sext", "target": "n_28_and", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_27_xor", "target": "n_28_and", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_28_and", "target": "n_29_icmp", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_29_icmp", "target": "n_30_br", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_67_misc", "target": "n_30_br", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_67_misc", "target": "n_68_phi", "color": "#999999", "width": 0.5, "weight": 0.25}, {"source": "n_67_misc", "target": "n_70_misc", "color": "#999999", "width": 0.5, "weight": 0.25}, {"source": "n_70_misc", "target": "n_30_br", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_70_misc", "target": "n_66_br", "color": "#999999", "width": 0.5, "weight": 1.0}, {"source": "n_32_getelementptr", "target": "n_33_load", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_33_load", "target": "n_37_sdiv", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_34_zext", "target": "n_35_add", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_35_add", "target": "n_36_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_36_zext", "target": "n_37_sdiv", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_37_sdiv", "target": "n_38_trunc", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_38_trunc", "target": "n_39_icmp", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_39_icmp", "target": "n_40_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_40_zext", "target": "n_41_uitofp", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_41_uitofp", "target": "n_42_fadd", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_42_fadd", "target": "n_43_fdiv", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_43_fdiv", "target": "n_44_bitcast", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_44_bitcast", "target": "n_45_bitselect", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_44_bitcast", "target": "n_46_partselect", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_44_bitcast", "target": "n_47_trunc", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_45_bitselect", "target": "n_65_select", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_46_partselect", "target": "n_50_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_46_partselect", "target": "n_53_sub", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_47_trunc", "target": "n_48_bitconcatenate", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_48_bitconcatenate", "target": "n_49_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_49_zext", "target": "n_58_lshr", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_49_zext", "target": "n_59_shl", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_50_zext", "target": "n_51_add", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_51_add", "target": "n_52_bitselect", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_51_add", "target": "n_55_select", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_52_bitselect", "target": "n_55_select", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_52_bitselect", "target": "n_63_select", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_53_sub", "target": "n_54_sext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_54_sext", "target": "n_55_select", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_55_select", "target": "n_56_sext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_56_sext", "target": "n_57_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_57_zext", "target": "n_58_lshr", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_57_zext", "target": "n_59_shl", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_58_lshr", "target": "n_60_bitselect", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_59_shl", "target": "n_62_partselect", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_60_bitselect", "target": "n_61_zext", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_61_zext", "target": "n_63_select", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_62_partselect", "target": "n_63_select", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_63_select", "target": "n_64_sub", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_63_select", "target": "n_65_select", "color": "#999999", "width": 0.5, "weight": 0.25}, {"source": "n_64_sub", "target": "n_65_select", "color": "#999999", "width": 0.5, "weight": 0.5}, {"source": "n_65_select", "target": "n_68_phi", "color": "#999999", "width": 0.5, "weight": 0.25}, {"source": "n_68_phi", "target": "n_69_ret", "color": "#999999", "width": 0.5, "weight": 1.0}, {"source": "n_31_misc", "target": "n_68_phi", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_31_misc", "target": "n_70_misc", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}, {"source": "n_31_misc", "target": "n_67_misc", "color": "#999999", "width": 0.5, "weight": 0.3333333333333333}], "nodes": [{"id": "n_3_misc", "text": "n_3_misc", "color": "#8338EC", "size": 5.0}, {"id": "n_15_read", "text": "n_15_read", "color": "#EAAA00", "size": 5.0}, {"id": "n_27_xor", "text": "n_27_xor", "color": "#EAAA00", "size": 5.0}, {"id": "n_2_misc", "text": "n_2_misc", "color": "#8338EC", "size": 5.0}, {"id": "n_16_read", "text": "n_16_read", "color": "#EAAA00", "size": 5.0}, {"id": "n_34_zext", "text": "n_34_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_1_misc", "text": "n_1_misc", "color": "#8338EC", "size": 5.0}, {"id": "n_17_getelementptr", "text": "n_17_getelementptr", "color": "#EAAA00", "size": 5.0}, {"id": "n_32_getelementptr", "text": "n_32_getelementptr", "color": "#EAAA00", "size": 5.0}, {"id": "n_18_load", "text": "n_18_load", "color": "#EAAA00", "size": 5.0}, {"id": "n_19_add", "text": "n_19_add", "color": "#857437", "size": 5.0}, {"id": "n_20_sext", "text": "n_20_sext", "color": "#EAAA00", "size": 5.0}, {"id": "n_24_sub", "text": "n_24_sub", "color": "#857437", "size": 5.0}, {"id": "n_4_misc", "text": "n_4_misc", "color": "#8338EC", "size": 5.0}, {"id": "n_21_getelementptr", "text": "n_21_getelementptr", "color": "#EAAA00", "size": 5.0}, {"id": "n_22_load", "text": "n_22_load", "color": "#EAAA00", "size": 5.0}, {"id": "n_23_zext", "text": "n_23_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_25_sub", "text": "n_25_sub", "color": "#857437", "size": 5.0}, {"id": "n_26_sext", "text": "n_26_sext", "color": "#EAAA00", "size": 5.0}, {"id": "n_28_and", "text": "n_28_and", "color": "#EAAA00", "size": 5.0}, {"id": "n_29_icmp", "text": "n_29_icmp", "color": "#EAAA00", "size": 5.0}, {"id": "n_30_br", "text": "n_30_br", "color": "#EAAA00", "size": 5.0}, {"id": "n_67_misc", "text": "n_67_misc", "color": "#FF006E", "size": 5.0}, {"id": "n_68_phi", "text": "n_68_phi", "color": "#EAAA00", "size": 5.0}, {"id": "n_70_misc", "text": "n_70_misc", "color": "#FF006E", "size": 5.0}, {"id": "n_66_br", "text": "n_66_br", "color": "#EAAA00", "size": 5.0}, {"id": "n_33_load", "text": "n_33_load", "color": "#EAAA00", "size": 5.0}, {"id": "n_37_sdiv", "text": "n_37_sdiv", "color": "#857437", "size": 5.0}, {"id": "n_35_add", "text": "n_35_add", "color": "#857437", "size": 5.0}, {"id": "n_36_zext", "text": "n_36_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_38_trunc", "text": "n_38_trunc", "color": "#EAAA00", "size": 5.0}, {"id": "n_39_icmp", "text": "n_39_icmp", "color": "#EAAA00", "size": 5.0}, {"id": "n_40_zext", "text": "n_40_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_41_uitofp", "text": "n_41_uitofp", "color": "#EAAA00", "size": 5.0}, {"id": "n_42_fadd", "text": "n_42_fadd", "color": "#857437", "size": 5.0}, {"id": "n_43_fdiv", "text": "n_43_fdiv", "color": "#857437", "size": 5.0}, {"id": "n_44_bitcast", "text": "n_44_bitcast", "color": "#EAAA00", "size": 5.0}, {"id": "n_45_bitselect", "text": "n_45_bitselect", "color": "#EAAA00", "size": 5.0}, {"id": "n_46_partselect", "text": "n_46_partselect", "color": "#EAAA00", "size": 5.0}, {"id": "n_47_trunc", "text": "n_47_trunc", "color": "#EAAA00", "size": 5.0}, {"id": "n_65_select", "text": "n_65_select", "color": "#EAAA00", "size": 5.0}, {"id": "n_50_zext", "text": "n_50_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_53_sub", "text": "n_53_sub", "color": "#857437", "size": 5.0}, {"id": "n_48_bitconcatenate", "text": "n_48_bitconcatenate", "color": "#EAAA00", "size": 5.0}, {"id": "n_49_zext", "text": "n_49_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_58_lshr", "text": "n_58_lshr", "color": "#EAAA00", "size": 5.0}, {"id": "n_59_shl", "text": "n_59_shl", "color": "#EAAA00", "size": 5.0}, {"id": "n_51_add", "text": "n_51_add", "color": "#857437", "size": 5.0}, {"id": "n_52_bitselect", "text": "n_52_bitselect", "color": "#EAAA00", "size": 5.0}, {"id": "n_55_select", "text": "n_55_select", "color": "#EAAA00", "size": 5.0}, {"id": "n_63_select", "text": "n_63_select", "color": "#EAAA00", "size": 5.0}, {"id": "n_54_sext", "text": "n_54_sext", "color": "#EAAA00", "size": 5.0}, {"id": "n_56_sext", "text": "n_56_sext", "color": "#EAAA00", "size": 5.0}, {"id": "n_57_zext", "text": "n_57_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_60_bitselect", "text": "n_60_bitselect", "color": "#EAAA00", "size": 5.0}, {"id": "n_62_partselect", "text": "n_62_partselect", "color": "#EAAA00", "size": 5.0}, {"id": "n_61_zext", "text": "n_61_zext", "color": "#EAAA00", "size": 5.0}, {"id": "n_64_sub", "text": "n_64_sub", "color": "#857437", "size": 5.0}, {"id": "n_69_ret", "text": "n_69_ret", "color": "#3A86FF", "size": 5.0}, {"id": "n_31_misc", "text": "n_31_misc", "color": "#FF006E", "size": 5.0}]};
+    var directed = true;
+
+    var simulation = d3.forceSimulation()        
+       .force("link", d3.forceLink().id(function(d) { return d.id; }).strength(function(d){return d.weight;}))
+        .force("charge", d3.forceManyBody().strength(-20).distanceMax(1200))
+       .force("repelForce", d3.forceManyBody().strength(-200).distanceMax(100))
+       .force("center", d3.forceCenter(1200 / 2, 1200 / 2))
+       .alphaTarget(0.0);
+
+    svg.append("defs").selectAll("marker")
+        .data(["end"])
+    .enter().append("marker")
+        .attr("id", String)
+        .attr("viewBox", "0 -5 20 20")
+        .attr("refX", 34)
+        .attr("refY", 0)
+        .attr("markerWidth", 15)
+        .attr("markerHeight", 15)
+        .attr("orient", "auto")
+    .append("path")
+        // draws a filled path (triangle) between three points
+        .attr("d", "M0,-5 L20,0 L0,5 z")
+        .attr("fill", '#999')
+        .attr("stroke", 'none');
+
+    var g = svg.append("g")
+        .attr("class", "everything");
+
+    var link = g.append("g")
+        .attr("class", "links_MKKoQJtW")
+        .selectAll("line")
+        .data(graph.links)
+        .enter().append("line")
+        .attr("stroke-width", function(d) { return d.width; })
+        .attr("stroke", function(d) { return d.color; } );
+
+    if (directed)
+        link.attr("marker-end", "url(#end)");
+
+    var node_g = g.append("g")
+        .attr("class", "nodes_MKKoQJtW")
+        .selectAll("circle")
+        .data(graph.nodes)
+        .enter()
+        .append("g"); 
+
+    var node = node_g.append("circle")
+        .attr('id', function(d) { return d.id; })
+        .attr("r", function(d) { return d.size; })
+        .attr("fill", function(d) { return d.color; })
+        .call(d3.drag()
+            .on("start", dragstarted)
+            .on("drag", dragged)
+            .on("end", dragended));
+
+    var text = node_g.append("text")
+    .attr("x", [0, -10][0])
+    .attr("y", [0, -10][1]+3)
+    .attr("id", function(d) {return d.id; })
+    .attr("class", "label_MKKoQJtW")
+    .text(function(d) { return d.id; });
+
+    node.append("title")
+        .text(function(d) { return d.text; });
+
+    var zoom_handler = d3.zoom()
+        .on("zoom", zoom_actions);
+    zoom_handler(svg);
+
+    // attach event handler for svg export
+    d3.select('#MKKoQJtW_svg_txt').on("click", save_svg);
+
+    simulation
+        .nodes(graph.nodes)
+        .on("tick", ticked);
+
+    simulation.force("link")
+        .links(graph.links);
+
+    function ticked() {
+        link.attr("x1", function(d) { return d.source.x; })
+            .attr("y1", function(d) { return d.source.y; })
+            .attr("x2", function(d) { return d.target.x; })
+            .attr("y2", function(d) { return d.target.y; });
+
+         text.attr("transform", transform);
+
+
+        text.attr("cx", function(d) { return d.x; })
+            .attr("cy", function(d) { return d.y; });
+
+        node.attr("cx", function(d) { return d.x; })
+            .attr("cy", function(d) { return d.y; });
+    }
+
+    function transform(d) {
+        return "translate(" + d.x + "," + d.y + ")";
+    }
+
+    function dragstarted(d) {
+    if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+    d.fx = d.x;
+    d.fy = d.y;
+    }
+
+    function zoom_actions(){
+        g.attr("transform", d3.event.transform)
+    }    
+
+    function dragged(d) {
+    d.fx = d3.event.x;
+    d.fy = d3.event.y;
+    }
+
+    function dragended(d) {
+    if (!d3.event.active) simulation.alphaTarget(0);
+    d.fx = null;
+    d.fy = null;
+    }
+
+    function to_svg() {
+        // Returns a SVG representation of the current state of the visualisation
+	    var svg  = document.getElementById('MKKoQJtW');
+	    var xml = (new XMLSerializer).serializeToString(svg);
+        return xml;
+    }
+
+    function save_svg() {
+        var svg  = document.getElementById('MKKoQJtW');
+        var xml = (new XMLSerializer).serializeToString(svg);        
+        var blob = new Blob([xml], {type: 'text/xml'});
+        if(window.navigator.msSaveOrOpenBlob) {
+            window.navigator.msSaveBlob(blob, 'network.svg');
+        }
+        else{
+            var elem = window.document.createElement('a');
+            elem.href = window.URL.createObjectURL(blob);
+            elem.download = 'network.svg';
+            document.body.appendChild(elem);
+            elem.click();
+            document.body.removeChild(elem);
+        }
+    }
+});
+</script></body>
+</html>

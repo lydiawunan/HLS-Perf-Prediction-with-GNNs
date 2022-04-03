@@ -1,0 +1,122 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+| Date         : Mon Apr 12 07:22:17 2021
+| Host         : seal-lambda running 64-bit Ubuntu 18.04.5 LTS
+| Command      : report_control_sets -verbose -file bd_0_wrapper_control_sets_placed.rpt
+| Design       : bd_0_wrapper
+| Device       : xc7z020
+-----------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    44 |
+|    Minimum number of control sets                        |    44 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    89 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    44 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     0 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     3 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     1 |
+| >= 16              |    39 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |            1701 |          434 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |             532 |          140 |
+| Yes          | No                    | No                     |            1910 |          496 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------+--------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+----------------+--------------+
+| Clock Signal |                                                             Enable Signal                                                            |                                                                    Set/Reset Signal                                                                   | Slice Load Count | Bel Load Count | Bels / Slice |
++--------------+--------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+----------------+--------------+
+|  ap_clk      | bd_0_i/hls_inst/inst/mul_64s_8s_64_5_1_U5/fn1_mul_64s_8s_64_5_1_Multiplier_0_U/E[0]                                                  |                                                                                                                                                       |                2 |              8 |         4.00 |
+|  ap_clk      | bd_0_i/hls_inst/inst/ap_CS_fsm_state216                                                                                              |                                                                                                                                                       |                2 |              9 |         4.50 |
+|  ap_clk      | bd_0_i/hls_inst/inst/ap_CS_fsm_state181                                                                                              |                                                                                                                                                       |                3 |              9 |         3.00 |
+|  ap_clk      | bd_0_i/hls_inst/inst/udiv_32s_11ns_23_36_seq_1_U10/fn1_udiv_32s_11ns_23_36_seq_1_div_U/start0                                        |                                                                                                                                                       |                4 |             10 |         2.50 |
+|  ap_clk      |                                                                                                                                      | bd_0_i/hls_inst/inst/sdiv_29ns_32ns_28_33_seq_1_U12/fn1_sdiv_29ns_32ns_28_33_seq_1_div_U/fn1_sdiv_29ns_32ns_28_33_seq_1_div_u_0/r_stage_reg_n_0_[0]   |                4 |             15 |         3.75 |
+|  ap_clk      |                                                                                                                                      | bd_0_i/hls_inst/inst/udiv_32s_11ns_23_36_seq_1_U10/fn1_udiv_32s_11ns_23_36_seq_1_div_U/fn1_udiv_32s_11ns_23_36_seq_1_div_u_0/dividend_tmp[31]_i_1_n_0 |                4 |             23 |         5.75 |
+|  ap_clk      | bd_0_i/hls_inst/inst/udiv_32s_11ns_23_36_seq_1_U10/fn1_udiv_32s_11ns_23_36_seq_1_div_U/fn1_udiv_32s_11ns_23_36_seq_1_div_u_0/E[0]    |                                                                                                                                                       |                8 |             23 |         2.88 |
+|  ap_clk      |                                                                                                                                      | bd_0_i/hls_inst/inst/sitofp_32s_32_6_no_dsp_1_U3/fn1_ap_sitofp_4_no_dsp_32_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/EXP/ZERO_DELAY/i_pipe/op_state[0]      |                8 |             25 |         3.12 |
+|  ap_clk      |                                                                                                                                      | bd_0_i/hls_inst/inst/uitofp_64s_32_6_no_dsp_1_U2/fn1_ap_uitofp_4_no_dsp_64_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/EXP/ZERO_DELAY/i_pipe/op_state[0]      |                8 |             25 |         3.12 |
+|  ap_clk      | bd_0_i/hls_inst/inst/sdiv_29ns_32ns_28_33_seq_1_U12/fn1_sdiv_29ns_32ns_28_33_seq_1_div_U/fn1_sdiv_29ns_32ns_28_33_seq_1_div_u_0/E[0] |                                                                                                                                                       |                7 |             28 |         4.00 |
+|  ap_clk      | bd_0_i/hls_inst/inst/ap_CS_fsm_state217                                                                                              |                                                                                                                                                       |                9 |             31 |         3.44 |
+|  ap_clk      | bd_0_i/hls_inst/inst/ap_CS_fsm_state139                                                                                              |                                                                                                                                                       |               10 |             31 |         3.10 |
+|  ap_clk      | bd_0_i/hls_inst/inst/ap_CS_fsm_state180                                                                                              |                                                                                                                                                       |               11 |             31 |         2.82 |
+|  ap_clk      |                                                                                                                                      | bd_0_i/hls_inst/inst/sitodp_32s_64_6_no_dsp_1_U4/fn1_ap_sitodp_4_no_dsp_32_u/inst/i_synth/FIX_TO_FLT_OP.SPD.OP/EXP/ZERO_DELAY/i_pipe/op_state[0]      |                8 |             31 |         3.88 |
+|  ap_clk      | bd_0_i/hls_inst/inst/ap_CS_fsm_state185                                                                                              |                                                                                                                                                       |               10 |             32 |         3.20 |
+|  ap_clk      | bd_0_i/hls_inst/inst/ap_CS_fsm_state175                                                                                              |                                                                                                                                                       |                8 |             32 |         4.00 |
+|  ap_clk      | bd_0_i/hls_inst/inst/ap_CS_fsm_state144                                                                                              |                                                                                                                                                       |               12 |             32 |         2.67 |
+|  ap_clk      | bd_0_i/hls_inst/inst/ap_CS_fsm_state215                                                                                              |                                                                                                                                                       |               12 |             32 |         2.67 |
+|  ap_clk      |                                                                                                                                      | bd_0_i/hls_inst/inst/faddfsub_32ns_32ns_32_5_full_dsp_1_U1/din1_buf1[31]_i_1_n_0                                                                      |                7 |             32 |         4.57 |
+|  ap_clk      | bd_0_i/hls_inst/inst/ap_CS_fsm_state133                                                                                              |                                                                                                                                                       |               10 |             32 |         3.20 |
+|  ap_clk      | bd_0_i/hls_inst/inst/urem_64ns_64ns_32_68_seq_1_U9/fn1_urem_64ns_64ns_32_68_seq_1_div_U/fn1_urem_64ns_64ns_32_68_seq_1_div_u_0/E[0]  |                                                                                                                                                       |                6 |             32 |         5.33 |
+|  ap_clk      | bd_0_i/hls_inst/inst/sdiv_64ns_11ns_32_68_seq_1_U8/fn1_sdiv_64ns_11ns_32_68_seq_1_div_U/fn1_sdiv_64ns_11ns_32_68_seq_1_div_u_0/E[0]  |                                                                                                                                                       |                8 |             32 |         4.00 |
+|  ap_clk      | bd_0_i/hls_inst/inst/sdiv_29ns_32ns_28_33_seq_1_U12/fn1_sdiv_29ns_32ns_28_33_seq_1_div_U/start0                                      |                                                                                                                                                       |                8 |             33 |         4.12 |
+|  ap_clk      | bd_0_i/hls_inst/inst/ap_CS_fsm_state145                                                                                              |                                                                                                                                                       |               10 |             33 |         3.30 |
+|  ap_clk      | bd_0_i/hls_inst/inst/ap_CS_fsm_state146                                                                                              |                                                                                                                                                       |                8 |             47 |         5.88 |
+|  ap_clk      |                                                                                                                                      | bd_0_i/hls_inst/inst/udiv_64s_64ns_64_68_seq_1_U6/fn1_udiv_64s_64ns_64_68_seq_1_div_U/fn1_udiv_64s_64ns_64_68_seq_1_div_u_0/r_stage_reg_n_0_[0]       |               13 |             48 |         3.69 |
+|  ap_clk      | bd_0_i/hls_inst/inst/ap_CS_fsm_state182                                                                                              |                                                                                                                                                       |               14 |             55 |         3.93 |
+|  ap_clk      | bd_0_i/hls_inst/inst/ap_CS_fsm_state218                                                                                              |                                                                                                                                                       |               16 |             61 |         3.81 |
+|  ap_clk      | bd_0_i/hls_inst/inst/sdiv_30s_32ns_32_34_seq_1_U13/fn1_sdiv_30s_32ns_32_34_seq_1_div_U/start0                                        |                                                                                                                                                       |               14 |             63 |         4.50 |
+|  ap_clk      | bd_0_i/hls_inst/inst/ap_CS_fsm_state3                                                                                                |                                                                                                                                                       |               21 |             63 |         3.00 |
+|  ap_clk      | bd_0_i/hls_inst/inst/udiv_64s_64ns_64_68_seq_1_U6/fn1_udiv_64s_64ns_64_68_seq_1_div_U/fn1_udiv_64s_64ns_64_68_seq_1_div_u_0/E[0]     |                                                                                                                                                       |               17 |             64 |         3.76 |
+|  ap_clk      | bd_0_i/hls_inst/inst/udiv_64s_64ns_64_68_seq_1_U6/fn1_udiv_64s_64ns_64_68_seq_1_div_U/start0                                         |                                                                                                                                                       |               15 |             64 |         4.27 |
+|  ap_clk      | bd_0_i/hls_inst/inst/sdiv_64ns_64ns_64_68_seq_1_U7/fn1_sdiv_64ns_64ns_64_68_seq_1_div_U/fn1_sdiv_64ns_64ns_64_68_seq_1_div_u_0/E[0]  |                                                                                                                                                       |               16 |             64 |         4.00 |
+|  ap_clk      | bd_0_i/hls_inst/inst/ap_CS_fsm_state77                                                                                               |                                                                                                                                                       |               14 |             64 |         4.57 |
+|  ap_clk      | bd_0_i/hls_inst/inst/ap_CS_fsm_state65                                                                                               |                                                                                                                                                       |               24 |             72 |         3.00 |
+|  ap_clk      | bd_0_i/hls_inst/inst/sdiv_64ns_11ns_32_68_seq_1_U8/fn1_sdiv_64ns_11ns_32_68_seq_1_div_U/start0                                       |                                                                                                                                                       |               14 |             74 |         5.29 |
+|  ap_clk      | bd_0_i/hls_inst/inst/ap_CS_fsm_state8                                                                                                |                                                                                                                                                       |               30 |            108 |         3.60 |
+|  ap_clk      | bd_0_i/hls_inst/inst/ap_CS_fsm_state78                                                                                               |                                                                                                                                                       |               29 |            128 |         4.41 |
+|  ap_clk      | bd_0_i/hls_inst/inst/ap_CS_fsm_state9                                                                                                |                                                                                                                                                       |               32 |            128 |         4.00 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_fu_547_ap_start                                                                                             |                                                                                                                                                       |               33 |            128 |         3.88 |
+|  ap_clk      | bd_0_i/hls_inst/inst/urem_64ns_64ns_32_68_seq_1_U9/fn1_urem_64ns_64ns_32_68_seq_1_div_U/start0                                       |                                                                                                                                                       |               29 |            128 |         4.41 |
+|  ap_clk      | bd_0_i/hls_inst/inst/sdiv_64ns_64ns_64_68_seq_1_U7/fn1_sdiv_64ns_64ns_64_68_seq_1_div_U/start0                                       |                                                                                                                                                       |               30 |            129 |         4.30 |
+|  ap_clk      |                                                                                                                                      | ap_rst                                                                                                                                                |               88 |            333 |         3.78 |
+|  ap_clk      |                                                                                                                                      |                                                                                                                                                       |              434 |           1717 |         3.96 |
++--------------+--------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+----------------+--------------+
+
+

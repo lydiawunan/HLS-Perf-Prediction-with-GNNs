@@ -1,0 +1,176 @@
+
+
+================================================================
+== Vitis HLS Report for 'top_dfg'
+================================================================
+* Date:           Sun May 16 13:50:59 2021
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)
+* Project:        project_tmp
+* Solution:       solution_tmp (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.912 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |        6|        6|  60.000 ns|  60.000 ns|    7|    7|     none|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 7
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.55>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%b_read = read i32 @_ssdm_op_Read.ap_auto.i32P0A, i32 %b" [top_dfg.c:6]   --->   Operation 8 'read' 'b_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (2.55ns)   --->   "%add_ln6 = add i32 %b_read, i32 2" [top_dfg.c:6]   --->   Operation 9 'add' 'add_ln6' <Predicate = true> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%write_ln6 = write void @_ssdm_op_Write.ap_auto.i32P0A, i32 %a, i32 %add_ln6" [top_dfg.c:6]   --->   Operation 10 'write' 'write_ln6' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 6.91>
+ST_2 : Operation 11 [2/2] (6.91ns)   --->   "%mul_ln7 = mul i32 %b_read, i32 %add_ln6" [top_dfg.c:7]   --->   Operation 11 'mul' 'mul_ln7' <Predicate = true> <Delay = 6.91> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 1> <II = 1> <Delay = 6.91> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 3 <SV = 2> <Delay = 6.91>
+ST_3 : Operation 12 [1/2] (6.91ns)   --->   "%mul_ln7 = mul i32 %b_read, i32 %add_ln6" [top_dfg.c:7]   --->   Operation 12 'mul' 'mul_ln7' <Predicate = true> <Delay = 6.91> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 1> <II = 1> <Delay = 6.91> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 4 <SV = 3> <Delay = 5.10>
+ST_4 : Operation 13 [1/1] (2.55ns)   --->   "%t1 = add i32 %mul_ln7, i32 4" [top_dfg.c:7]   --->   Operation 13 'add' 't1' <Predicate = true> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 14 [1/1] (0.00ns)   --->   "%c_read = read i32 @_ssdm_op_Read.ap_auto.i32P0A, i32 %c" [top_dfg.c:8]   --->   Operation 14 'read' 'c_read' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 15 [1/1] (2.55ns)   --->   "%t2 = add i32 %c_read, i32 %t1" [top_dfg.c:8]   --->   Operation 15 'add' 't2' <Predicate = true> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 5 <SV = 4> <Delay = 6.91>
+ST_5 : Operation 16 [2/2] (6.91ns)   --->   "%t3 = mul i32 %b_read, i32 %t2" [top_dfg.c:9]   --->   Operation 16 'mul' 't3' <Predicate = true> <Delay = 6.91> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 1> <II = 1> <Delay = 6.91> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 6 <SV = 5> <Delay = 6.91>
+ST_6 : Operation 17 [1/2] (6.91ns)   --->   "%t3 = mul i32 %b_read, i32 %t2" [top_dfg.c:9]   --->   Operation 17 'mul' 't3' <Predicate = true> <Delay = 6.91> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 1> <II = 1> <Delay = 6.91> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 7 <SV = 6> <Delay = 4.37>
+ST_7 : Operation 18 [1/1] (0.00ns)   --->   "%spectopmodule_ln0 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_1"   --->   Operation 18 'spectopmodule' 'spectopmodule_ln0' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 19 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %a"   --->   Operation 19 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 20 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %a, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 20 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 21 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %b"   --->   Operation 21 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 22 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %b, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 22 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 23 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %c"   --->   Operation 23 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 24 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %c, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 24 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 25 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln10 = add i32 %t1, i32 %t3" [top_dfg.c:10]   --->   Operation 25 'add' 'add_ln10' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.18> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync>
+ST_7 : Operation 26 [1/1] (4.37ns) (root node of TernaryAdder)   --->   "%add_ln10_1 = add i32 %add_ln10, i32 %t2" [top_dfg.c:10]   --->   Operation 26 'add' 'add_ln10_1' <Predicate = true> <Delay = 4.37> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.18> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync>
+ST_7 : Operation 27 [1/1] (0.00ns)   --->   "%write_ln10 = write void @_ssdm_op_Write.ap_auto.i32P0A, i32 %c, i32 %add_ln10_1" [top_dfg.c:10]   --->   Operation 27 'write' 'write_ln10' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 28 [1/1] (0.00ns)   --->   "%ret_ln11 = ret" [top_dfg.c:11]   --->   Operation 28 'ret' 'ret_ln11' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 2.55ns
+The critical path consists of the following:
+	wire read on port 'b' (top_dfg.c:6) [11]  (0 ns)
+	'add' operation ('add_ln6', top_dfg.c:6) [12]  (2.55 ns)
+
+ <State 2>: 6.91ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln7', top_dfg.c:7) [14]  (6.91 ns)
+
+ <State 3>: 6.91ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln7', top_dfg.c:7) [14]  (6.91 ns)
+
+ <State 4>: 5.1ns
+The critical path consists of the following:
+	'add' operation ('t1', top_dfg.c:7) [15]  (2.55 ns)
+	'add' operation ('t2', top_dfg.c:8) [17]  (2.55 ns)
+
+ <State 5>: 6.91ns
+The critical path consists of the following:
+	'mul' operation ('t3', top_dfg.c:9) [18]  (6.91 ns)
+
+ <State 6>: 6.91ns
+The critical path consists of the following:
+	'mul' operation ('t3', top_dfg.c:9) [18]  (6.91 ns)
+
+ <State 7>: 4.37ns
+The critical path consists of the following:
+	'add' operation ('add_ln10', top_dfg.c:10) [19]  (0 ns)
+	'add' operation ('add_ln10_1', top_dfg.c:10) [20]  (4.37 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
