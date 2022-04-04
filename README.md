@@ -69,7 +69,7 @@ More information can be found in [ldrgrn](https://github.com/gergo-/ldrgen)
 
 1. Clone the repo
 ```sh
-git clone https://github.com/github_username/repo_name.git
+git clone https://github.com/lydiawunan/HLS-Perf-Prediction-with-GNNs.git
 ```
 2. Install Stellargraph packages (even with conda, please use pip for installation)
 ```sh
