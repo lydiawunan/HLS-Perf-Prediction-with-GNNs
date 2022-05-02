@@ -57,7 +57,7 @@ The processed datasets are stored together with [GNN models](#modeling).
 * The three approaches explored in our paper:
   - Off-the-shelf approach 
     <figure>
-      <img src="./images/gnn.pdf" style="width:95%">
+      <img src="./images/gnn.png" style="width:100%">
     </figure>
 * 14 GNN models are profiled for [graph-level regression](https://github.com/lydiawunan/HLS-Perf-Prediction-with-GNNs/tree/main/GNN) of resource usage and timing
 * 4 GNN models are explored for [node-level classification](https://github.com/lydiawunan/HLS-Perf-Prediction-with-GNNs/tree/main/Node-level%20task) of resource types
