@@ -36,5 +36,5 @@
 * [Data preprocessing script](https://github.com/lydiawunan/HLS-Perf-Prediction-with-GNNs/blob/main/Graphs/process_real_case_graph.ipynb)
 * Processed datasets:
   * The [dataset](https://github.com/lydiawunan/HLS-Perf-Prediction-with-GNNs/tree/main/Graphs/real%20case/cdfg) that only has processed CDFGs
-  * The [dataset](https://github.com/lydiawunan/HLS-Perf-Prediction-with-GNNs/tree/main/Graphs/real%20case/all_real_case)  that has CDFGs for training and real-case application for testing
+  * The [dataset](https://github.com/lydiawunan/HLS-Perf-Prediction-with-GNNs/tree/main/Graphs/real%20case/all_real_case)  that has CDFGs for training and all real-case applications for testing
 
