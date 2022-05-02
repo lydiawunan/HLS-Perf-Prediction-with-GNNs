@@ -21,6 +21,10 @@
 
 This project aims to explore the capability of GNN-based predictors in HLS design performance evalution, where the ultimate goal is to provide fast and accurate circuit quality evaluation from early design stages as well as to facilitate hardware agile design.
 
+<figure>
+  <img src="./images/p2c.png">
+</figure>
+
 **Contribution** 
 * Benchmarking: we build a standard benchmark containing 40k C synthesizable programs, which includes both synthetic programs and three sets of real-world HLS benchmarks. Each program is implemented on FPGA to generate ground-truth performance metrics. 
 * Modeling: we formally formulate the HLS performance prediction problem on graphs, and propose multiple modeling strategies with GNNs that leverage different trade-offs between prediction timeliness (early/late prediction) and accuracy. 
