@@ -22,7 +22,7 @@
 This project aims to explore the capability of GNN-based predictors in HLS design performance evalution, where the ultimate goal is to provide fast and accurate circuit quality evaluation from early design stages as well as to facilitate hardware agile design.
 
 <figure>
-  <img src="./images/p2c.png" style="width:95%">
+  <img src="./images/p2c.png" style="width:90%">
 </figure>
 
 **Contribution** 
@@ -56,6 +56,9 @@ The processed datasets are stored together with [GNN models](#modeling).
 ## Modeling and Advancing
 * The three approaches explored in our paper:
   - Off-the-shelf approach 
+    <figure>
+      <img src="./images/gnn.pdf" style="width:95%">
+    </figure>
 * 14 GNN models are profiled for [graph-level regression](https://github.com/lydiawunan/HLS-Perf-Prediction-with-GNNs/tree/main/GNN) of resource usage and timing
 * 4 GNN models are explored for [node-level classification](https://github.com/lydiawunan/HLS-Perf-Prediction-with-GNNs/tree/main/Node-level%20task) of resource types
 
