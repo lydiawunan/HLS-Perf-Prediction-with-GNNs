@@ -1,7 +1,7 @@
 # Raw Graphs
 
 # DFG: data flow graphs
-* Raw files
+* [Raw files](https://github.com/lydiawunan/HLS-Perf-Prediction-with-GNNs/tree/main/Graphs/dfg)
   * C programs
   * Extracted intermediate files after HLS front-end compilation
   * Post-implementation resource usage and timing (saved in json)
@@ -11,7 +11,7 @@
   * [data_prep_util.py](https://github.com/lydiawunan/HLS-Perf-Prediction-with-GNNs/blob/main/Graphs/dfg/data_prep_util.py)
 
 # CDFG: control data flow graphs
-* Raw files
+* [Raw files](https://github.com/lydiawunan/HLS-Perf-Prediction-with-GNNs/tree/main/Graphs/cdfg)
   * C programs
   * Extracted intermediate files after HLS front-end compilation
   * Post-implementation resource usage and timing (saved in json)
@@ -35,6 +35,6 @@
   * [Processed data](https://github.com/lydiawunan/HLS-Perf-Prediction-with-GNNs/tree/main/Graphs/real%20case/PolyBench_ds)
 * [Data preprocessing script](https://github.com/lydiawunan/HLS-Perf-Prediction-with-GNNs/blob/main/Graphs/process_real_case_graph.ipynb)
 * Processed datasets:
-  * The [dataset] that only has processed CDFGs(https://github.com/lydiawunan/HLS-Perf-Prediction-with-GNNs/tree/main/Graphs/real%20case/cdfg)
-  * The [dataset] that has CDFGs for training and real-case application for testing(https://github.com/lydiawunan/HLS-Perf-Prediction-with-GNNs/tree/main/Graphs/real%20case/all_real_case) 
+  * The [dataset](https://github.com/lydiawunan/HLS-Perf-Prediction-with-GNNs/tree/main/Graphs/real%20case/cdfg) that only has processed CDFGs
+  * The [dataset](https://github.com/lydiawunan/HLS-Perf-Prediction-with-GNNs/tree/main/Graphs/real%20case/all_real_case)  that has CDFGs for training and real-case application for testing
 
