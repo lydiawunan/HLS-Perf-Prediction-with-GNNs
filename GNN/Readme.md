@@ -4,6 +4,7 @@
 * For off-the-shelf approach:
   * DFG: dfg_*cp/dsp/ff/lut*
   * CDFG: cdfg_*cp/dsp/ff/lut*
+  * CDFG+real-case benchmarks: cdfg_*cp/dsp/ff/lut*_all
 * For knowledge-rich approach:
   * DFG: dfg_*cp/dsp/ff/lut*_numerical
   * CDFG: cdfg_*cp/dsp/ff/lut*_numerical
