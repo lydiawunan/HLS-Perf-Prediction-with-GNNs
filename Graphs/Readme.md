@@ -1,6 +1,6 @@
 # Raw Graphs
 
-# DFG: data flow graphs
+## DFG: data flow graphs
 * [Raw files](https://github.com/lydiawunan/HLS-Perf-Prediction-with-GNNs/tree/main/Graphs/dfg)
   * C programs
   * Extracted intermediate files after HLS front-end compilation
@@ -20,7 +20,7 @@
   * [data_prep.py](https://github.com/lydiawunan/HLS-Perf-Prediction-with-GNNs/blob/main/Graphs/cdfg/data_prep.py)
   * [data_prep_util.py](https://github.com/lydiawunan/HLS-Perf-Prediction-with-GNNs/blob/main/Graphs/cdfg/data_prep_util.py)
 
-# Real-case Benchmarks
+## Real-case Benchmarks
 * CHStone: 
   * [Extracted graphs and post-implementation metrics (prefixed with chstone_) in json](https://github.com/lydiawunan/HLS-Perf-Prediction-with-GNNs/tree/main/Graphs/real%20case/CHStone)
   * [Intermediate files](https://github.com/lydiawunan/HLS-Perf-Prediction-with-GNNs/tree/main/Graphs/real%20case/CHStone_adb)
