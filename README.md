@@ -17,6 +17,13 @@
 
 This project aims to explore the capability of GNN-based predictors in HLS design performance evalution, where the ultimate goal is to provide fast and accurate circuit quality evaluation from early design stages as well as to facilitate hardware agile design.
 
+<style>
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
 <figure>
   <img src="./images/p2c.png" style="width:90%" class="center">
 </figure>
