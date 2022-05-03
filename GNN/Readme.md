@@ -17,12 +17,11 @@
 
 ### GNN Models
 * 14 models are included
-* To switch among different approaches, the imported files should be changed accordingly in [node_encoder.py]
-(https://github.com/lydiawunan/HLS-Perf-Prediction-with-GNNs/blob/main/GNN/node_encoder.py).
- * For example, for the knowledge-infused approach, features_numerical.py should be imported.
-  ```sh
-  from features_numerical import get_node_feature_dims, get_edge_feature_dims 
-  ```
+* To switch among different approaches, the imported files should be changed accordingly in [node_encoder.py](https://github.com/lydiawunan/HLS-Perf-Prediction-with-GNNs/blob/main/GNN/node_encoder.py).
+  * For example, for the knowledge-infused approach, features_numerical.py should be imported.
+    ```sh
+    from features_numerical import get_node_feature_dims, get_edge_feature_dims 
+    ```
 * How to run:
   ```sh 
   python main_pna.py --dataset dfg_dsp
