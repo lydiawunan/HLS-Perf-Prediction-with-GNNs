@@ -73,6 +73,6 @@ The processed datasets are stored together with [GNN models](#modeling-and-advan
 
 <!-- Road Map -->
 ## Road Map
-<center>
-  <img src="./images/taskx.png" style="width:50%" class="center">
-</center>
+<figure>
+  <img src="./images/taskx.png" style="width:50%" align="center">
+</figure>
