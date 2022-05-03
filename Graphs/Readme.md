@@ -10,7 +10,7 @@
   * [data_prep.py](https://github.com/lydiawunan/HLS-Perf-Prediction-with-GNNs/blob/main/Graphs/dfg/data_prep.py)
   * [data_prep_util.py](https://github.com/lydiawunan/HLS-Perf-Prediction-with-GNNs/blob/main/Graphs/dfg/data_prep_util.py)
 
-# CDFG: control data flow graphs
+## CDFG: control data flow graphs
 * [Raw files](https://github.com/lydiawunan/HLS-Perf-Prediction-with-GNNs/tree/main/Graphs/cdfg)
   * C programs
   * Extracted intermediate files after HLS front-end compilation
